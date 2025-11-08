@@ -4,13 +4,13 @@ credentials:
       email: victor@aberration.com
       name: Victor
       password: $2b$12$.ejUPQtRJR9cLgZd.e7fUeBpUFf5gXT/9RwXsZNCKhvWuT96wsywK
-    femi:
-      email: femi@aberration.com
-      name: Femi
-      password: $2b$12$TwkhVVBAOEzpER6l2NQdMuw0VwWtf2L/oWez/2/kkrnmOSWmqJeAW
+    glenn:
+      email: glenn@aberration.com
+      name: Glenn
+      password: $2b$12$qc0s.S18jjQm7ZzUFmLBquo/omkAHOvm7BSCmGipyg8HBRaZZasLG
 cookie:
   expiry_days: 30
-  key: overnight_signature_key # Must be string
-  name: overnight_cookie_name
+  key: bridge_signature_key # Must be string
+  name: bridge_cookie_name
 preauthorized:
   emails:
