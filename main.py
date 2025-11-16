@@ -65,8 +65,8 @@ if st.session_state.get('authentication_status'):
     INSTRUCTION = f.decrypt(INSTRUCTION_ENCRYPTED).decode()
 
     # Set page layout and title.
-    st.set_page_config(page_title="Integrity AI", page_icon=":swan:", layout="wide")
-    st.header(":swan: Integrity AI")
+    st.set_page_config(page_title="Integrity AI", page_icon=":butterfly:", layout="wide")
+    st.header(":butterfly: Integrity AI")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
