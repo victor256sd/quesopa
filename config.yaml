@@ -8,6 +8,10 @@ credentials:
       email: glenn@aberration.com
       name: Glenn
       password: $2b$12$qc0s.S18jjQm7ZzUFmLBquo/omkAHOvm7BSCmGipyg8HBRaZZasLG
+    jimmy:
+      email: jimmy@aberration.com
+      name: Jimmy
+      password: $2b$12$HZhqIM6ohDzMn1IeEUY20ufZlk4iLQyimhvn162.SQ.IXvFAwHwnm
 cookie:
   expiry_days: 30
   key: thecode_signature_key # Must be string
