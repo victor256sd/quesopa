@@ -12,9 +12,9 @@ credentials:
       email: jimmy@aberration.com
       name: Jimmy
       password: $2b$12$HZhqIM6ohDzMn1IeEUY20ufZlk4iLQyimhvn162.SQ.IXvFAwHwnm
-    frank:
-      email: frank@aberration.com
-      name: Frank
+    fred:
+      email: fred@aberration.com
+      name: Fred
       password: $2b$12$Pkr2C1L0Z3FNe1Vo5bebc.NV8inii7LklqV22IVlq1Z6c4e6z7EBO
 cookie:
   expiry_days: 30
