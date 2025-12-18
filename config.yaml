@@ -16,6 +16,10 @@ credentials:
       email: fred@aberration.com
       name: Fred
       password: $2b$12$Pkr2C1L0Z3FNe1Vo5bebc.NV8inii7LklqV22IVlq1Z6c4e6z7EBO
+    annemarie:
+      email: annemarie@aberration.com
+      name: Anne Marie
+      password: $2b$12$3ezLU5xhmvjZ2fY/pf8UUuQMS2xA2cMmdohhI52KDTYf.R060ujE.
 cookie:
   expiry_days: 30
   key: thecode_signature_key # Must be string
