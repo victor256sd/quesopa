@@ -67,6 +67,7 @@ if st.session_state.get('authentication_status'):
     # Set page layout and title.
     st.set_page_config(page_title="Integrity AI", page_icon=":butterfly:", layout="wide")
     st.header(":butterfly: Integrity AI")
+    st.markdown("## Your starting point for educator ethics.")
     st.markdown("*The purpose of the educational information in the responses that are generated is to foster discussions between **people**. It is these conversations that help with the evolution and implementation of best practices.*")
     
     # Field for OpenAI API key.
@@ -82,7 +83,7 @@ if st.session_state.get('authentication_status'):
     
     # Create new form to search aitam library vector store.    
     with st.form(key="qa_form", clear_on_submit=False, height=300):
-        query = st.text_area("**Ask for education guidance:**", height="stretch")
+        query = st.text_area("**Ask for guidance:**", height="stretch")
         submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
