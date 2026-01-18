@@ -132,7 +132,7 @@ if st.session_state.get('authentication_status'):
         elif Q1 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q1=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q1=0,"
         
         if Q2 == "Never": 
@@ -147,7 +147,7 @@ if st.session_state.get('authentication_status'):
         elif Q2 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q2=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q2=0,"
 
         if Q3 == "Never": 
@@ -162,7 +162,7 @@ if st.session_state.get('authentication_status'):
         elif Q3 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q3=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q3=0,"
 
         if Q4 == "Never": 
@@ -177,7 +177,7 @@ if st.session_state.get('authentication_status'):
         elif Q4 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q4=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q4=0,"
 
         # Scored in reverse.
@@ -193,7 +193,7 @@ if st.session_state.get('authentication_status'):
         elif Q5 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q5=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q5=0,"
         
         # Scored in reverse.
@@ -209,7 +209,7 @@ if st.session_state.get('authentication_status'):
         elif Q6 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q6=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q6=0,"
     
         if Q7 == "Never": 
@@ -224,7 +224,7 @@ if st.session_state.get('authentication_status'):
         elif Q7 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q7=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q7=0,"
 
         if Q8 == "Never": 
@@ -239,7 +239,7 @@ if st.session_state.get('authentication_status'):
         elif Q8 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q8=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q8=0,"
 
         # Scored in reverse.
@@ -255,7 +255,7 @@ if st.session_state.get('authentication_status'):
         elif Q9 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q9=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q9=0,"
 
         # Scored in reverse.
@@ -271,7 +271,7 @@ if st.session_state.get('authentication_status'):
         elif Q10 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q10=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q10=0,"
 
         if Q11 == "Never": 
@@ -286,7 +286,7 @@ if st.session_state.get('authentication_status'):
         elif Q11 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q11=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q11=0,"
     
         if Q12 == "Never": 
@@ -301,7 +301,7 @@ if st.session_state.get('authentication_status'):
         elif Q12 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q12=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q12=0,"
 
         if Q13 == "Never": 
@@ -316,7 +316,7 @@ if st.session_state.get('authentication_status'):
         elif Q13 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q13=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q13=0,"
 
         if Q14 == "Never": 
@@ -331,7 +331,7 @@ if st.session_state.get('authentication_status'):
         elif Q14 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q14=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q14=0,"
 
         # Scored in reverse.
@@ -347,7 +347,7 @@ if st.session_state.get('authentication_status'):
         elif Q15 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q15=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q15=0,"
 
         # Scored in reverse.
@@ -363,7 +363,7 @@ if st.session_state.get('authentication_status'):
         elif Q16 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q16=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q16=0,"
     
         if Q17 == "Never": 
@@ -378,7 +378,7 @@ if st.session_state.get('authentication_status'):
         elif Q17 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q17=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q17=0,"
 
         if Q18 == "Never": 
@@ -393,7 +393,7 @@ if st.session_state.get('authentication_status'):
         elif Q18 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q18=4,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q18=0,"
 
         # Scored in reverse.
@@ -409,7 +409,7 @@ if st.session_state.get('authentication_status'):
         elif Q19 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q19=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q19=0,"
     
         # Scored in reverse.
@@ -425,7 +425,7 @@ if st.session_state.get('authentication_status'):
         elif Q20 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q20=1,"
-        else
+        else:
             Q_rawdata = Q_rawdata + "Q20=0,"
 
         if Q_total < 20:
