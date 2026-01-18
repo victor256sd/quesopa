@@ -313,7 +313,12 @@ if st.session_state.get('authentication_status'):
             Q_response = "High degree of loneliness."
 
         if Q_total >= 20:
-            st.markdown("For additional information and resources, please visit: \n [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf) \n [The Trevor Project](https://www.thetrevorproject.org/) \n [211](https://www.211.org/) \n [988](https://988lifeline.org/get-help/) \n [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+            st.markdown("For additional information and resources, please visit:")
+            st.markdown("[US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf)")
+            st.markdown("[The Trevor Project](https://www.thetrevorproject.org/)")
+            st.markdown("[211](https://www.211.org/)")
+            st.markdown("[988](https://988lifeline.org/get-help/)")
+            st.markdown("[Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -351,8 +356,8 @@ if st.session_state.get('authentication_status'):
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
         except:
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
-        st.write("*The guidance and responses provided by this application are AI-generated and informed by the Model Code of Ethics for Educators and related professional standards. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their school district policies, state regulations, or legal counsel for authoritative guidance on ethical or compliance matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
-        st.markdown("#### Response")
+        st.markdown("#### AI Guidance")
+        st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
         st.markdown(cleaned_response)
 
         st.markdown("#### Sources")
@@ -362,10 +367,8 @@ if st.session_state.get('authentication_status'):
             retrieved_files = set([response2.filename for response2 in annotations])
             file_list_str = ", ".join(retrieved_files)
             st.markdown(f"**File(s):** {file_list_str}")
-            st.markdown("For additional information and resources, please visit [www.educatorethics.org](http://www.educatorethics.org).")
         except (AttributeError, IndexError):
             st.markdown("**File(s): n/a**")
-            st.markdown("For additional information and resources, please visit [www.educatorethics.org](http://www.educatorethics.org).")
 
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
