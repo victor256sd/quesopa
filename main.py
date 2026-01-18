@@ -90,9 +90,23 @@ if st.session_state.get('authentication_status'):
         Q1 = st.selectbox("How often do you feel that you are *in tune* with the people around you?", ["Never", "Rarely", "Sometimes", "Often"])
         Q2 = st.selectbox("How often do you feel that you lack companionship?", ["Never", "Rarely", "Sometimes", "Often"])
         Q3 = st.selectbox("How often do you feel that there is no one you can turn to?", ["Never", "Rarely", "Sometimes", "Often"])
-        Q4 = st.selectbox("How often do you feel that you are *in tune* with the people around you?", ["Never", "Rarely", "Sometimes", "Often"])
-
-        
+        Q4 = st.selectbox("How often do you feel alone?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q5 = st.selectbox("How often do you feel part of a group of friends?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q6 = st.selectbox("How often do you feel that you have a lot in common with the people around you?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q7 = st.selectbox("How often do you feel that you are no longer close to anyone?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q8 = st.selectbox("How often do you feel that your interests and ideas are not shared by those around you?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q9 = st.selectbox("How often do you feel outgoing and friendly?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q10 = st.selectbox("How often do you feel close to people?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q11 = st.selectbox("How often do you feel left out?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q12 = st.selectbox("How often do you feel that your relationships with others are not meaningful?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q13 = st.selectbox("How often do you feel that no one really knows you well?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q14 = st.selectbox("How often do you feel isolated from others?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q15 = st.selectbox("How often do you feel you can find companionship when you want it?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q16 = st.selectbox("How often do you feel that there are people who really understand you?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q17 = st.selectbox("How often do you feel shy?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q18 = st.selectbox("How often do you feel that people are around you but not with you?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q19 = st.selectbox("How often do you feel that there are people you can talk to?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q20 = st.selectbox("How often do you feel that there are people you can turn to?", ["Never", "Rarely", "Sometimes", "Often"])
         
         submitted = st.form_submit_button("Submit")
     
