@@ -314,7 +314,7 @@ if st.session_state.get('authentication_status'):
     #     submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
-    if submit_thecode:
+    if Q_total = 999:
         # If form is submitted without a query, stop.
         if not query:
             st.error("Enter a question for MCEE guidance!")
