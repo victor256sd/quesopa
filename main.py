@@ -445,7 +445,7 @@ if st.session_state.get('authentication_status'):
 
         if Q_total >= 20:
             st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
-            Q_rawdata = Q_rawdata + "Score=" + Q_total
+            Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
