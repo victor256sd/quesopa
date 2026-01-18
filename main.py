@@ -69,7 +69,7 @@ if st.session_state.get('authentication_status'):
     st.header(":hibiscus: Qué Sopa AI")
     st.markdown("###### An assessment of loneliness.")
     # st.markdown("###### Your starting point for educator ethics")
-    st.markdown("*The below assessment is the UCLA Loneliness Scale (Version 3), which is used to assess an individual's subjective feelings of loneliness and social isolation.*")
+    st.markdown("*The below assessment is the UCLA Loneliness Scale (Version 3), which is used to assess an individual's subjective feelings of loneliness and social isolation. The below questions were taken from [psytests.org](https://psytests.org/ipl/uclav3en-bl.html).*")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
@@ -81,6 +81,20 @@ if st.session_state.get('authentication_status'):
     if not openai_api_key:
         st.error("Please enter your OpenAI API key!")
         st.stop()
+
+    # Create loneliness survey form.
+    with st.form("ucla3_form"):
+        st.write("Please fill out the form below:")
+        name = st.text_input("Name")
+        age = st.slider("Age", 18, 99)
+        Q1 = st.selectbox("How often do you feel that you are *in tune* with the people around you?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q2 = st.selectbox("How often do you feel that you lack companionship?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q3 = st.selectbox("How often do you feel that there is no one you can turn to?", ["Never", "Rarely", "Sometimes", "Often"])
+        Q4 = st.selectbox("How often do you feel that you are *in tune* with the people around you?", ["Never", "Rarely", "Sometimes", "Often"])
+
+        
+        
+        submitted = st.form_submit_button("Submit")
     
     # Create new form to search aitam library vector store.    
     with st.form(key="qa_form", clear_on_submit=False, height=300):
