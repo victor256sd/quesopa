@@ -314,11 +314,7 @@ if st.session_state.get('authentication_status'):
 
         if Q_total >= 20:
             st.markdown("For additional information and resources, please visit:")
-            st.markdown("[US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf)")
-            st.markdown("[The Trevor Project](https://www.thetrevorproject.org/)")
-            st.markdown("[211](https://www.211.org/)")
-            st.markdown("[988](https://988lifeline.org/get-help/)")
-            st.markdown("[Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+            st.markdown("[US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -356,7 +352,7 @@ if st.session_state.get('authentication_status'):
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
         except:
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
-        st.markdown("#### AI Guidance")
+        st.markdown("#### Qué Sopa AI Guidance")
         st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
         st.markdown(cleaned_response)
 
