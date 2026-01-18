@@ -75,7 +75,8 @@ if st.session_state.get('authentication_status'):
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
 
     # Retrieve user-selected openai model.
-    model: str = st.selectbox("Model", options=MODEL_LIST)
+    # model: str = st.selectbox("Model", options=MODEL_LIST)
+    model = "gpt-4o-mini"
         
     # If there's no openai api key, stop.
     if not openai_api_key:
@@ -87,33 +88,119 @@ if st.session_state.get('authentication_status'):
         st.write("Please fill out the form below:")
         name = st.text_input("Name")
         age = st.slider("Age", 18, 99)
-        Q1 = st.selectbox("How often do you feel that you are *in tune* with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q2 = st.selectbox("How often do you feel that you lack companionship?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q3 = st.selectbox("How often do you feel that there is no one you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q4 = st.selectbox("How often do you feel alone?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q5 = st.selectbox("How often do you feel part of a group of friends?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q6 = st.selectbox("How often do you feel that you have a lot in common with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q7 = st.selectbox("How often do you feel that you are no longer close to anyone?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q8 = st.selectbox("How often do you feel that your interests and ideas are not shared by those around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q9 = st.selectbox("How often do you feel outgoing and friendly?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q10 = st.selectbox("How often do you feel close to people?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q11 = st.selectbox("How often do you feel left out?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q12 = st.selectbox("How often do you feel that your relationships with others are not meaningful?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q13 = st.selectbox("How often do you feel that no one really knows you well?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q14 = st.selectbox("How often do you feel isolated from others?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q15 = st.selectbox("How often do you feel you can find companionship when you want it?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q16 = st.selectbox("How often do you feel that there are people who really understand you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q17 = st.selectbox("How often do you feel shy?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q18 = st.selectbox("How often do you feel that people are around you but not with you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q19 = st.selectbox("How often do you feel that there are people you can talk to?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q20 = st.selectbox("How often do you feel that there are people you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q1 = st.selectbox("1. How often do you feel that you are *in tune* with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q2 = st.selectbox("2. How often do you feel that you lack companionship?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q3 = st.selectbox("3. How often do you feel that there is no one you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q4 = st.selectbox("4. How often do you feel alone?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q5 = st.selectbox("5. How often do you feel part of a group of friends?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q6 = st.selectbox("6. How often do you feel that you have a lot in common with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q7 = st.selectbox("7. How often do you feel that you are no longer close to anyone?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q8 = st.selectbox("8. How often do you feel that your interests and ideas are not shared by those around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q9 = st.selectbox("9. How often do you feel outgoing and friendly?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q10 = st.selectbox("10. How often do you feel close to people?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q11 = st.selectbox("11. How often do you feel left out?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q12 = st.selectbox("12. How often do you feel that your relationships with others are not meaningful?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q13 = st.selectbox("13. How often do you feel that no one really knows you well?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q14 = st.selectbox("14. How often do you feel isolated from others?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q15 = st.selectbox("15. How often do you feel you can find companionship when you want it?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q16 = st.selectbox("16. How often do you feel that there are people who really understand you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q17 = st.selectbox("17. How often do you feel shy?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q18 = st.selectbox("18. How often do you feel that people are around you but not with you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q19 = st.selectbox("19. How often do you feel that there are people you can talk to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        Q20 = st.selectbox("20. How often do you feel that there are people you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
         
         submitted = st.form_submit_button("Submit")
+
+    if submit:
+        Q_total = 0
+
+        # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
+        if Q1 == "Never": 
+            Q_total = Q_total + 4
+        elif Q1 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q1 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q1 == "Often":
+            Q_total = Q_total + 1
+
+        if Q5 == "Never": 
+            Q_total = Q_total + 4
+        elif Q5 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q5 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q5 == "Often":
+            Q_total = Q_total + 1
+        
+        if Q6 == "Never": 
+            Q_total = Q_total + 4
+        elif Q6 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q6 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q6 == "Often":
+            Q_total = Q_total + 1
+    
+        if Q9 == "Never": 
+            Q_total = Q_total + 4
+        elif Q9 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q9 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q9 == "Often":
+            Q_total = Q_total + 1
+
+        if Q10 == "Never": 
+            Q_total = Q_total + 4
+        elif Q10 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q10 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q10 == "Often":
+            Q_total = Q_total + 1
+
+        if Q15 == "Never": 
+            Q_total = Q_total + 4
+        elif Q15 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q15 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q15 == "Often":
+            Q_total = Q_total + 1
+
+        if Q16 == "Never": 
+            Q_total = Q_total + 4
+        elif Q16 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q16 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q16 == "Often":
+            Q_total = Q_total + 1
+    
+        if Q19 == "Never": 
+            Q_total = Q_total + 4
+        elif Q19 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q19 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q19 == "Often":
+            Q_total = Q_total + 1
+    
+        if Q20 == "Never": 
+            Q_total = Q_total + 4
+        elif Q20 == "Rarely":
+            Q_total = Q_total + 3
+        elif Q20 == "Sometimes":
+            Q_total = Q_total + 2
+        elif Q20 == "Often":
+            Q_total = Q_total + 1
+
     
     # Create new form to search aitam library vector store.    
-    with st.form(key="qa_form", clear_on_submit=False, height=300):
-        query = st.text_area("**What would you like to discuss?**", height="stretch")
-        submit = st.form_submit_button("Send")
+    # with st.form(key="qa_form", clear_on_submit=False, height=300):
+    #     query = st.text_area("**What would you like to discuss?**", height="stretch")
+    #     submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
     if submit:
