@@ -196,6 +196,117 @@ if st.session_state.get('authentication_status'):
         elif Q20 == "Often":
             Q_total = Q_total + 1
 
+        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
+        if Q2 == "Never": 
+            Q_total = Q_total + 1
+        elif Q2 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q2 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q2 == "Often":
+            Q_total = Q_total + 4
+
+        if Q3 == "Never": 
+            Q_total = Q_total + 1
+        elif Q3 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q3 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q3 == "Often":
+            Q_total = Q_total + 4
+
+        if Q4 == "Never": 
+            Q_total = Q_total + 1
+        elif Q4 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q4 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q4 == "Often":
+            Q_total = Q_total + 4
+
+        if Q7 == "Never": 
+            Q_total = Q_total + 1
+        elif Q7 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q7 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q7 == "Often":
+            Q_total = Q_total + 4
+
+        if Q8 == "Never": 
+            Q_total = Q_total + 1
+        elif Q8 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q8 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q8 == "Often":
+            Q_total = Q_total + 4
+
+        if Q11 == "Never": 
+            Q_total = Q_total + 1
+        elif Q11 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q11 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q11 == "Often":
+            Q_total = Q_total + 4
+    
+        if Q12 == "Never": 
+            Q_total = Q_total + 1
+        elif Q12 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q12 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q12 == "Often":
+            Q_total = Q_total + 4
+
+        if Q13 == "Never": 
+            Q_total = Q_total + 1
+        elif Q13 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q13 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q13 == "Often":
+            Q_total = Q_total + 4
+
+        if Q14 == "Never": 
+            Q_total = Q_total + 1
+        elif Q14 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q14 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q14 == "Often":
+            Q_total = Q_total + 4
+
+        if Q17 == "Never": 
+            Q_total = Q_total + 1
+        elif Q17 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q17 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q17 == "Often":
+            Q_total = Q_total + 4
+
+        if Q18 == "Never": 
+            Q_total = Q_total + 1
+        elif Q18 == "Rarely":
+            Q_total = Q_total + 2
+        elif Q18 == "Sometimes":
+            Q_total = Q_total + 3
+        elif Q18 == "Often":
+            Q_total = Q_total + 4
+
+        if Q_total < 20:
+            st.markdown("Please answer all questions.")
+        elif Q_total < 28:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("No, or low, loneliness.")
+        elif Q_total >= 28 and Q_total <= 43:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("Moderate loneliness.")
+        elif Q_total > 43:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("High degree of loneliness.")
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -203,7 +314,7 @@ if st.session_state.get('authentication_status'):
     #     submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
-    if submit:
+    if submit_thecode:
         # If form is submitted without a query, stop.
         if not query:
             st.error("Enter a question for MCEE guidance!")
