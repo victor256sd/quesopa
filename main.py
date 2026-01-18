@@ -109,7 +109,7 @@ if st.session_state.get('authentication_status'):
         Q19 = st.selectbox("19. How often do you feel that there are people you can talk to?", ["","Never", "Rarely", "Sometimes", "Often"])
         Q20 = st.selectbox("20. How often do you feel that there are people you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
         
-        submitted = st.form_submit_button("Submit")
+        submit = st.form_submit_button("Submit")
 
     if submit:
         Q_total = 0
