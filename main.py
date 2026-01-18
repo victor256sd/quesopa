@@ -114,188 +114,319 @@ if st.session_state.get('authentication_status'):
     if submit:
         Q_total = 0
         Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
 
         # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
+        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
+
+        # Scored in reverse.
         if Q1 == "Never": 
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q1=4,"
         elif Q1 == "Rarely":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q1=3,"
         elif Q1 == "Sometimes":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q1=2,"
         elif Q1 == "Often":
             Q_total = Q_total + 1
-
-        if Q5 == "Never": 
-            Q_total = Q_total + 4
-        elif Q5 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q5 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q5 == "Often":
-            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q1=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q1=0,"
         
-        if Q6 == "Never": 
-            Q_total = Q_total + 4
-        elif Q6 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q6 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q6 == "Often":
-            Q_total = Q_total + 1
-    
-        if Q9 == "Never": 
-            Q_total = Q_total + 4
-        elif Q9 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q9 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q9 == "Often":
-            Q_total = Q_total + 1
-
-        if Q10 == "Never": 
-            Q_total = Q_total + 4
-        elif Q10 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q10 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q10 == "Often":
-            Q_total = Q_total + 1
-
-        if Q15 == "Never": 
-            Q_total = Q_total + 4
-        elif Q15 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q15 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q15 == "Often":
-            Q_total = Q_total + 1
-
-        if Q16 == "Never": 
-            Q_total = Q_total + 4
-        elif Q16 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q16 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q16 == "Often":
-            Q_total = Q_total + 1
-    
-        if Q19 == "Never": 
-            Q_total = Q_total + 4
-        elif Q19 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q19 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q19 == "Often":
-            Q_total = Q_total + 1
-    
-        if Q20 == "Never": 
-            Q_total = Q_total + 4
-        elif Q20 == "Rarely":
-            Q_total = Q_total + 3
-        elif Q20 == "Sometimes":
-            Q_total = Q_total + 2
-        elif Q20 == "Often":
-            Q_total = Q_total + 1
-
-        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
         if Q2 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q2=1,"
         elif Q2 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q2=2,"
         elif Q2 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q2=3,"
         elif Q2 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q2=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q2=0,"
 
         if Q3 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q3=1,"
         elif Q3 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q3=2,"
         elif Q3 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q3=3,"
         elif Q3 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q3=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q3=0,"
 
         if Q4 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q4=1,"
         elif Q4 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q4=2,"
         elif Q4 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q4=3,"
         elif Q4 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q4=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q4=0,"
 
+        # Scored in reverse.
+        if Q5 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q5=4,"
+        elif Q5 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q5=3,"
+        elif Q5 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q5=2,"
+        elif Q5 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q5=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q5=0,"
+        
+        # Scored in reverse.
+        if Q6 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q6=4,"
+        elif Q6 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6=3,"
+        elif Q6 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6=2,"
+        elif Q6 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q6=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q6=0,"
+    
         if Q7 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q7=1,"
         elif Q7 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q7=2,"
         elif Q7 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q7=3,"
         elif Q7 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q7=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q7=0,"
 
         if Q8 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q8=1,"
         elif Q8 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q8=2,"
         elif Q8 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q8=3,"
         elif Q8 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q8=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q8=0,"
+
+        # Scored in reverse.
+        if Q9 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q9=4,"
+        elif Q9 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9=3,"
+        elif Q9 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9=2,"
+        elif Q9 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q9=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q9=0,"
+
+        # Scored in reverse.
+        if Q10 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q10=4,"
+        elif Q10 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10=3,"
+        elif Q10 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10=2,"
+        elif Q10 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q10=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q10=0,"
 
         if Q11 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q11=1,"
         elif Q11 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q11=2,"
         elif Q11 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q11=3,"
         elif Q11 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q11=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q11=0,"
     
         if Q12 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q12=1,"
         elif Q12 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q12=2,"
         elif Q12 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q12=3,"
         elif Q12 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q12=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q12=0,"
 
         if Q13 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q13=1,"
         elif Q13 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q13=2,"
         elif Q13 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q13=3,"
         elif Q13 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q13=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q13=0,"
 
         if Q14 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q14=1,"
         elif Q14 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q14=2,"
         elif Q14 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q14=3,"
         elif Q14 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q14=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q14=0,"
 
+        # Scored in reverse.
+        if Q15 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q15=4,"
+        elif Q15 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q15=3,"
+        elif Q15 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q15=2,"
+        elif Q15 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q15=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q15=0,"
+
+        # Scored in reverse.
+        if Q16 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q16=4,"
+        elif Q16 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q16=3,"
+        elif Q16 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q16=2,"
+        elif Q16 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q16=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q16=0,"
+    
         if Q17 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q17=1,"
         elif Q17 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q17=2,"
         elif Q17 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q17=3,"
         elif Q17 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q17=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q17=0,"
 
         if Q18 == "Never": 
             Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q18=1,"
         elif Q18 == "Rarely":
             Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q18=2,"
         elif Q18 == "Sometimes":
             Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q18=3,"
         elif Q18 == "Often":
             Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q18=4,"
+        else
+            Q_rawdata = Q_rawdata + "Q18=0,"
+
+        # Scored in reverse.
+        if Q19 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q19=4,"
+        elif Q19 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q19=3,"
+        elif Q19 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q19=2,"
+        elif Q19 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q19=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q19=0,"
+    
+        # Scored in reverse.
+        if Q20 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q20=4,"
+        elif Q20 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q20=3,"
+        elif Q20 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q20=2,"
+        elif Q20 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q20=1,"
+        else
+            Q_rawdata = Q_rawdata + "Q20=0,"
 
         if Q_total < 20:
             st.markdown("Please answer all questions.")
@@ -314,6 +445,7 @@ if st.session_state.get('authentication_status'):
 
         if Q_total >= 20:
             st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+            Q_rawdata = Q_rawdata + "Score=" + Q_total
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -323,7 +455,7 @@ if st.session_state.get('authentication_status'):
     # If submit button is clicked, query the aitam library.            
     if submit and Q_total >= 20:
         # If form is submitted without a query, stop.
-        query = f"Please provide insights and recommendations to me regarding loneliness. I scored a {Q_total} on the UCLA Version 3 Loneliness Scale, which indicated the following: {Q_response}"
+        query = f"(For later reference: {Q_rawdata}) Please provide insights and recommendations to me regarding loneliness. I scored a {Q_total} on the UCLA Version 3 Loneliness Scale, which indicated the following: {Q_response}"
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
