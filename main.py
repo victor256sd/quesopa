@@ -311,16 +311,13 @@ if st.session_state.get('authentication_status'):
         if Q_total < 10:
             st.markdown("Please answer all questions.")
         elif Q_total < 25:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("Average.")
+            st.write(f"#### Total Score: {Q_total} (Average)")
             Q_response = "Average."
         elif Q_total >= 25 and Q_total <= 29:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("High level of loneliness.")
+            st.write(f"#### Total Score: {Q_total} (High level of loneliness)")
             Q_response = "High level of loneliness."
         elif Q_total >= 30:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("Very high level of loneliness.")
+            st.write(f"#### Total Score: {Q_total} (Very high level of loneliness)")
             Q_response = "Very high level of loneliness."
 
         if Q_total >= 10:
@@ -490,16 +487,13 @@ if st.session_state.get('authentication_status'):
         if Q_total < 10:
             st.markdown("Contesta todas preguntas, por favor.")
         elif Q_total < 25:
-            st.write(f"#### Puntos Totales: {Q_total}")
-            st.markdown("Media.")
-            Q_response = "Media."
+            st.write(f"#### Puntos Totales: {Q_total} (Medio)")
+            Q_response = "Medio."
         elif Q_total >= 25 and Q_total <= 29:
-            st.write(f"#### Puntos Totales: {Q_total}")
-            st.markdown("Alto nivel de soledad.")
+            st.write(f"#### Puntos Totales: {Q_total} (Alto nivel de soledad)")
             Q_response = "Alto nivel de soledad."
         elif Q_total >= 30:
-            st.write(f"#### Puntos Totales: {Q_total}")
-            st.markdown("Muy alto nivel de soledad.")
+            st.write(f"#### Puntos Totales: {Q_total} (Muy alto nivel de soledad)")
             Q_response = "Muy alto nivel de soledad."
 
         if Q_total >= 10:
