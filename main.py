@@ -1,9 +1,17 @@
+#-------------------------------------------------------------------
 # Copyright (c) 2026 victor256sd
 # All rights reserved.
+#
 # Changelog:
+#
+# 1/19/2026: Changed Medium interpretation to Low, point AI to 
+# consider specific questions and answers on the assessment. Modi-
+# fied the query prompt.
+#
 # 1/18/2026: Changed age range from 10 to 99, adjusted questions 
 # to short form of 10 questions (GL provided) and included Spanish 
 # option (GL provided), changed verbiage from Often to Always.
+#
 # 1/17/2026: Initial development.
 #-------------------------------------------------------------------
 
@@ -64,7 +72,7 @@ if st.session_state.get('authentication_status'):
     MODEL_LIST = ["gpt-4o-mini"] #, "gpt-4.1-nano", "gpt-4.1", "o4-mini"] "gpt-5-nano"]
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     VECTOR_STORE_ID = st.secrets["VECTOR_STORE_ID"]
-    INSTRUCTION_ENCRYPTED = b'gAAAAABpbXsMkt_BC6C4XuxVk2ybwnUHMC62RjEYc9RZKoQd6l-ndeiagHULy5tFKHkdlkO2BJ0DfP93QW5c7MNiaf7-YWTOra1YfoYbITL3n4FdjbuqRP5Jhk9pMzcvqLDc_q3_3x4ayG6j2pcwpk7vB3rjXM3T1FqbDKiJ707bQjEIm05FbMRxRDh6FCZ-nXedVwr9096bzZnsVBf7omLJC8yl4zMuJKHNUu_kodvzUvatXw8geCJxul__0I5wkTFJiuqOwaibGfVdsJpP0UDbfEu1PCgg3sqJ_QcuJsZJEl5P-PHvzqajw7WxsEaC-j-trcova-TjpmEASnnKq9zE5VRIkOoauuYeuAP4ykvAxYe9c8X2iDIaM3pi8J3kw2kWCqN9lgiLHL7QQS6xmstddraKWVobJrkb-BI31ffS0GdlDQXeFvw5S5dPnDPK_PYRxbZpzUxblGvvlYtnGpgzpzffEJt4rrZ99G40xsvfIx0OpqmXwdUgZrjQ0r41RxY7UznMZmzh-s2PSTI-9dK51BmgEUV3D6tkBIfo9f6lFfmV08jR-Ri8YDpu3kslrYJCWSAbc3Zr2SL4q5UkLOl-1YGEiaQ_GNW3GrbjFpPkdKj84kvMJqianDh54ww5-9BOa9ZEYmC2bjrDb99IDQYw5IW5CAS-_x7DsnjDyeDCOfYK7RvzmJd8E-hzR1WZbZd02DxQcIjVnp0T4HeT6b8Zw_Ek0Yav5cV9ZoyDkRDWneZRIMjjbeoACypvOJlsr2WkGY9XSrt_Y-wC7mnKVAE1hfrSOi-PY69DZOw8JMay3uXiLVjisrQIOkDgsMx-Qe6TtvqjHjweWU6zjc-lhWkGlsuiHKkoUW7MVqyD2dBgieb6a1EcL3ig_UhgL7oEw1G_NVUPsDMy4Odh4-r2qZi133TfKDAzpzCc4WMTR7JJYFglH8aOnS8KLBnXSK0Fn-mo8UTd6pQbogEMPl5spFkIbXZPLitpAG3o7lSXeI0Em8WPrWiz6FOGU1xZSjEFbkGWdNHHNLAJZd_NAWYRqdDSmLI9-hDeSVtmlFo6qqsfIosI197y6cDmJMlZHa7ppJ_d3JHX-4ie8yP9vaQE8A_Xp_OC12ruW9meRiFkMuysT238E1ztgT4egbehKnBJl583SeAP4wjLlPkb6yrU-v4gDb0OcdCdlWOb2j0NV1Gu9YiVYfJVyXt2JMG_FAK0Rtc0WSI65mjZdZshS725mdNmNHzeOiOFq7S89mbhYvttsxhoB0otf9_yYqVWW-mUPqruy9879Gj8sXHHo4HsvOMwXpG43uZ3QOlqjoQTbZCTB_QQ94mHz1Kn_EWMw_Xi48ryLPcH0N8Ns9WAQPq8WEv04pvQmUBdlTXdPnjO7g62Sm8mvadXleAWKy_V5EOc-FknhXhqJTC0euPDBXzTt5KooR2Algfz4DHfJ0SlmcaN47WUCCCv10AGBM2QpnSO8vtb-3VGfFzA2wA1AANFj0QPdSXdOCBw5MZKlS7p3Hv2AMDnLAFhs31cJdYWy75QbTNmmZnpG42UhKaLrpSLSyDwakgc5Hiq376ltSpkTONqgvqgls26P0k2qtzeg751uXioI_dyrE8aaQZQZ9hW6joa6jEn3wL9vcnvhcwA_6K6t8X7Eh0UFUdX46DfJVbe8MHFPuZoTmzajQABPeooVQFKvzmnaNk0kbq3AL0E1GNCpzHQ3E8NSEA='
+    INSTRUCTION_ENCRYPTED = b'gAAAAABpbk-AE9uozCfiv8u0pfhWkoig9OZkGGJIgy7gKMVPdlDt7ljuUj8XjolW7xyylldEPCk7WbxV3rZPRg7OVmUJr0i56E2OV8U_oMFuGoCZu-KIbJX51W4V1_clyeQQx6jINy5ODBFX7d1kO3M57dFux_dQhGvIetq374TN9ZXUgHgmOvX4PvEAuPUQhm6DxfCMQT9gfhpXkN-SDT-_RYQ01rWGvDvt7wVaHabxuwRk9ztBMfmD95vnSA3B7liTE5c4ghut_mXtT4g5kYYTDKDils4DY1hykiL6jjXVcz-uWGw_bT0DI_x4Daeorzj6ylq6fE4wz7WxUKr3cbVF8FrtQysZKPOVjYj9L6Pic4QNYBSvVSWBK6Rdd5uq_gRRuekqCTkYoc6R8NfmgFsFBAduSbmcESrJrbMoYUSeMC2j4QBCXQlGI3zeUU-cAoehLZA4n1fvj7rdqxLdvI_XiH6C3C713K_0TuFXhu51jqOnrT1uS0WqVGnhi5TdVhxIpcqIy7HOLMp0iVu6UKfXZUNHPpwcGeu7abKmLfVmMOyHk2G7azK-0dlFcdrCaRVkwKDRWaA3aJNS-afIK8-_l4K8vrEBFjEnD3zOYP6S_mk8nP5DEoos_U7ex8kLOJBD3JqX24lU7TluNDolmMhgcKiuykLwGbLIIw0ecXlBq2WYb2Q0KR04mCZacD675KyRpYcOxYcu2-0Tuv18Zk1gjKbrolf2FWfkOW9zCD5VBG4HueeRmqncsJoBlSMRxj6IRDQXc84e-v8pH3DrDzG7ScD7hfJia_IeL2eZI1Vw5feYm15OBJ6c9GzgAam31cFN4nc7AxkeYX7izcjR-sWw6rDiwMcgGmNy-y31WQwv0hrC0kTewoQ_FH1X9YC2-MX4pTtYc4uXiGhg98EOU-k1gFTmnVfsj6qzeyVCnGrKQpC6fqfQrI0-yO5ewZ5Y0msBsczs64MjRtUtXEhN7IJWsumIVcI3ZGsHd72Nz_tf9MQWP87rpQCWpkKdhwgK7ZQXP82vD3aqMjSFDgQYFU05sXGFZBEF5MpxdvPq7RrmVXGj-TG7H0CgbrwqU3JbwYHfXIM08YMDQ4A5L5IVGla2zOTx2sJnijKT8AMUetfpSuOVtlvuaaf3UIULfVJB6budGSsFN16a47s31A5wG_NhqtU8RynMIz7Yy7zUqs4h4zCe2cRFi6tLSGaUaTXinRI9_SmNCo3yVlEjBu0gAnrmB_1pdP_VhetwrmcGxuJuOP4WurefYbwcg-0PnJnJ7aCrAGUE5d6t5zFu4WGUDnMhMkcSjVXMCqy_10LjOfvAX6qm_Qe4pKn-KAJ7xJC1g_eY1td8MHbpD65VHH-dFoYZ09QFt1lJ2I7Yb4SGeLbYs2CWjR7nDALUHZYtEJWMb1XzufLPnGQiFatEEUSc_4q_oXd__n5osMrcLaToyxt4WaiU5Ukr8c6CKtvLXUsgt4QBktxDvGYdGdmSGUWsY_DApkO411pUYatUk8WbR705KEueU7ws3vwE1nqWAb0W5DLQYcUyM3ToB5fmOdBwHRmI8b1emhoYoafmkY-FjSkgQZVIce6lWJMsClkitHBxY0obyQZvKtAYMbe-Meo1zLANf5SF6Xs9chOFf-Vjn8yoO-oOYNkdybnLkLUdBieWEaZgBa735B3sV4zDsQ1QyZ7Xhu6f_Kr1Q2mYxwVKwZ-w9hPhlHyOp5k2SzzNQlqP9FkYdkUVPXM-DWpXG0zfQYmfC7kUYccjUkL3Y54ySKs636f2Y57TxuUe9b8KYweyiAc2pGlfch0btW9W_FFoB6whmrYptylaNf3EGIJu-k8B934dMpUfWoJW2Z0-us0WXQxkaW1_AFyz3BnPUjSKoV5q_Mv1QPfu8Ty-X0E7V3Jy2Jwo3NFUq6L6jjsnDo0adsb2r83vKMTVGoKyagOyt6ei35jHGM3BaNsVkkf84oCViL11Jn7TJJULIIc64uAPm3_rz1vUkXuoi26EwUPMn4RM-BaoqruhHsM-nWRx2nQRXUdYfTmEPDECAsvucr8Bj4QuZr6vQ5VRv4e3NE48b5ET_1AhVky4lRr4D-zsvBHF1F_M8oO4M3RACtnbAVC6y-VkfXn81OVevAOPw_KexoqnEuv99HSpGzQdmvl-u9_0nV0bV0lQO39ddI57g9P-64Fkif_BZhxA6b36Q0WNcTPQC7aqX4BEjMtjy8RtY2CJjcjzcz60bANnjIEglbPx2pxCL5hg5w62lYxcK8HVyF4AcXb0dWq6SnNshSZTsSAal_E1HfjORayJdF5tvp35HdZRorVFDLFXS3fWSuJnvUD23Xugctd2dQ6Jyqe1-epFlfBJXrQnS8EEWU6kiQqXoql7rCup01q--2Fm3HOZ_4nohrnSIDZV1h13mt8WgwnHN59RPb-CA_i2FPUDNN4dUEmBobcc-QmMxAJz7vhyKO86LssQWfGJRJZcq0gZ0Pjsp6mfvnsXVrocbIg2FvDe40RFLDr2OEV8CgXXXUb9X-NqI3h5jE7NcGLZem3-6z5VXP5QzI5qq5DWEg2YoaGgZ_uLe_sYrTWrVi9aWgzKWjg2WYzoDKbMDOOfLf9CRvBDB1l_XFqprvVDRjU80ngWVnulz1Ed0VnRLCW87k3nJqQkAyj4D9-n60aE352dajgIifF4G7SSeX6BT1uK3aT3PzSWtTcvWA6653kSmv4S36zm6HvgjclUSnsE7T74rjijxr66qBY18Zv7OwQmj9SKkHNLMHhqXlq1m-wYt3aJtVYIpAqMW-iCBwPMcEz9JqdVf2cn04MG-t4yyDMTrHjjF3DO893r1i5uh_vGbBYlO-Zjy3fjHxO_SfU4HPgf6JisWLBLHdZttnWErQ_hgVrdQxRA7hqE1UPZBsSfoRRSmJn7TE12TxMsfNQyJ2-0oy5YLy56qeiNVimNxKuujp2cEXjd-m88KtcAPmie-QNq7INL3cfx2yBSxmJ-80t_90XXI5zoPZdxbgQtj02rN1nr5xEBSOF7Y0eZXl_gnzPbMqtk3mpiWAsC6C3afAgkujpy7CtufAgqbSop9DRtH-nqvt8fUfyN0XLYJvszprhu8aEVmABaZlyB3pUvlHel5uOgvrgFg7U9hVCajD7WFkG7q8KuipPsEOM2DvKY5HUNJu4KQRQ3tu8XhNSAEE55wmKKJH4ZaODdJc-VQ4QP-mpCGFIX6k0CaL-2g2uBI296bvbID8QHATJOdc65nlud-NDDJqUe_YDTDypB_qAZCbQA7B-HP2IPvhIO3XAnXRT3VQ-PUjGcg9oFVaJ8ucK1u149AM5X5z9ISlK1SSY2zTeo_sq7wklFUrF-ePpg3HFyFFhdy5vLrWOkb5OBCT2vB_e9VBq2pd7orrWugmscBHisMk1DnqrYINedu63ByuoY2f3pXFu-J1yNrHff4Ob7Ing4ATuoZ7a-KG6h640wwFFprYauJhtMsU_LEq02Kwa4SSUEhO_tSOC_WegZ4147VH9MP7eblOm2LLG3Zs3xiv8__TgLibjxS-cjDGj_OPqzLxyWl29scAMMhrbQBFP_dGFypwYLzMDvEPz4kACaWnNhczpvcfZ081uLvzC7iuYnkt0tYcoyS3ilHvr2JBJoCdSqJsNyvMfmPaY7ROuBincNvF77T2w5ioqFEOzOcuOIj8bo6KfJEQEN1XJ6xK8tTDfCqCwwwIlhYaXjC64DYnZTj7o8XyMlRjAsETnGHxxeJ389zzoojaYlLOU389_1PYkbc5a-LzdnjOxn7w3IR_kPUt0ECK1SAPYFk-ch4sJte2NaDzXazeiH9acYzzAud-keclyL199l2AjJlYHCt3sNpjNR9ghaKjDMMqRSTqPVuJ2ESvDGwbBiU076R8cRbIHj4vxrDRjCkbbUGIbs-SqYDdCie7RV94IDJdhlZX6eddFcNu-sEErqRNbSxWuec8S-z5ivdVYuMceTIT5IMnxW8XSNb6xOScEj203MM9qIAox24TcZFtBFGIt6JXzTB6XfWx_9uwhyQWSdoEXxpFaE8fedimm2hY4XziQSl-d7gionuS-5CbSRyHVnGLhOs_Kwgj17cmcrVm8A4GBhVYirY0kFlFDbnZhAF9EHs6B3e-cFHkazX9ahgYKZ_OxsN0e3HLylpL3QK-nyNoDZEIUevHx3HYlu7CyF2WbVCmQMBRlAojU5JU5YwzXxsmusqNpglpPRT2HOGv7VljPtlvFZyaoW4zWUGocxa9cIin7B122ZzYsm4bHJ-PrXs0NsrVDIBh1vNO03lfXxhLqY9dQ0u__J8P6hrnfVJaIL5px1bQQZUYLLjKKVugPyhI4vGvczOpGOzwcxWsJG6L9__Rx74lvlnYTsE1tRoz5auxZdt0LpSvxlIYcg-81aj4V5GciM3bivqOkzI_fImyK4niyGPhBfzy3_3DA0vzojF9re7YRRAdKzBHBws7VcsUs_b9SxHqn0aaTSx0PZCS_w_W1J-BWUu_pYbpvIOBaQwhCpel2yfkhkva5y-UQ3wPTlLz3jgPnjDrqO0Y8G8TNxBLkDwDYRT-1lvdWyeVA-X4YoAJ1m0ycbZ7BQhxXFz-txl5k3E5NvNAQofKuZ7aAyJZd_BlkKsTTEthYcRI9Ky3hxAlhUJzBm91Q4LCauKDi-AwzWgVZSCVpxyVbFblPkf2QiVjQhQ7sJYaREOPU8rwvziZvz9RI26UgPYtoC8zFgav3jvCL03OTUfooc-zriYnFHA2kOOFwSPzpsW4JfrIHJcIp7UmG47B4NHg=='
 
     key = st.secrets['INSTRUCTION_KEY'].encode()
     f = Fernet(key)
@@ -311,8 +319,8 @@ if st.session_state.get('authentication_status'):
         if Q_total < 10:
             st.markdown("Please answer all questions.")
         elif Q_total < 25:
-            st.write(f"#### Total Score: {Q_total} (Average)")
-            Q_response = "Average."
+            st.write(f"#### Total Score: {Q_total} (Low level of loneliness)")
+            Q_response = "Low level of loneliness."
         elif Q_total >= 25 and Q_total <= 29:
             st.write(f"#### Total Score: {Q_total} (High level of loneliness)")
             Q_response = "High level of loneliness."
@@ -487,8 +495,8 @@ if st.session_state.get('authentication_status'):
         if Q_total < 10:
             st.markdown("Contesta todas preguntas, por favor.")
         elif Q_total < 25:
-            st.write(f"#### Puntos Totales: {Q_total} (Medio)")
-            Q_response = "Medio."
+            st.write(f"#### Puntos Totales: {Q_total} (Bajo nivel de soledad)")
+            Q_response = "Bajo nivel de soledad."
         elif Q_total >= 25 and Q_total <= 29:
             st.write(f"#### Puntos Totales: {Q_total} (Alto nivel de soledad)")
             Q_response = "Alto nivel de soledad."
@@ -664,7 +672,10 @@ if st.session_state.get('authentication_status'):
     # If submit button is clicked, query the aitam library.            
     if submit and Q_total >= 10:
         # If form is submitted without a query, stop.
-        query = f"(For later reference: {Q_rawdata}) Please provide insights and recommendations to me regarding loneliness in {language}. I scored a {Q_total} on the UCLA Short Form Loneliness Scale, which indicated the following: {Q_response}"
+        QUERY_ENCRYPTED = b'gAAAAABpblDBWqjJsMjvJgCktXfNdbJiGh9LARyav4D-zJnEqyYLdokf3AMMwNbRIeHCZpqFKCGNnEJA0xjOV8ONuqH_YwlUlifc_1ZAnaUbfHkw8Wz-sYtCamseiodJvAbCWofI62o8UkFOkB_stx50Sl4f4dZcAJJl3fa6c-R802GijEhB6iXEj5tvrioNsHCWljNMoM-MnHkoeQdYs23FlUUFVTsRFF6caSBRy3zxIi0PTJePO0aT3njRa5pjj1SUvp4-cYtTunc05jDIPIcRJzDO7gRAdA0AKLrhZ8tut-eb2Lq1epQ_kKKI1g8QJaFi9t6jMc9uOBdO9nKJPiX3adKqnsD4Sr1T9xW6jpZSFdoBzOMjDfeSKXrZ9KETq8JBuHa61REy62VoEqVWRuidKXDo-6EsJUaZ-jkfkzA1L1KouWy-0g516vFW69tA2_cK0N2dr-pw_2AN5A0eTCcmRBD5CD_XmwqAiaIfsT3ZE435KBjPElznF5RI1r38hf6qJQ4J-f4sYQ5MfBnz57kO_jSLuZjcdkSj22swAK3bYKaX5mcY8TI5Y_Pt1FZBd9V3JsB2Rvb10YMRf84kheffq8HBxXSWDyj7n6grrMkP-bUhkQBQQbO79Pb0qLpdmx3xdnDhfTpc4KgW6A1OPpxxst9RZMOJ3MEL2XOpv6BRiZPpJ2IGBltnZtBm1ZtQbdBRxISoNYrbR8LUsHqF6krG1PSPOyG3xOP-XBu9aVq-o5ehkQeKEfe0ctWG1zp2v-rJf36v8gug2KjDP29qX62YTKAHjmLEbKRZzl1RzMcFztVQK9Cd8wIw1g2mNafiyciWWRZ-oLSdquFWBNYa-RczVXwFuUFZRivnYGFUMwAZ66uOsUT7GMrRrw880LCX-ig0nN09pznFDAQ7RDfUHSx_jG9Ed9PZ3pXGrOWy3pLVgEBZ3_Crk0kFcAzNTo8q869aqDS5enlvzjtM9USDIo8b124wRaclMMPRw4BUkrHGUJvaFGMnypbpCrh9WYeTwPIfr8tLIRhZaGSiUO2PLRZrspbbBwFMvsxI8bPEiqFJHeOCC5Jp675bIPR7ftv4SxakEfZzvSmeedWFP6e_L3sBWyS-7ViSe9wYzUfCBv3BzYKsMGerjwxrBphYHzfDsbDJ7btl-HHhJtwMYEKNyEMFNiJ1Fprf5wGGRUyTH1hxlvseOSXk22ihzVYc9rSWZ274mZC43q39OBrw64WUMhzqAfsd0S9MO6fpRowlJKhAErQMW8KrDJI0PvqUtTyu7A-tEAyYRYWFzXdyIrt-9NfS7eYpgADvm2Z0ayFQDcGiSlBC9GZxtK54hXiPs6rxH5MvLiZ95WMGmdkiE5VLU2_yRJkt4ar4gYCqZ1k-COBPBiyrffAuxiOJI6vNrDw35DsgLm0cEQbaVSzjOM5P8m2qk4OXWKLUYD2wDe48daMNmweXLzSIogof02QMqbyXxq7IuLpUBJ1xysMwRoje7xlsFBxB453oGWqWFJMDBpXurYzNiAwF_jX79GJjWK1_uwgIXi3nu5ZBQZc15F4fkemrCK3QIoYGGPXU38roPhIbgCLE2uwiBAXw_OMDuLmjM7w9GBTd8Q55Pp6dfGQ9rHTeywJfFbwlKzTJ7mgBPaqU-m61RQW7cvsDRE8SWY1SMNYkCvSuugf3IOxbLVY_P3ra0i88bCVtMBha7Km7reT6otIRdXBwVM1rMZ0FHatIsHF3GB45P_Pfh5iW6jT88cJ5JU_Ki4tF_dcWotIp1uVCWxZAa8VsdWDev4-zpzx11UKttgNcTUqPHAIbtzqrChKtXuYJ7kjwIBrafowA0mZPhsvoKFdiqiU='
+        key = st.secrets['INSTRUCTION_KEY'].encode()
+        f = Fernet(key)
+        QUERY = f.decrypt(QUERY_ENCRYPTED).decode()
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
@@ -674,7 +685,7 @@ if st.session_state.get('authentication_status'):
         with st.spinner('Searching...'):
             response2 = client2.responses.create(
                 instructions = INSTRUCTION,
-                input = query,
+                input = QUERY,
                 model = model,
                 temperature = 0.6,
                 # text={
