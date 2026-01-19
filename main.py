@@ -75,7 +75,7 @@ if st.session_state.get('authentication_status'):
     st.header(":hibiscus: Qué Sopa AI")
     st.markdown("###### An assessment of loneliness.")
     # st.markdown("###### Your starting point for educator ethics")
-    st.markdown("*The below assessment is the UCLA Loneliness Scale (Version 3), which is used to assess an individual's subjective feelings of loneliness and social isolation. The below questions were taken from [psytests.org](https://psytests.org/ipl/uclav3en-bl.html).*")
+    st.markdown("*The below assessment is the UCLA Short Form Loneliness Scale, which is used to assess an individual's subjective feelings of loneliness and social isolation.*")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
