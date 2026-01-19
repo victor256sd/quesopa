@@ -305,6 +305,25 @@ if st.session_state.get('authentication_status'):
         else:
             Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=No Answer,"
 
+        if Q_total < 10:
+            st.markdown("Please answer all questions.")
+        elif Q_total < 25:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("Average.")
+            Q_response = "Average."
+        elif Q_total >= 25 and Q_total <= 29:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("High level of loneliness.")
+            Q_response = "High level of loneliness."
+        elif Q_total >= 30:
+            st.write(f"#### Total Score: {Q_total}")
+            st.markdown("Very high level of loneliness.")
+            Q_response = "Very high level of loneliness."
+
+        if Q_total >= 10:
+            st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+            Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
     if submit and language == "Spanish":
         Q_total = 0
         Q_response = ""
@@ -465,6 +484,25 @@ if st.session_state.get('authentication_status'):
         else:
             Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=No Contesta,"
 
+        if Q_total < 10:
+            st.markdown("Contesta todas preguntas, por favor.")
+        elif Q_total < 25:
+            st.write(f"#### Puntos Totales: {Q_total}")
+            st.markdown("Media.")
+            Q_response = "Media."
+        elif Q_total >= 25 and Q_total <= 29:
+            st.write(f"#### Puntos Totales: {Q_total}")
+            st.markdown("Alto nivel de soledad.")
+            Q_response = "Alto nivel de soledad."
+        elif Q_total >= 30:
+            st.write(f"#### Puntos Totales: {Q_total}")
+            st.markdown("Muy alto nivel de soledad.")
+            Q_response = "Muy alto nivel de soledad."
+
+        if Q_total >= 10:
+            st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+            Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
         # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
         # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
         # if Q11 == "Never": 
@@ -620,25 +658,6 @@ if st.session_state.get('authentication_status'):
         #     Q_rawdata = Q_rawdata + "Q20=1,"
         # else:
         #     Q_rawdata = Q_rawdata + "Q20=0,"
-
-        if Q_total < 10:
-            st.markdown("Please answer all questions.")
-        elif Q_total < 25:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("Average.")
-            Q_response = "Average."
-        elif Q_total >= 25 and Q_total <= 29:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("High level of loneliness.")
-            Q_response = "High level of loneliness."
-        elif Q_total >= 30:
-            st.write(f"#### Total Score: {Q_total}")
-            st.markdown("Very high level of loneliness.")
-            Q_response = "Very high level of loneliness."
-
-        if Q_total >= 10:
-            st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
-            Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
     
     # Create new form to search aitam library vector store.    
     # with st.form(key="qa_form", clear_on_submit=False, height=300):
@@ -646,9 +665,9 @@ if st.session_state.get('authentication_status'):
     #     submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
-    if submit and Q_total >= 20:
+    if submit and Q_total >= 10:
         # If form is submitted without a query, stop.
-        query = f"(For later reference: {Q_rawdata}) Please provide insights and recommendations to me regarding loneliness. I scored a {Q_total} on the UCLA Version 3 Loneliness Scale, which indicated the following: {Q_response}"
+        query = f"(For later reference: {Q_rawdata}) Please provide insights and recommendations to me regarding loneliness in {language}. I scored a {Q_total} on the UCLA Short Form Loneliness Scale, which indicated the following: {Q_response}"
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
@@ -676,19 +695,35 @@ if st.session_state.get('authentication_status'):
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
         except:
             cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
-        st.markdown("#### Qué Sopa AI Guidance")
-        st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
+
+        if language == "English":
+            st.markdown("#### Qué Sopa AI Guidance")
+            st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
+        elif language == "Spanish":
+            st.markdown("#### Qué Sopa AI Información")
+            st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
+            
         st.markdown(cleaned_response)
 
-        st.markdown("#### Sources")
+        if language == "English":
+            st.markdown("#### Sources")
+        elif language == "Spanish":
+            st.markdown("#### Fuentes")
+            
         # Extract annotations from the response, and print source files.
         try:
             annotations = response2.output[1].content[0].annotations
             retrieved_files = set([response2.filename for response2 in annotations])
             file_list_str = ", ".join(retrieved_files)
-            st.markdown(f"**File(s):** {file_list_str}")
+            if language == "English":
+                st.markdown(f"**File(s):** {file_list_str}")
+            elif language == "Spanish":
+                st.markdown(f"**Archivo(s):** {file_list_str}")
         except (AttributeError, IndexError):
-            st.markdown("**File(s): n/a**")
+            if language == "English":
+                st.markdown("**File(s): n/a**")
+            elif language == "Spanish":
+                st.markdown("**Archivo(s): n/a**")
 
         # st.session_state.ai_response = cleaned_response
         # Write files used to generate the answer.
