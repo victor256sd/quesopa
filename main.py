@@ -1,5 +1,11 @@
-# Copyright (c) 2025 victor256sd
+# Copyright (c) 2026 victor256sd
 # All rights reserved.
+# Changelog:
+# 1/18/2026: Changed age range from 10 to 99, adjusted questions 
+# to short form of 10 questions (GL provided) and included Spanish 
+# option (GL provided), changed verbiage from Often to Always.
+# 1/17/2026: Initial development.
+#-------------------------------------------------------------------
 
 import streamlit as st
 import streamlit_authenticator as stauth
@@ -84,33 +90,61 @@ if st.session_state.get('authentication_status'):
         st.stop()
 
     # Create loneliness survey form.
-    with st.form("ucla3_form"):
+    with st.form("ucla-short_form"):
         st.write("Please fill out the form below:")
         name = st.text_input("Name")
-        age = st.slider("Age", 18, 99)
-        Q1 = st.selectbox("#1. How often do you feel that you are *in tune* with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q2 = st.selectbox("#2. How often do you feel that you lack companionship?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q3 = st.selectbox("#3. How often do you feel that there is no one you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q4 = st.selectbox("#4. How often do you feel alone?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q5 = st.selectbox("#5. How often do you feel part of a group of friends?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q6 = st.selectbox("#6. How often do you feel that you have a lot in common with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q7 = st.selectbox("#7. How often do you feel that you are no longer close to anyone?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q8 = st.selectbox("#8. How often do you feel that your interests and ideas are not shared by those around you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q9 = st.selectbox("#9. How often do you feel outgoing and friendly?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q10 = st.selectbox("#10. How often do you feel close to people?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q11 = st.selectbox("#11. How often do you feel left out?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q12 = st.selectbox("#12. How often do you feel that your relationships with others are not meaningful?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q13 = st.selectbox("#13. How often do you feel that no one really knows you well?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q14 = st.selectbox("#14. How often do you feel isolated from others?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q15 = st.selectbox("#15. How often do you feel you can find companionship when you want it?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q16 = st.selectbox("#16. How often do you feel that there are people who really understand you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q17 = st.selectbox("#17. How often do you feel shy?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q18 = st.selectbox("#18. How often do you feel that people are around you but not with you?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q19 = st.selectbox("#19. How often do you feel that there are people you can talk to?", ["","Never", "Rarely", "Sometimes", "Often"])
-        Q20 = st.selectbox("#20. How often do you feel that there are people you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
-        
-        submit = st.form_submit_button("Submit")
 
+        row1 = st.columns([2,2])
+        age = row1[0].slider("Age", 10, 99)
+        language = row1[1].selectbox("Language",["English", "Spanish"])
+
+        if language == "English":
+            Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q2 = st.selectbox("#2. Do you feel that people understand you, encourage you, and know you well?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q3 = st.selectbox("#3. When you want to talk with someone or do something together, is it easy to connect with others?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q4 = st.selectbox("#4. How often do you feel separate from others, even when you are with them?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q6 = st.selectbox("#6. Is it hard for you to make friends?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q7 = st.selectbox("#7. How often do you wait a long time for others to contact you or reply to your messages?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q8 = st.selectbox("#8. Is it easier for you to play games or watch events by yourself?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q9 = st.selectbox("#9. How often do you feel left out when others get together without inviting you?", ["","Never", "Rarely", "Sometimes", "Always"])
+            Q10 = st.selectbox("#10. How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?", ["","Never", "Rarely", "Sometimes", "Always"])
+
+        # Q1 = st.selectbox("#1. How often do you feel that you are *in tune* with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q2 = st.selectbox("#2. How often do you feel that you lack companionship?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q3 = st.selectbox("#3. How often do you feel that there is no one you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q4 = st.selectbox("#4. How often do you feel alone?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q5 = st.selectbox("#5. How often do you feel part of a group of friends?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q6 = st.selectbox("#6. How often do you feel that you have a lot in common with the people around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q7 = st.selectbox("#7. How often do you feel that you are no longer close to anyone?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q8 = st.selectbox("#8. How often do you feel that your interests and ideas are not shared by those around you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q9 = st.selectbox("#9. How often do you feel outgoing and friendly?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q10 = st.selectbox("#10. How often do you feel close to people?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q11 = st.selectbox("#11. How often do you feel left out?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q12 = st.selectbox("#12. How often do you feel that your relationships with others are not meaningful?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q13 = st.selectbox("#13. How often do you feel that no one really knows you well?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q14 = st.selectbox("#14. How often do you feel isolated from others?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q15 = st.selectbox("#15. How often do you feel you can find companionship when you want it?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q16 = st.selectbox("#16. How often do you feel that there are people who really understand you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q17 = st.selectbox("#17. How often do you feel shy?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q18 = st.selectbox("#18. How often do you feel that people are around you but not with you?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q19 = st.selectbox("#19. How often do you feel that there are people you can talk to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        # Q20 = st.selectbox("#20. How often do you feel that there are people you can turn to?", ["","Never", "Rarely", "Sometimes", "Often"])
+        
+        elif language == "Spanish":
+            Q1sp = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q2sp = st.selectbox("#2. ¿Sientes que las personas te entienden, te apoyan y te conocen bien?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q3sp = st.selectbox("#3. Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q4sp = st.selectbox("#4. ¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q5sp = st.selectbox("#5. Tengo a alguien con quien comer cuando quiero compartir una comida.", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q6sp = st.selectbox("#6. ¿Te resulta difícil hacer amigos?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q7sp = st.selectbox("#7. ¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q8sp = st.selectbox("#8. ¿Te resulta más fácil jugar o ver eventos tú solo(a)?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q9sp = st.selectbox("#9. ¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+            Q10sp = st.selectbox("#10. ¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?", ["", "Nunca", "Casi Nunca", "A Veces", "Siempre"])
+
+        submit = st.form_submit_button("Submit")
+    
     if submit:
         Q_total = 0
         Q_response = ""
@@ -129,39 +163,41 @@ if st.session_state.get('authentication_status'):
         elif Q1 == "Sometimes":
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q1=2,"
-        elif Q1 == "Often":
+        elif Q1 == "Always":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q1=1,"
         else:
             Q_rawdata = Q_rawdata + "Q1=0,"
         
+        # Scored in reverse.
         if Q2 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q2=1,"
-        elif Q2 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q2=2,"
-        elif Q2 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q2=3,"
-        elif Q2 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q2=4,"
+        elif Q2 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q2=3,"
+        elif Q2 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q2=2,"
+        elif Q2 == "Always":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q2=1,"
         else:
             Q_rawdata = Q_rawdata + "Q2=0,"
 
+        # Scored in reverse.
         if Q3 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q3=1,"
-        elif Q3 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q3=2,"
-        elif Q3 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q3=3,"
-        elif Q3 == "Often":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q3=4,"
+        elif Q3 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q3=3,"
+        elif Q3 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q3=2,"
+        elif Q3 == "Always":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q3=1,"
         else:
             Q_rawdata = Q_rawdata + "Q3=0,"
 
@@ -174,7 +210,7 @@ if st.session_state.get('authentication_status'):
         elif Q4 == "Sometimes":
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q4=3,"
-        elif Q4 == "Often":
+        elif Q4 == "Always":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q4=4,"
         else:
@@ -190,25 +226,24 @@ if st.session_state.get('authentication_status'):
         elif Q5 == "Sometimes":
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q5=2,"
-        elif Q5 == "Often":
+        elif Q5 == "Always":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q5=1,"
         else:
             Q_rawdata = Q_rawdata + "Q5=0,"
         
-        # Scored in reverse.
         if Q6 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6=4,"
-        elif Q6 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6=3,"
-        elif Q6 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6=2,"
-        elif Q6 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q6=1,"
+        elif Q6 == "Rarely":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6=2,"
+        elif Q6 == "Sometimes":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6=3,"
+        elif Q6 == "Always":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q6=4,"
         else:
             Q_rawdata = Q_rawdata + "Q6=0,"
     
@@ -221,7 +256,7 @@ if st.session_state.get('authentication_status'):
         elif Q7 == "Sometimes":
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q7=3,"
-        elif Q7 == "Often":
+        elif Q7 == "Always":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q7=4,"
         else:
@@ -236,214 +271,212 @@ if st.session_state.get('authentication_status'):
         elif Q8 == "Sometimes":
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q8=3,"
-        elif Q8 == "Often":
+        elif Q8 == "Always":
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q8=4,"
         else:
             Q_rawdata = Q_rawdata + "Q8=0,"
 
-        # Scored in reverse.
         if Q9 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q9=4,"
-        elif Q9 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q9=3,"
-        elif Q9 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q9=2,"
-        elif Q9 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q9=1,"
+        elif Q9 == "Rarely":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9=2,"
+        elif Q9 == "Sometimes":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9=3,"
+        elif Q9 == "Always":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q9=4,"
         else:
             Q_rawdata = Q_rawdata + "Q9=0,"
 
-        # Scored in reverse.
         if Q10 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q10=4,"
-        elif Q10 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q10=3,"
-        elif Q10 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q10=2,"
-        elif Q10 == "Often":
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q10=1,"
+        elif Q10 == "Rarely":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10=2,"
+        elif Q10 == "Sometimes":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10=3,"
+        elif Q10 == "Always":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q10=4,"
         else:
             Q_rawdata = Q_rawdata + "Q10=0,"
 
-        if Q11 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q11=1,"
-        elif Q11 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q11=2,"
-        elif Q11 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q11=3,"
-        elif Q11 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q11=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q11=0,"
+        # if Q11 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q11=1,"
+        # elif Q11 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q11=2,"
+        # elif Q11 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q11=3,"
+        # elif Q11 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q11=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q11=0,"
     
-        if Q12 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q12=1,"
-        elif Q12 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q12=2,"
-        elif Q12 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q12=3,"
-        elif Q12 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q12=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q12=0,"
+        # if Q12 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q12=1,"
+        # elif Q12 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q12=2,"
+        # elif Q12 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q12=3,"
+        # elif Q12 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q12=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q12=0,"
 
-        if Q13 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q13=1,"
-        elif Q13 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q13=2,"
-        elif Q13 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q13=3,"
-        elif Q13 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q13=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q13=0,"
+        # if Q13 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q13=1,"
+        # elif Q13 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q13=2,"
+        # elif Q13 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q13=3,"
+        # elif Q13 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q13=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q13=0,"
 
-        if Q14 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q14=1,"
-        elif Q14 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q14=2,"
-        elif Q14 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q14=3,"
-        elif Q14 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q14=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q14=0,"
-
-        # Scored in reverse.
-        if Q15 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q15=4,"
-        elif Q15 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q15=3,"
-        elif Q15 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q15=2,"
-        elif Q15 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q15=1,"
-        else:
-            Q_rawdata = Q_rawdata + "Q15=0,"
+        # if Q14 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q14=1,"
+        # elif Q14 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q14=2,"
+        # elif Q14 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q14=3,"
+        # elif Q14 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q14=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q14=0,"
 
         # Scored in reverse.
-        if Q16 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q16=4,"
-        elif Q16 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q16=3,"
-        elif Q16 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q16=2,"
-        elif Q16 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q16=1,"
-        else:
-            Q_rawdata = Q_rawdata + "Q16=0,"
+        # if Q15 == "Never": 
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q15=4,"
+        # elif Q15 == "Rarely":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q15=3,"
+        # elif Q15 == "Sometimes":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q15=2,"
+        # elif Q15 == "Often":
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q15=1,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q15=0,"
+
+        # Scored in reverse.
+        # if Q16 == "Never": 
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q16=4,"
+        # elif Q16 == "Rarely":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q16=3,"
+        # elif Q16 == "Sometimes":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q16=2,"
+        # elif Q16 == "Often":
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q16=1,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q16=0,"
     
-        if Q17 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q17=1,"
-        elif Q17 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q17=2,"
-        elif Q17 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q17=3,"
-        elif Q17 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q17=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q17=0,"
+        # if Q17 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q17=1,"
+        # elif Q17 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q17=2,"
+        # elif Q17 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q17=3,"
+        # elif Q17 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q17=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q17=0,"
 
-        if Q18 == "Never": 
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q18=1,"
-        elif Q18 == "Rarely":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q18=2,"
-        elif Q18 == "Sometimes":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q18=3,"
-        elif Q18 == "Often":
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q18=4,"
-        else:
-            Q_rawdata = Q_rawdata + "Q18=0,"
+        # if Q18 == "Never": 
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q18=1,"
+        # elif Q18 == "Rarely":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q18=2,"
+        # elif Q18 == "Sometimes":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q18=3,"
+        # elif Q18 == "Often":
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q18=4,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q18=0,"
 
         # Scored in reverse.
-        if Q19 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q19=4,"
-        elif Q19 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q19=3,"
-        elif Q19 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q19=2,"
-        elif Q19 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q19=1,"
-        else:
-            Q_rawdata = Q_rawdata + "Q19=0,"
+        # if Q19 == "Never": 
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q19=4,"
+        # elif Q19 == "Rarely":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q19=3,"
+        # elif Q19 == "Sometimes":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q19=2,"
+        # elif Q19 == "Often":
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q19=1,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q19=0,"
     
         # Scored in reverse.
-        if Q20 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q20=4,"
-        elif Q20 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q20=3,"
-        elif Q20 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q20=2,"
-        elif Q20 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q20=1,"
-        else:
-            Q_rawdata = Q_rawdata + "Q20=0,"
+        # if Q20 == "Never": 
+        #     Q_total = Q_total + 4
+        #     Q_rawdata = Q_rawdata + "Q20=4,"
+        # elif Q20 == "Rarely":
+        #     Q_total = Q_total + 3
+        #     Q_rawdata = Q_rawdata + "Q20=3,"
+        # elif Q20 == "Sometimes":
+        #     Q_total = Q_total + 2
+        #     Q_rawdata = Q_rawdata + "Q20=2,"
+        # elif Q20 == "Often":
+        #     Q_total = Q_total + 1
+        #     Q_rawdata = Q_rawdata + "Q20=1,"
+        # else:
+        #     Q_rawdata = Q_rawdata + "Q20=0,"
 
-        if Q_total < 20:
+        if Q_total < 10:
             st.markdown("Please answer all questions.")
-        elif Q_total < 28:
+        elif Q_total < 25:
             st.write(f"#### Total Score: {Q_total}")
-            st.markdown("No, or low, loneliness.")
-            Q_response = "No, or low, loneliness."
-        elif Q_total >= 28 and Q_total <= 43:
+            st.markdown("Average.")
+            Q_response = "Average."
+        elif Q_total >= 25 and Q_total <= 29:
             st.write(f"#### Total Score: {Q_total}")
-            st.markdown("Moderate loneliness.")
-            Q_response = "Moderate loneliness."
-        elif Q_total > 43:
+            st.markdown("High level of loneliness.")
+            Q_response = "High level of loneliness."
+        elif Q_total >= 30:
             st.write(f"#### Total Score: {Q_total}")
-            st.markdown("High degree of loneliness.")
-            Q_response = "High degree of loneliness."
+            st.markdown("Very high level of loneliness.")
+            Q_response = "Very high level of loneliness."
 
-        if Q_total >= 20:
+        if Q_total >= 10:
             st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
             Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
     
