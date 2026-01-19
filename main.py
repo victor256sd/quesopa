@@ -145,168 +145,328 @@ if st.session_state.get('authentication_status'):
 
         submit = st.form_submit_button("Submit")
     
-    if submit:
+    if submit and language == "English":
         Q_total = 0
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
 
-        # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
-        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
-
+        # Questions 1, 2, 3, and 5 scored in reverse.
         # Scored in reverse.
         if Q1 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q1=4,"
+            Q_rawdata = Q_rawdata + "Q1:How often do people respond kindly when you share your feelings or worries?=Never,"
         elif Q1 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q1=3,"
+            Q_rawdata = Q_rawdata + "Q1:How often do people respond kindly when you share your feelings or worries?=Rarely,"
         elif Q1 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q1=2,"
+            Q_rawdata = Q_rawdata + "Q1:How often do people respond kindly when you share your feelings or worries?=Sometimes,"
         elif Q1 == "Always":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q1=1,"
+            Q_rawdata = Q_rawdata + "Q1:How often do people respond kindly when you share your feelings or worries?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q1=0,"
+            Q_rawdata = Q_rawdata + "Q1:How often do people respond kindly when you share your feelings or worries?=No Answer,"
         
         # Scored in reverse.
         if Q2 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q2=4,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Never,"
         elif Q2 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q2=3,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Rarely,"
         elif Q2 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q2=2,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Sometimes,"
         elif Q2 == "Always":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q2=1,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q2=0,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=No Answer,"
 
         # Scored in reverse.
         if Q3 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q3=4,"
+            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect with others?=Never,"
         elif Q3 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q3=3,"
+            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect with others?=Rarely,"
         elif Q3 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q3=2,"
+            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect with others?=Sometimes,"
         elif Q3 == "Always":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q3=1,"
+            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect with others?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q3=0,"
+            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect with others?=No Answer,"
 
         if Q4 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q4=1,"
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Never,"
         elif Q4 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q4=2,"
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Rarely,"
         elif Q4 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q4=3,"
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Sometimes,"
         elif Q4 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q4=4,"
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q4=0,"
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=No Answer,"
 
         # Scored in reverse.
         if Q5 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q5=4,"
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Never,"
         elif Q5 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q5=3,"
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Rarely,"
         elif Q5 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q5=2,"
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Sometimes,"
         elif Q5 == "Always":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q5=1,"
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q5=0,"
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=No Answer,"
         
         if Q6 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q6=1,"
+            Q_rawdata = Q_rawdata + "Q6:Is it hard for you to make friends?=Never,"
         elif Q6 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6=2,"
+            Q_rawdata = Q_rawdata + "Q6:Is it hard for you to make friends?=Rarely,"
         elif Q6 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6=3,"
+            Q_rawdata = Q_rawdata + "Q6:Is it hard for you to make friends?=Sometimes,"
         elif Q6 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6=4,"
+            Q_rawdata = Q_rawdata + "Q6:Is it hard for you to make friends?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q6=0,"
+            Q_rawdata = Q_rawdata + "Q6:Is it hard for you to make friends?=No Answer,"
     
         if Q7 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q7=1,"
+            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Never,"
         elif Q7 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q7=2,"
+            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Rarely,"
         elif Q7 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q7=3,"
+            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Sometimes,"
         elif Q7 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q7=4,"
+            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q7=0,"
+            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=No Answer,"
 
         if Q8 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q8=1,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Never,"
         elif Q8 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q8=2,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Rarely,"
         elif Q8 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q8=3,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Sometimes,"
         elif Q8 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q8=4,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q8=0,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=No Answer,"
 
         if Q9 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q9=1,"
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Never,"
         elif Q9 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q9=2,"
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Rarely,"
         elif Q9 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q9=3,"
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Sometimes,"
         elif Q9 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q9=4,"
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q9=0,"
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=No Answer,"
 
         if Q10 == "Never": 
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q10=1,"
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Never,"
         elif Q10 == "Rarely":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q10=2,"
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Rarely,"
         elif Q10 == "Sometimes":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q10=3,"
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Sometimes,"
         elif Q10 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q10=4,"
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q10=0,"
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=No Answer,"
 
+    if submit and language == "Spanish":
+        Q_total = 0
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        # Questions 1, 2, 3, and 5 scored in reverse.
+        # Scored in reverse.
+        if Q1 == "Nunca": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q1:¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?=Nunca,"
+        elif Q1 == "Casi Nunca":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q1:¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?=Casi Nunca,"
+        elif Q1 == "A Veces":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q1:¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?=A Veces,"
+        elif Q1 == "Siempre":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q1:¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q1:¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?=No Contesta,"
+        
+        # Scored in reverse.
+        if Q2 == "Nunca": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Nunca,"
+        elif Q2 == "Casi Nunca":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Casi Nunca,"
+        elif Q2 == "A Veces":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=A Veces,"
+        elif Q2 == "Siempre":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=No Contesta,"
+
+        # Scored in reverse.
+        if Q3 == "Nunca": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Nunca,"
+        elif Q3 == "Casi Nunca":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Casi Nunca,"
+        elif Q3 == "A Veces":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=A Veces,"
+        elif Q3 == "Siempre":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=No Contesta,"
+
+        if Q4 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Nunca,"
+        elif Q4 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Casi Nunca,"
+        elif Q4 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=A Veces,"
+        elif Q4 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=No Contesta,"
+
+        # Scored in reverse.
+        if Q5 == "Nunca": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q5:Tengo a alguien con quien comer cuando quiero compartir una comida.=Nunca,"
+        elif Q5 == "Casi Nunca":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q5:Tengo a alguien con quien comer cuando quiero compartir una comida.=Casi Nunca,"
+        elif Q5 == "A Veces":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q5:Tengo a alguien con quien comer cuando quiero compartir una comida.=A Veces,"
+        elif Q5 == "Siempre":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q5:Tengo a alguien con quien comer cuando quiero compartir una comida.=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q5:Tengo a alguien con quien comer cuando quiero compartir una comida.=No Contesta,"
+        
+        if Q6 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Nunca,"
+        elif Q6 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Casi Nunca,"
+        elif Q6 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=A Veces,"
+        elif Q6 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=No Contesta,"
+    
+        if Q7 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Nunca,"
+        elif Q7 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Casi Nunca,"
+        elif Q7 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=A Veces,"
+        elif Q7 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=No Contesta,"
+
+        if Q8 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Nunca,"
+        elif Q8 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Casi Nunca,"
+        elif Q8 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=A Veces,"
+        elif Q8 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=No Contesta,"
+
+        if Q9 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q9:¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?=Nunca,"
+        elif Q9 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9:¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?=Casi Nunca,"
+        elif Q9 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9:¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?=A Veces,"
+        elif Q9 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q9:¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q9:¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?=No Contesta,"
+
+        if Q10 == "Nunca": 
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Nunca,"
+        elif Q10 == "Casi Nunca":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Casi Nunca,"
+        elif Q10 == "A Veces":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=A Veces,"
+        elif Q10 == "Siempre":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Siempre,"
+        else:
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=No Contesta,"
+
+        # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
+        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
         # if Q11 == "Never": 
         #     Q_total = Q_total + 1
         #     Q_rawdata = Q_rawdata + "Q11=1,"
