@@ -638,7 +638,7 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q12:Paso la mayor parte de mi tiempo en línea.=No Contesta,"
         
         if Q_total >= 0 and Q_total <= 15:
-            st.write(f"#### Total Score: {Q_total} (Alta soledad social)")
+            st.write(f"#### Total Score: {Q_total} (Alto aislamiento social)")
             Q_response = "Alta soledad social."
         elif Q_total >= 16 and Q_total <= 31:
             st.write(f"#### Total Score: {Q_total} (Conexión mixta/moderada)")
