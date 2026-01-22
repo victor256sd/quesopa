@@ -470,21 +470,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q4 == "Nunca": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=Nunca,"
         elif Q4 == "Rara vez":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=Rara vez,"
         elif Q4 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=A veces,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=A veces,"
         elif Q4 == "A menudo":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=A menudo,"
         elif Q4 == "Siempre":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado de los demás, incluso cuando estás con ellos?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q4:¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?=No Contesta,"
 
         if Q5 == "Nunca": 
             Q_total = Q_total + 0
@@ -583,21 +583,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q10 == "Nunca": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=Nunca,"
         elif Q10 == "Rara vez":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=Rara vez,"
         elif Q10 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=A veces,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=A veces,"
         elif Q10 == "A menudo":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=A menudo,"
         elif Q10 == "Siempre":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar de tus pensamientos y sentimientos?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q10:¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?=No Contesta,"
 
         # Scored in reverse.
         if Q11 == "Nunca": 
