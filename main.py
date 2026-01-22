@@ -85,7 +85,7 @@ if st.session_state.get('authentication_status'):
     # Set page layout and title.
     st.set_page_config(page_title="Qué Sopa AI", page_icon=":hibiscus:", layout="wide")
     st.header(":hibiscus: Qué Sopa AI")
-    st.markdown("###### An assessment of social connection.")
+    st.markdown("###### Understand your social connection.")
     # st.markdown("###### Your starting point for educator ethics")
     st.markdown("*The Social Connection & Isolation Questionnaire is a brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.*")
     
