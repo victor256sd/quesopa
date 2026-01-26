@@ -201,6 +201,9 @@ if st.session_state.get('authentication_status'):
             Q41 = st.selectbox("#41. Proud of myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
 
             submit1 = st.form_submit_button("Submit")
+
+    else:
+        st.write("No selection made.")
     
     if submit1 and language == "English":
         Q_total = 0
