@@ -110,7 +110,7 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Make a selection:",
-        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)"],
+        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)"], index=0,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past two weeks.",
