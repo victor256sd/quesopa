@@ -204,6 +204,7 @@ if st.session_state.get('authentication_status'):
 
     else:
         st.write("No selection made.")
+        submit1 = False
     
     if submit1 and language == "English":
         Q_total = 0
