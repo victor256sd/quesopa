@@ -203,7 +203,6 @@ if st.session_state.get('authentication_status'):
             submit1 = st.form_submit_button("Submit")
 
     else:
-        st.write("No selection made.")
         submit1 = False
     
     if submit1 and language == "English":
