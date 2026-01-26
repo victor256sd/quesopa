@@ -4,6 +4,9 @@
 #
 # Changelog:
 #
+# 1/26/2026: Modified page to accommodate the loneliness and NEIL
+# child version surveys.
+#
 # 1/21/2026: Modifications to survey, question wording and adding
 # two questions, verbiage for prompts changed, interpretation of
 # scores changed (Glenn email, 1/21/2026).
@@ -85,9 +88,9 @@ if st.session_state.get('authentication_status'):
     # Set page layout and title.
     st.set_page_config(page_title="Qué Sopa AI", page_icon=":hibiscus:", layout="wide")
     st.header(":hibiscus: Qué Sopa AI")
-    st.markdown("###### Understand your social connection.")
+    st.markdown("###### A Starting Point for Understanding Loneliness and Belonging")
     # st.markdown("###### Your starting point for educator ethics")
-    st.markdown("*The Social Connection & Isolation Questionnaire is a brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.*")
+    st.markdown("*Explore two simple tools that measure how people connect, feel included, or experience loneliness online or in daily life. A child‑friendly version is also available to capture younger children’s emotions and social experiences.*")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
@@ -106,8 +109,16 @@ if st.session_state.get('authentication_status'):
     age = row1[0].slider("Age", 10, 99)
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
+    tool = st.radio("Make a selection:",
+        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)"],
+        captions=[
+            "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.",
+            "A questionnaire that helps measure how a child has been feeling and connecting with others over the past two weeks.",
+        ],
+    )
+    
     # Create loneliness survey form.
-    if language == "English":
+    if tool == "Social Connection & Isolation Questionnaire" and language == "English":
         with st.form("yvform"):
             st.write("Please answer each question based on how you usually feel. Choose one response.")
             Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -123,9 +134,9 @@ if st.session_state.get('authentication_status'):
             Q11 = st.selectbox("#11. Most of my friends are online and not people I see in person.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q12 = st.selectbox("#12. I spend most of my time online.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
 
-            submit = st.form_submit_button("Submit")
+            submit1 = st.form_submit_button("Submit")
         
-    elif language == "Spanish":
+    elif tool == "Social Connection & Isolation Questionnaire" and language == "Spanish":
         with st.form("yvform"):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
             Q1 = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
@@ -141,9 +152,28 @@ if st.session_state.get('authentication_status'):
             Q11 = st.selectbox("#11. La mayoría de mis amigos están en línea y no son personas que veo en persona.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q12 = st.selectbox("#12. Paso la mayor parte de mi tiempo en línea.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
 
-            submit = st.form_submit_button("Enviar")
+            submit1 = st.form_submit_button("Enviar")
+
+    # Create NEIL survey form.
+    elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
+        with st.form("neilform"):
+            st.write("Think about how you have felt over the **last two weeks**. Look at each sentence and select the answer that shows how often you felt that way.")
+            Q1 = st.selectbox("#1. Other people included me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q2 = st.selectbox("#2. Do you feel that people understand you, encourage you, and know you well?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q3 = st.selectbox("#3. When you want to talk with someone or do something together, is it easy to connect?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q4 = st.selectbox("#4. How often do you feel separate from others, even when you are with them?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q6 = st.selectbox("#6. It is not easy for me to make friends?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q7 = st.selectbox("#7. How often do you wait a long time for others to contact you or reply to your messages?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q8 = st.selectbox("#8. Is it easier for you to play games or watch events by yourself?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q9 = st.selectbox("#9. How often do you feel left out when others get together without inviting you?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q10 = st.selectbox("#10. How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q11 = st.selectbox("#11. Most of my friends are online and not people I see in person.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q12 = st.selectbox("#12. I spend most of my time online.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+
+            submit1 = st.form_submit_button("Submit")
     
-    if submit and language == "English":
+    if submit1 and language == "English":
         Q_total = 0
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -386,7 +416,7 @@ if st.session_state.get('authentication_status'):
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
 
-    if submit and language == "Spanish":
+    if submit1 and language == "Spanish":
         Q_total = 0
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -628,170 +658,9 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
-
-        # Questions 1, 5, 6, 9, 10, 15, 16, 19, 20 are scored in reverse.
-        # Questions 2, 3, 4, 7, 8, 11, 12, 13, 14, 17, 18 scored normally.
-        # if Q11 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q11=1,"
-        # elif Q11 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q11=2,"
-        # elif Q11 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q11=3,"
-        # elif Q11 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q11=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q11=0,"
-    
-        # if Q12 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q12=1,"
-        # elif Q12 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q12=2,"
-        # elif Q12 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q12=3,"
-        # elif Q12 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q12=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q12=0,"
-
-        # if Q13 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q13=1,"
-        # elif Q13 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q13=2,"
-        # elif Q13 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q13=3,"
-        # elif Q13 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q13=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q13=0,"
-
-        # if Q14 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q14=1,"
-        # elif Q14 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q14=2,"
-        # elif Q14 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q14=3,"
-        # elif Q14 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q14=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q14=0,"
-
-        # Scored in reverse.
-        # if Q15 == "Never": 
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q15=4,"
-        # elif Q15 == "Rarely":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q15=3,"
-        # elif Q15 == "Sometimes":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q15=2,"
-        # elif Q15 == "Often":
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q15=1,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q15=0,"
-
-        # Scored in reverse.
-        # if Q16 == "Never": 
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q16=4,"
-        # elif Q16 == "Rarely":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q16=3,"
-        # elif Q16 == "Sometimes":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q16=2,"
-        # elif Q16 == "Often":
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q16=1,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q16=0,"
-    
-        # if Q17 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q17=1,"
-        # elif Q17 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q17=2,"
-        # elif Q17 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q17=3,"
-        # elif Q17 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q17=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q17=0,"
-
-        # if Q18 == "Never": 
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q18=1,"
-        # elif Q18 == "Rarely":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q18=2,"
-        # elif Q18 == "Sometimes":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q18=3,"
-        # elif Q18 == "Often":
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q18=4,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q18=0,"
-
-        # Scored in reverse.
-        # if Q19 == "Never": 
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q19=4,"
-        # elif Q19 == "Rarely":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q19=3,"
-        # elif Q19 == "Sometimes":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q19=2,"
-        # elif Q19 == "Often":
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q19=1,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q19=0,"
-    
-        # Scored in reverse.
-        # if Q20 == "Never": 
-        #     Q_total = Q_total + 4
-        #     Q_rawdata = Q_rawdata + "Q20=4,"
-        # elif Q20 == "Rarely":
-        #     Q_total = Q_total + 3
-        #     Q_rawdata = Q_rawdata + "Q20=3,"
-        # elif Q20 == "Sometimes":
-        #     Q_total = Q_total + 2
-        #     Q_rawdata = Q_rawdata + "Q20=2,"
-        # elif Q20 == "Often":
-        #     Q_total = Q_total + 1
-        #     Q_rawdata = Q_rawdata + "Q20=1,"
-        # else:
-        #     Q_rawdata = Q_rawdata + "Q20=0,"
-    
-    # Create new form to search aitam library vector store.    
-    # with st.form(key="qa_form", clear_on_submit=False, height=300):
-    #     query = st.text_area("**What would you like to discuss?**", height="stretch")
-    #     submit = st.form_submit_button("Send")
         
     # If submit button is clicked, query the aitam library.            
-    if submit:
+    if submit1:
         # If form is submitted without a query, stop.
         # QUERY_ENCRYPTED = b'gAAAAABpblkpLk8QZU-YUoN7fenjaVQ9i8ZBwuYIFMeWp_zl4TnSVInqQxIIkDg6TXnBUTqpNZgqSwFomnhoqADofSljkwXoKbvDJBpqkQdKmbiWaE4zKTTlEJXDYiglOZSeW_U2YeouZTcj425PuOs-7TOjAay4k6d_vKbit26hG_tbKcBBEdx9Xtj6HYZWGDgEtQ_WvsAhiCeWauiK0MrGIFx83xoFljciU9I4cRkgIeXYcqYTQ6Ns3cNbyod_vgqwHUH9P4yNUg9BTO6b1k7_0Vrz8aXP9w-GnhJdncheqUXmAUoNlgcI4HfFch8_OPXx3CqoXQe3m_FOjERsm6ctqC5UJQXZ1QiFG08IhlDm8_SoYdMTmo6011uh7m8h0uonXr0YJMzXJuu4q6ffHWQ461jXhSiZZDxx5nsm9Gtxbv0O-oy1O0KNpb8Rs7iS_PFqvLhwzmqPEFIXEiXa2Ls_WMtpOA5ONTXRjxs-KxW0NVZc92AFNFEtPT4-NfZkB_h3Xema1l5vI6cRGp139Iqw3E_wvRn1YguZaF5Y-6uYOR9L8tgiAQFRGLJjlGMa00p4ivZ6rIeGseXKEt97wyELUo0TaigPNPLVJFnC2-hD-RnZTuZKc4YkEJBcLQxmuvW_HuC3u_hnf6hsiongosYPQ2L1fpFPm2317Sf6qmJdf-aMNcR3J5CdTNpVsqoLE2hs1H6yMybeP00F2Y7nvo4gUNCdmyrsU0r6WWpzIdWxsHkznapDPHfaTdDoTvDIQsoBq5mR5X0YYE0Mk8eGATL77AqGjBYEPqSzUjVHL84AuVb3SGZb4mJV-mcZx31q5tiow51Pkjwm5YOqGE4JomNyNBkP2p1JcEjImJ9Wt5lG4MPhCQMrQ6pimf_ah2O_tMV6kJ9I9Ea3fhQazeuuegFFojmVDrbdhMF4GvnxyZ8LdU25BgzRcM9iaELupnyc7tLvur8qTu74dIHIqcJLCWS11CaRqlK4YrAbn0qNCkZd-XgtFh_Z-3pRkQeJFmZ3NAInm3RShzrIBm5FbRWNVNlaR4qhtw9XTKCMlIVxkXSvOXfPiKK7BFevtRpuTQzv5umim22gIPrD3GJlaoBwpceVo22OyNHOe0nM29XrUHumDEUoYIVrTHWmRyRlg6MjULXPes82e9NITzp8RZIwEqS64jey64wmqOUP4wb8G3U9fKfKdhkd7MK5wW8AnN5avJwHD7bCY6bQO3JJBXQaelDnYR0TbWjXFzd2UdWafuLcH6kGqXNY6YgVibp0Lu1EZ-OalsimA_OKFnjfoHkVG0djixQv5xzQsS-Y9MTPTPJ_BnZVjC3wuW1hn-RmqCQFSiqA5u8KIvC9M1u1suoxqZSUZRjhnBbgv1qxES7f50qWttqGJuNrULwrxGQHtiybppR0OTKFEIQsSAk7uv_bTHESHj2KW0SB2uQsn21li_4f4Mn0whPC_ZZcc7pDhhDdMl1Vn7eK6dfwNTZ-ruGAxTvEOxdeMqKAXB2kjCyg9na6DgxEUU1pNXGzyyFiVzwtFS1sCQAdzK1P5U7KXXnq1bYrrmV_bXyDI9c8tjtJ7-THqj_gvZsU73PQYY4ugrIoA-AMQj3io4KwEqtzfs675DxD_GRNpOKh8sJ-GSG1Ap7ziLL-JfGOOTQoPbGxmlUOMDjJRI-VYmMcvTeSOfawDBraOnHvji-Ybp5XmI_XIMPr6H5BFqSQigbGSBxMMs2BzzFl18-NotKJ'
         # key = st.secrets['INSTRUCTION_KEY'].encode()
@@ -859,75 +728,6 @@ if st.session_state.get('authentication_status'):
             # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
             
         st.markdown(cleaned_response)
-
-        # if language == "English":
-        #     st.markdown("#### Sources")
-        # elif language == "Spanish":
-        #     st.markdown("#### Fuentes")
-            
-        # Extract annotations from the response, and print source files.
-        # try:
-        #     annotations = response2.output[1].content[0].annotations
-        #     retrieved_files = set([response2.filename for response2 in annotations])
-        #     file_list_str = ", ".join(retrieved_files)
-        #     if language == "English":
-        #         st.markdown(f"**File(s):** {file_list_str}")
-        #     elif language == "Spanish":
-        #         st.markdown(f"**Archivo(s):** {file_list_str}")
-        # except (AttributeError, IndexError):
-        #     if language == "English":
-        #         st.markdown("**File(s): n/a**")
-        #     elif language == "Spanish":
-        #         st.markdown("**Archivo(s): n/a**")
-
-        # st.session_state.ai_response = cleaned_response
-        # Write files used to generate the answer.
-        # with sources_col:
-        #     st.markdown("#### Sources")
-        #     # Extract annotations from the response, and print source files.
-        #     annotations = response2.output[1].content[0].annotations
-        #     retrieved_files = set([response2.filename for response2 in annotations])
-        #     file_list_str = ", ".join(retrieved_files)
-        #     st.markdown(f"**File(s):** {file_list_str}")
-
-            # st.markdown("#### Token Usage")
-            # input_tokens = response2.usage.input_tokens
-            # output_tokens = response2.usage.output_tokens
-            # total_tokens = input_tokens + output_tokens
-            # input_tokens_str = f"{input_tokens:,}"
-            # output_tokens_str = f"{output_tokens:,}"
-            # total_tokens_str = f"{total_tokens:,}"
-
-            # st.markdown(
-            #     f"""
-            #     <p style="margin-bottom:0;">Input Tokens: {input_tokens_str}</p>
-            #     <p style="margin-bottom:0;">Output Tokens: {output_tokens_str}</p>
-            #     """,
-            #     unsafe_allow_html=True
-            # )
-            # st.markdown(f"Total Tokens: {total_tokens_str}")
-
-            # if model == "gpt-4.1-nano":
-            #     input_token_cost = .1/1000000
-            #     output_token_cost = .4/1000000
-            # elif model == "gpt-4o-mini":
-            #     input_token_cost = .15/1000000
-            #     output_token_cost = .6/1000000
-            # elif model == "gpt-4.1":
-            #     input_token_cost = 2.00/1000000
-            #     output_token_cost = 8.00/1000000
-            # elif model == "o4-mini":
-            #     input_token_cost = 1.10/1000000
-            #     output_token_cost = 4.40/1000000
-
-            # cost = input_tokens*input_token_cost + output_tokens*output_token_cost
-            # formatted_cost = "${:,.4f}".format(cost)
-            
-            # st.markdown(f"**Total Cost:** {formatted_cost}")
-
-    # elif not submit:
-    #         st.markdown("#### Response")
-    #         st.markdown(st.session_state.ai_response)
 
 elif st.session_state.get('authentication_status') is False:
     st.error('Username/password is incorrect')
