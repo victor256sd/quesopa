@@ -201,7 +201,8 @@ if st.session_state.get('authentication_status'):
             Q41 = st.selectbox("#41. Proud of myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
 
             submit2 = st.form_submit_button("Submit")
-
+            submit1 = False
+    
     else:
         submit1 = False
         submit2 = False
