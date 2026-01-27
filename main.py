@@ -1710,13 +1710,13 @@ if st.session_state.get('authentication_status'):
         st.write(f"#### Score Interpretation: {Q_response}")
 
         if (Q36 == "Often" or Q36 == "A lot of the time (almost always)") and Q_connection >= 14:
-            st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate ""toxic"" friendships or bullying within a close group.")
+            st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate \"toxic\" friendships or bullying within a close group.")
         if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == 0:
-            st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is ""Not at all"". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
+            st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is \"Not at all\". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
         if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
-            st.write(f"Skewed Responding - the test taker answered ""Not at all"" for every single item. The results may be invalid due to ""all-or-nothing"" thinking or a lack of engagement with the questions.")
+            st.write(f"Skewed Responding - the test taker answered \"Not at all\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
         elif (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 196:
-            st.write(f"Skewed Responding - the test taker answered ""A lot of the time (almost always)"" for every single item. The results may be invalid due to ""all-or-nothing"" thinking or a lack of engagement with the questions.")
+            st.write(f"Skewed Responding - the test taker answered \"A lot of the time (almost always)\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
         
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
