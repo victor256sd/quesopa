@@ -173,7 +173,7 @@ if st.session_state.get('authentication_status'):
             Q11 = st.selectbox("#11. Glad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q12 = st.selectbox("#12. Happy with how things are.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q13 = st.selectbox("#13. Very, very excited.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q14 = st.selectbox("#14. Like, people didn't like me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q14 = st.selectbox("#14. I believe many people do not like me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q15 = st.selectbox("#15. Uncomfortable or nervous.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q16 = st.selectbox("#16. Really disliking other people.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q17 = st.selectbox("#17. Friendly.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
@@ -1023,25 +1023,25 @@ if st.session_state.get('authentication_status'):
         if Q14 == "Not at all": 
             Q_isolation = Q_isolation + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=Not at all,"
         elif Q14 == "Only a little":
             Q_isolation = Q_isolation + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=Only a little,"
         elif Q14 == "Sometimes":
             Q_isolation = Q_isolation + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=Sometimes,"
         elif Q14 == "Often":
             Q_isolation = Q_isolation + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=Often,"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=Often,"
         elif Q14 == "A lot of the time (almost always)":
             Q_isolation = Q_isolation + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q14:Like, people didn't like me.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q14:I believe many people do not like me.=No Answer,"
 
         if Q15 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
@@ -1730,6 +1730,70 @@ if st.session_state.get('authentication_status'):
         # key = st.secrets['INSTRUCTION_KEY'].encode()
         # f = Fernet(key)
         # QUERY = f.decrypt(QUERY_ENCRYPTED).decode()
+        QUERY = f"""User context:
+            - Assessment: UCLA Loneliness Scale Version 3, Short Form
+            - Raw responses: {Q_rawdata} 
+            - Total score: {Q_total}
+            - Interpretation label from the assessment system (if any): {Q_response}
+            - Preferred language: {language}
+            
+            Task:
+            Using only the retrieved content from the vector store—prioritizing:
+            1) "US Surgeon General - Our Epidemic of Loneliness and Isolation 2023"
+            2) "Cacioppo - Easing Your Way Out of Loneliness.pdf"—
+            provide a supportive, concise response in {language} following the “Answer Structure” rules defined in the system instructions. Tailor the response based on the above interpretation label, total score, and raw responses.
+            
+            Requirements:
+            - Include at least one **direct quote** with proper citation (quotation marks + source + year + page/section if available).
+            - Do not speculate or use outside knowledge.
+            - Be emotionally sensitive and avoid clinical or diagnostic language.
+            
+            Edge cases:
+            - If the retrieved content is insufficient for a safe, useful answer, say so briefly and offer a compassionate general pointer drawn from what *is* available (with citations).
+            - If the user language is right-to-left, ensure readability and correct punctuation direction.
+            
+            Now produce the response."""
+
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = INSTRUCTION,
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        if language == "English":
+            st.markdown("#### Qué Sopa AI Guidance")
+            st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")
+            # st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
+        elif language == "Spanish":
+            st.markdown("#### Qué Sopa AI Información")
+            st.write("*Este instrumento es una herramienta de detección, no una medida diagnóstica. Los puntajes nunca deben utilizarse de manera aislada para tomar decisiones clínicas, educativas, disciplinarias u otras decisiones de vida. Todas las personas tienen fortalezas y debilidades. Use esta información para conectarse con otros que puedan ofrecer sugerencias útiles y buenas conversaciones. Los puntajes elevados de aislamiento pueden ser seguidos por una conversación con líderes religiosos, grupos de autoayuda, terapeutas y profesionales de la salud. Esto puede llevar a que otras personas le realicen entrevistas. La información colateral (familia, escuela, contexto) y la consideración de la etapa de desarrollo, las normas culturales y el acceso a compañeros en persona son áreas de indagación. Un alto nivel de participación en línea no indica inherentemente una patología; la interpretación debe distinguir entre conexión en línea adaptativa versus retraimiento social evitativo o perjudicial. Si las respuestas sugieren angustia significativa, retraimiento o dificultades para aprender, trabajar o amar, considere buscar una evaluación psicosocial integral y una detección de depresión, ansiedad, exposición a trauma o acoso escolar.*")
+            # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
+            
+        st.markdown(cleaned_response)
+
+    elif submit2:
         QUERY = f"""User context:
             - Assessment: UCLA Loneliness Scale Version 3, Short Form
             - Raw responses: {Q_rawdata} 
