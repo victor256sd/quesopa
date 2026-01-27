@@ -113,7 +113,7 @@ if st.session_state.get('authentication_status'):
         ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
-            "A questionnaire that helps measure how a child has been feeling and connecting with others over the past two weeks.",
+            "A questionnaire that helps measure how a child has been feeling and connecting with others over the past two weeks.\n",
         ],
     )
     
