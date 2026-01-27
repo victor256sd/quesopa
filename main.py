@@ -1695,16 +1695,16 @@ if st.session_state.get('authentication_status'):
         Q_total = Q_connection + Q_inclusion + Q_happy_feelings - Q_isolation - Q_bad_feelings
 
         if Q_total >= 20:
-            st.write(f"#### Total Score: {Q_total} (Thriving)")
+            st.write(f"#### Total Score: {Q_total}")
             Q_response = "Thriving - Strong emotional reserves and high resilience."
         elif Q_total >= 0 and Q_total <= 19:
-            st.write(f"#### Total Score: {Q_total} (Stable)")
+            st.write(f"#### Total Score: {Q_total}")
             Q_response = "Stable - Typical emotional ups and downs."
         elif Q_total >= -10 and Q_total <= -1:
-            st.write(f"#### Total Score: {Q_total} (At Risk)")
+            st.write(f"#### Total Score: {Q_total}")
             Q_response = "At Risk - The child is experiencing more distress than joy."
         elif Q_total <= -11:
-            st.write(f"#### Total Score: {Q_total} (High Distress)")
+            st.write(f"#### Total Score: {Q_total}")
             Q_response = "High Distress - May require immediate clinical or school intervention."
 
         st.write(f"#### Score Interpretation: {Q_response}")
