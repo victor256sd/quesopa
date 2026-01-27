@@ -1731,12 +1731,11 @@ if st.session_state.get('authentication_status'):
         # f = Fernet(key)
         # QUERY = f.decrypt(QUERY_ENCRYPTED).decode()
         QUERY = f"""User context:
-            - Assessment: UCLA Loneliness Scale Version 3, Short Form
+            - Assessment: Social Connection & Isolation Questionnaire
             - Raw responses: {Q_rawdata} 
             - Total score: {Q_total}
             - Interpretation label from the assessment system (if any): {Q_response}
             - Preferred language: {language}
-            - Questionnaire: Social Connection & Isolation Questionnaire
             
             Task:
             Using only the retrieved content from the vector store—prioritizing:
@@ -1796,12 +1795,11 @@ if st.session_state.get('authentication_status'):
 
     elif submit2:
         QUERY = f"""User context:
-            - Assessment: UCLA Loneliness Scale Version 3, Short Form
+            - Assessment: My Feelings and Needs (NEIL Child Version)
             - Raw responses: {Q_rawdata} 
             - Total score: {Q_total}
             - Interpretation label from the assessment system (if any): {Q_response}
             - Preferred language: {language}
-            - Questionnaire: My Feelings and Needs (NEIL Child Version)
             
             Task:
             Using only the retrieved content from the vector store—prioritizing:
