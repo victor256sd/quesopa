@@ -1696,22 +1696,22 @@ if st.session_state.get('authentication_status'):
 
         if Q_total >= 20:
             st.write(f"#### Total Score: {Q_total} (Thriving)")
-            Q_response = "Thriving: Strong emotional reserves and high resilience."
+            Q_response = "Thriving - Strong emotional reserves and high resilience."
         elif Q_total >= 0 and Q_total <= 19:
             st.write(f"#### Total Score: {Q_total} (Stable)")
-            Q_response = "Stable: Typical emotional ups and downs."
+            Q_response = "Stable - Typical emotional ups and downs."
         elif Q_total >= -10 and Q_total <= -1:
             st.write(f"#### Total Score: {Q_total} (At Risk)")
-            Q_response = "At Risk: The child is experiencing more distress than joy."
+            Q_response = "At Risk - The child is experiencing more distress than joy."
         elif Q_total <= -11:
             st.write(f"#### Total Score: {Q_total} (High Distress)")
-            Q_response = "High Distress: May require immediate clinical or school intervention."
+            Q_response = "High Distress - May require immediate clinical or school intervention."
 
         st.write(f"#### Score Interpretation: {Q_response}")
 
-        if Q36 >= 3 and Q_connection >= 14:
+        if (Q36 == "Often" or Q36 == "A lot of the time (almost always)") and Q_connection >= 14:
             st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate ""toxic"" friendships or bullying within a close group.")
-        if Q21 >= 3 and Q18 == 0:
+        if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == 0:
             st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is ""Not at all"". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
         if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
             st.write(f"Skewed Responding - the test taker answered ""Not at all"" for every single item. The results may be invalid due to ""all-or-nothing"" thinking or a lack of engagement with the questions.")
