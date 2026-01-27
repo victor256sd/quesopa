@@ -135,6 +135,7 @@ if st.session_state.get('authentication_status'):
             Q12 = st.selectbox("#12. I spend most of my time online.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
 
             submit1 = st.form_submit_button("Submit")
+            submit2 = False
         
     elif tool == "Social Connection & Isolation Questionnaire" and language == "Spanish":
         with st.form("yvform"):
@@ -153,6 +154,7 @@ if st.session_state.get('authentication_status'):
             Q12 = st.selectbox("#12. Paso la mayor parte de mi tiempo en línea.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
 
             submit1 = st.form_submit_button("Enviar")
+            submit2 = False
 
     # Create NEIL survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
