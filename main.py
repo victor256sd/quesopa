@@ -710,27 +710,27 @@ if st.session_state.get('authentication_status'):
         # Scores for bad feelings (questions 5, 7, 10, 15, 16, 20, 21, 24, 27, 28, 29, 30, 36) and 
         # isoluation (questions 14, 22, 35, 36, 40) will be subtracted from other question totals.
         if Q1 == "Not at all": 
-            Q_connect = Q_connect + 0
+            Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=Not at all,"
         elif Q1 == "Only a little":
-            Q_connect = Q_connect + 1
+            Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=Only a little,"
         elif Q1 == "Sometimes":
-            Q_connect = Q_connect + 2
+            Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=Sometimes,"
         elif Q1 == "Often":
-            Q_connect = Q_connect + 3
+            Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=Often,"
         elif Q1 == "A lot of the time (almost always)":
-            Q_connect = Q_connect + 4
+            Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=A lot of the time (almost always),"
@@ -738,27 +738,27 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q1:Other people included me.=No Answer,"
 
         if Q2 == "Not at all": 
-            Q_connect = Q_connect + 0
+            Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q2:Others want me to be with them.=Not at all,"
         elif Q2 == "Only a little":
-            Q_connect = Q_connect + 1
+            Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q2:Others want me to be with them.=Only a little,"
         elif Q2 == "Sometimes":
-            Q_connect = Q_connect + 2
+            Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q2:Others want me to be with them.=Sometimes,"
         elif Q2 == "Often":
-            Q_connect = Q_connect + 3
+            Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q2:Others want me to be with them.=Often,"
         elif Q2 == "A lot of the time (almost always)":
-            Q_connect = Q_connect + 4
+            Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q2:Others want me to be with them.=A lot of the time (almost always),"
