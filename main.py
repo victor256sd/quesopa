@@ -251,13 +251,13 @@ if st.session_state.get('authentication_status'):
             Q29 = st.selectbox("#29. Shame.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q30 = st.selectbox("#30. Part of a group.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q31 = st.selectbox("#31. Liking yourself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q32 = st.selectbox("#32. Having Good Choices.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q32 = st.selectbox("#32. Having good choices.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q33 = st.selectbox("#33. Curiosity.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q34 = st.selectbox("#34. Hurt by others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q35 = st.selectbox("#35. Understood.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q36 = st.selectbox("#36. Loved.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q37 = st.selectbox("#37. Happy.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q38 = st.selectbox("#38. Left-Out.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q38 = st.selectbox("#38. Left-out.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q39 = st.selectbox("#39. Proud.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q40 = st.selectbox("#40. Wishing you were not here.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q41 = st.selectbox("#41. Believing life will get better.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
@@ -1838,6 +1838,14 @@ if st.session_state.get('authentication_status'):
         Q_social_support_security = 0
         Q_social_isolation_rejection = 0
         Q_total = 0
+
+        Q_hopeful_sum = 0
+        Q_despairing_sum = 0
+        Q_outlook_balance = 0
+        Q_included_sum = 0
+        Q_isolated_sum = 0
+        Q_social_connectivity_balance = 0
+        
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
 
@@ -1858,22 +1866,27 @@ if st.session_state.get('authentication_status'):
         # Total Max Score: 16
         if Q1 == "Not at all": 
             Q_social_support_security = Q_social_support_security + 0
+            Q_included_sum = Q_included_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q1:Included by others.=Not at all,"
         elif Q1 == "Only a little":
             Q_social_support_security = Q_social_support_security + 1
+            Q_included_sum = Q_included_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q1:Included by others.=Only a little,"
         elif Q1 == "Sometimes":
             Q_social_support_security = Q_social_support_security + 2
+            Q_included_sum = Q_included_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q1:Included by others.=Sometimes,"
         elif Q1 == "Often":
             Q_social_support_security = Q_social_support_security + 3
+            Q_included_sum = Q_included_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q1:Included by others.=Often,"
         elif Q1 == "A lot of the time (almost always)":
             Q_social_support_security = Q_social_support_security + 4
+            Q_included_sum = Q_included_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q1:Included by others.=A lot of the time (almost always),"
         else:
@@ -1945,22 +1958,27 @@ if st.session_state.get('authentication_status'):
 
         if Q5 == "Not at all": 
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
+            Q_hopeful_sum = Q_hopeful_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q5:Looking forward to tomorrow.=Not at all,"
         elif Q5 == "Only a little":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_hopeful_sum = Q_hopeful_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q5:Looking forward to tomorrow.=Only a little,"
         elif Q5 == "Sometimes":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_hopeful_sum = Q_hopeful_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q5:Looking forward to tomorrow.=Sometimes,"
         elif Q5 == "Often":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_hopeful_sum = Q_hopeful_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q5:Looking forward to tomorrow.=Often,"
         elif Q5 == "A lot of the time (almost always)":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_hopeful_sum = Q_hopeful_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q5:Looking forward to tomorrow.=A lot of the time (almost always),"
         else:
@@ -2129,22 +2147,27 @@ if st.session_state.get('authentication_status'):
 
         if Q13 == "Not at all": 
             Q_social_isolation_rejection = Q_social_isolation_rejection + 0
+            Q_isolated_sum = Q_isolated_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q13:Disliked.=Not at all,"
         elif Q13 == "Only a little":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_isolated_sum = Q_isolated_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q13:Disliked.=Only a little,"
         elif Q13 == "Sometimes":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_isolated_sum = Q_isolated_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q13:Disliked.=Sometimes,"
         elif Q13 == "Often":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_isolated_sum = Q_isolated_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q13:Disliked.=Often,"
         elif Q13 == "A lot of the time (almost always)":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_isolated_sum = Q_isolated_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q13:Disliked.=A lot of the time (almost always),"
         else:
@@ -2313,22 +2336,27 @@ if st.session_state.get('authentication_status'):
 
         if Q21 == "Not at all": 
             Q_social_isolation_rejection = Q_social_isolation_rejection + 0
+            Q_isolated_sum = Q_isolated_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q21:Lonely.=Not at all,"
         elif Q21 == "Only a little":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_isolated_sum = Q_isolated_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q21:Lonely.=Only a little,"
         elif Q21 == "Sometimes":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_isolated_sum = Q_isolated_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q21:Lonely.=Sometimes,"
         elif Q21 == "Often":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_isolated_sum = Q_isolated_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q21:Lonely.=Often,"
         elif Q21 == "A lot of the time (almost always)":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_isolated_sum = Q_isolated_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q21:Lonely.=A lot of the time (almost always),"
         else:
@@ -2359,22 +2387,27 @@ if st.session_state.get('authentication_status'):
 
         if Q23 == "Not at all": 
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
+            Q_despairing_sum = Q_despairing_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q23:Tearful.=Not at all,"
         elif Q23 == "Only a little":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_despairing_sum = Q_despairing_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q23:Tearful.=Only a little,"
         elif Q23 == "Sometimes":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_despairing_sum = Q_despairing_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q23:Tearful.=Sometimes,"
         elif Q23 == "Often":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_despairing_sum = Q_despairing_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q23:Tearful.=Often,"
         elif Q23 == "A lot of the time (almost always)":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_despairing_sum = Q_despairing_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q23:Tearful.=A lot of the time (almost always),"
         else:
@@ -2382,22 +2415,27 @@ if st.session_state.get('authentication_status'):
 
         if Q24 == "Not at all": 
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
+            Q_hopeful_sum = Q_hopeful_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q24:Hopeful.=Not at all,"
         elif Q24 == "Only a little":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_hopeful_sum = Q_hopeful_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q24:Hopeful.=Only a little,"
         elif Q24 == "Sometimes":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_hopeful_sum = Q_hopeful_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q24:Hopeful.=Sometimes,"
         elif Q24 == "Often":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_hopeful_sum = Q_hopeful_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q24:Hopeful.=Often,"
         elif Q24 == "A lot of the time (almost always)":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_hopeful_sum = Q_hopeful_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q24:Hopeful.=A lot of the time (almost always),"
         else:
@@ -2428,22 +2466,27 @@ if st.session_state.get('authentication_status'):
 
         if Q26 == "Not at all": 
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
+            Q_despairing_sum = Q_despairing_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q26:Sadness.=Not at all,"
         elif Q26 == "Only a little":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_despairing_sum = Q_despairing_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q26:Sadness.=Only a little,"
         elif Q26 == "Sometimes":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_despairing_sum = Q_despairing_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q26:Sadness.=Sometimes,"
         elif Q26 == "Often":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_despairing_sum = Q_despairing_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q26:Sadness.=Often,"
         elif Q26 == "A lot of the time (almost always)":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_despairing_sum = Q_despairing_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q26:Sadness.=A lot of the time (almost always),"
         else:
@@ -2497,22 +2540,27 @@ if st.session_state.get('authentication_status'):
 
         if Q29 == "Not at all": 
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
+            Q_despairing_sum = Q_despairing_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q29:Shame.=Not at all,"
         elif Q29 == "Only a little":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_despairing_sum = Q_despairing_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q29:Shame.=Only a little,"
         elif Q29 == "Sometimes":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_despairing_sum = Q_despairing_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q29:Shame.=Sometimes,"
         elif Q29 == "Often":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_despairing_sum = Q_despairing_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q29:Shame.=Often,"
         elif Q29 == "A lot of the time (almost always)":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_despairing_sum = Q_despairing_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q29:Shame.=A lot of the time (almost always),"
         else:
@@ -2520,22 +2568,27 @@ if st.session_state.get('authentication_status'):
 
         if Q30 == "Not at all": 
             Q_social_support_security = Q_social_support_security + 0
+            Q_included_sum = Q_included_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q30:Part of a group.=Not at all,"
         elif Q30 == "Only a little":
             Q_social_support_security = Q_social_support_security + 1
+            Q_included_sum = Q_included_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q30:Part of a group.=Only a little,"
         elif Q30 == "Sometimes":
             Q_social_support_security = Q_social_support_security + 2
+            Q_included_sum = Q_included_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q30:Part of a group.=Sometimes,"
         elif Q30 == "Often":
             Q_social_support_security = Q_social_support_security + 3
+            Q_included_sum = Q_included_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q30:Part of a group.=Often,"
         elif Q30 == "A lot of the time (almost always)":
             Q_social_support_security = Q_social_support_security + 4
+            Q_included_sum = Q_included_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q30:Part of a group.=A lot of the time (almost always),"
         else:
@@ -2543,22 +2596,27 @@ if st.session_state.get('authentication_status'):
 
         if Q31 == "Not at all": 
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
+            Q_hopeful_sum = Q_hopeful_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Not at all,"
         elif Q31 == "Only a little":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_hopeful_sum = Q_hopeful_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Only a little,"
         elif Q31 == "Sometimes":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_hopeful_sum = Q_hopeful_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Sometimes,"
         elif Q31 == "Often":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_hopeful_sum = Q_hopeful_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Often,"
         elif Q31 == "A lot of the time (almost always)":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_hopeful_sum = Q_hopeful_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q31:Liking yourself.=A lot of the time (almost always),"
         else:
@@ -2612,22 +2670,27 @@ if st.session_state.get('authentication_status'):
 
         if Q34 == "Not at all": 
             Q_social_isolation_rejection = Q_social_isolation_rejection + 0
+            Q_isolated_sum = Q_isolated_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Not at all,"
         elif Q34 == "Only a little":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_isolated_sum = Q_isolated_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Only a little,"
         elif Q34 == "Sometimes":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_isolated_sum = Q_isolated_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Sometimes,"
         elif Q34 == "Often":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_isolated_sum = Q_isolated_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Often,"
         elif Q34 == "A lot of the time (almost always)":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_isolated_sum = Q_isolated_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q34:Hurt by others.=A lot of the time (almost always),"
         else:
@@ -2635,22 +2698,27 @@ if st.session_state.get('authentication_status'):
 
         if Q35 == "Not at all": 
             Q_social_support_security = Q_social_support_security + 0
+            Q_included_sum = Q_included_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q35:Understood.=Not at all,"
         elif Q35 == "Only a little":
             Q_social_support_security = Q_social_support_security + 1
+            Q_included_sum = Q_included_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q35:Understood.=Only a little,"
         elif Q35 == "Sometimes":
             Q_social_support_security = Q_social_support_security + 2
+            Q_included_sum = Q_included_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q35:Understood.=Sometimes,"
         elif Q35 == "Often":
             Q_social_support_security = Q_social_support_security + 3
+            Q_included_sum = Q_included_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q35:Understood.=Often,"
         elif Q35 == "A lot of the time (almost always)":
             Q_social_support_security = Q_social_support_security + 4
+            Q_included_sum = Q_included_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q35:Understood.=A lot of the time (almost always),"
         else:
@@ -2658,22 +2726,27 @@ if st.session_state.get('authentication_status'):
 
         if Q36 == "Not at all": 
             Q_social_support_security = Q_social_support_security + 0
+            Q_included_sum = Q_included_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q36:Loved.=Not at all,"
         elif Q36 == "Only a little":
             Q_social_support_security = Q_social_support_security + 1
+            Q_included_sum = Q_included_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q36:Loved.=Only a little,"
         elif Q36 == "Sometimes":
             Q_social_support_security = Q_social_support_security + 2
+            Q_included_sum = Q_included_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q36:Loved.=Sometimes,"
         elif Q36 == "Often":
             Q_social_support_security = Q_social_support_security + 3
+            Q_included_sum = Q_included_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q36:Loved.=Often,"
         elif Q36 == "A lot of the time (almost always)":
             Q_social_support_security = Q_social_support_security + 4
+            Q_included_sum = Q_included_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q36:Loved.=A lot of the time (almost always),"
         else:
@@ -2681,22 +2754,27 @@ if st.session_state.get('authentication_status'):
 
         if Q37 == "Not at all": 
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
+            Q_hopeful_sum = Q_hopeful_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q37:Happy.=Not at all,"
         elif Q37 == "Only a little":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_hopeful_sum = Q_hopeful_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q37:Happy.=Only a little,"
         elif Q37 == "Sometimes":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_hopeful_sum = Q_hopeful_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q37:Happy.=Sometimes,"
         elif Q37 == "Often":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_hopeful_sum = Q_hopeful_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q37:Happy.=Often,"
         elif Q37 == "A lot of the time (almost always)":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_hopeful_sum = Q_hopeful_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q37:Happy.=A lot of the time (almost always),"
         else:
@@ -2704,22 +2782,27 @@ if st.session_state.get('authentication_status'):
 
         if Q38 == "Not at all": 
             Q_social_isolation_rejection = Q_social_isolation_rejection + 0
+            Q_isolated_sum = Q_isolated_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q38:Left-out.=Not at all,"
         elif Q38 == "Only a little":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_isolated_sum = Q_isolated_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q38:Left-out.=Only a little,"
         elif Q38 == "Sometimes":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_isolated_sum = Q_isolated_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q38:Left-out.=Sometimes,"
         elif Q38 == "Often":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_isolated_sum = Q_isolated_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q38:Left-out.=Often,"
         elif Q38 == "A lot of the time (almost always)":
             Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_isolated_sum = Q_isolated_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q38:Left-out.=A lot of the time (almost always),"
         else:
@@ -2750,22 +2833,27 @@ if st.session_state.get('authentication_status'):
 
         if Q40 == "Not at all": 
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
+            Q_despairing_sum = Q_despairing_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Not at all,"
         elif Q40 == "Only a little":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_despairing_sum = Q_despairing_sum + 1
             Q_total = Q_total - 1
             Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Only a little,"
         elif Q40 == "Sometimes":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_despairing_sum = Q_despairing_sum + 2
             Q_total = Q_total - 2
             Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Sometimes,"
         elif Q40 == "Often":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_despairing_sum = Q_despairing_sum + 3
             Q_total = Q_total - 3
             Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Often,"
         elif Q40 == "A lot of the time (almost always)":
             Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_despairing_sum = Q_despairing_sum + 4
             Q_total = Q_total - 4
             Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=A lot of the time (almost always),"
         else:
@@ -2773,22 +2861,27 @@ if st.session_state.get('authentication_status'):
 
         if Q41 == "Not at all": 
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
+            Q_hopeful_sum = Q_hopeful_sum + 0
             Q_total = Q_total + 0
             Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Not at all,"
         elif Q41 == "Only a little":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_hopeful_sum = Q_hopeful_sum + 1
             Q_total = Q_total + 1
             Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Only a little,"
         elif Q41 == "Sometimes":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_hopeful_sum = Q_hopeful_sum + 2
             Q_total = Q_total + 2
             Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Sometimes,"
         elif Q41 == "Often":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_hopeful_sum = Q_hopeful_sum + 3
             Q_total = Q_total + 3
             Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Often,"
         elif Q41 == "A lot of the time (almost always)":
             Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_hopeful_sum = Q_hopeful_sum + 4
             Q_total = Q_total + 4
             Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=A lot of the time (almost always),"
         else:
@@ -2827,21 +2920,43 @@ if st.session_state.get('authentication_status'):
             Q_response = "Stable, typical emotional ups and downs."
         elif Q_total >= -10 and Q_total <= -1:
             st.write(f"#### Total Score: {Q_total}")
-            Q_response = "At Risk, the child is experiencing more distress than joy."
+            Q_response = "At Risk, the adult is experiencing more distress than joy."
         elif Q_total <= -11:
             st.write(f"#### Total Score: {Q_total}")
-            Q_response = "High Distress, may require immediate clinical or school intervention."
-
+            Q_response = "High Distress, may require immediate clinical or community intervention."
+        
         st.write(f"#### Score Interpretation: {Q_response}")
 
-        if (Q36 == "Often" or Q36 == "A lot of the time (almost always)") and Q_connection >= 14:
-            st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate \"toxic\" friendships or bullying within a close group.")
-        if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == 0:
-            st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is \"Not at all\". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
-        if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
-            st.write(f"Skewed Responding - the test taker answered \"Not at all\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
-        elif (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 196:
-            st.write(f"Skewed Responding - the test taker answered \"A lot of the time (almost always)\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
+        # Outlook Balance=Sum(Hopeful)−Sum(Despairing)
+        # Balanced range -16 to +20
+        Q_outlook_balance = Q_hopeful_sum - Q_despairing_sum
+
+        if Q_outlook_balance > 20:
+            st.write(f"#### Outlook Balance (Hope vs. Despair) Score: {Q_outlook_balance} (Hopeful)")            
+        elif Q_outlook_balance >= -16 and Q_outlook_balance <= 20:
+            st.write(f"#### Outlook Balance (Hope vs. Despair) Score: {Q_outlook_balance} (Balanced)")
+        elif Q_outlook_balance < -16:
+            st.write(f"#### Outlook Balance (Hope vs. Despair) Score: {Q_outlook_balance} (Despair)")
+        
+        # Social Balance=Sum(Included)−Sum(Isolated)
+        # Balanced range -16 to +16
+        Q_social_connectivity_balance = Q_included_sum - Q_isolated_sum
+
+        if Q_outlook_balance > 16:
+            st.write(f"#### Social Connectivity Balance (Included vs. Isolated) Score: {Q_outlook_balance} (Included)")            
+        elif Q_outlook_balance >= -16 and Q_outlook_balance <= 16:
+            st.write(f"#### Outlook Balance (Hope vs. Despair) Score: {Q_outlook_balance} (Balanced)")
+        elif Q_outlook_balance < -16:
+            st.write(f"#### Outlook Balance (Hope vs. Despair) Score: {Q_outlook_balance} (Isolated)")
+
+        # Special conditions.
+        # Clinical Note on Items 40 & 42
+        # Item 40 (Wishing you were not here): Any rating of 1 or higher on this item should trigger a standard risk assessment protocol.
+        # Item 42 (Somatic Stress): High ratings here suggest the individual may benefit from “bottom-up” regulatory strategies (e.g., grounding, breathing) in addition to cognitive interventions.
+        if Q40 == "Only a little" or Q40 == "Sometimes" or Q40 == "Often" or Q36 == "A lot of the time (almost always)":
+            st.write(f"Answer to Item 40 (Wishing you were not here) is non-zero ({Q40}). A standard risk assessment protocol is recommended.")
+        if Q42 == "Often" or Q42 == "A lot of the time (almost always)":
+            st.write(f"Answer to Item 42 (Somatic stress) is high ({Q42}). High ratings here suggest the individual may benefit from \“bottom-up\” regulatory strategies (e.g., grounding, breathing) in addition to cognitive interventions.")
         
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
@@ -2919,6 +3034,70 @@ if st.session_state.get('authentication_status'):
     elif submit2:
         QUERY = f"""User context:
             - Assessment: My Feelings and Needs (NEIL Child Version)
+            - Raw responses: {Q_rawdata} 
+            - Total score: {Q_total}
+            - Interpretation label from the assessment system (if any): {Q_response}
+            - Preferred language: {language}
+            
+            Task:
+            Using only the retrieved content from the vector store—prioritizing:
+            1) "US Surgeon General - Our Epidemic of Loneliness and Isolation 2023"
+            2) "Cacioppo - Easing Your Way Out of Loneliness.pdf"—
+            provide a supportive, concise response in {language} following the “Answer Structure” rules defined in the system instructions. Tailor the response based on the above interpretation label, total score, and raw responses.
+            
+            Requirements:
+            - Include at least one **direct quote** with proper citation (quotation marks + source + year + page/section if available).
+            - Do not speculate or use outside knowledge.
+            - Be emotionally sensitive and avoid clinical or diagnostic language.
+            
+            Edge cases:
+            - If the retrieved content is insufficient for a safe, useful answer, say so briefly and offer a compassionate general pointer drawn from what *is* available (with citations).
+            - If the user language is right-to-left, ensure readability and correct punctuation direction.
+            
+            Now produce the response."""
+
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = INSTRUCTION,
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        if language == "English":
+            st.markdown("#### Qué Sopa AI Guidance")
+            st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")
+            # st.write("*The guidance and responses provided by this application are AI-generated and informed by the US Surgeon General's report Our Epidemic of Loneliness and Isolation and related professional resources. They are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their professional policies, state regulations, or legal counsel for authoritative guidance on loneliness and isolation matters. This tool is designed to assist, not replace, professional decision-making or formal review processes.*")
+        elif language == "Spanish":
+            st.markdown("#### Qué Sopa AI Información")
+            st.write("*Este instrumento es una herramienta de detección, no una medida diagnóstica. Los puntajes nunca deben utilizarse de manera aislada para tomar decisiones clínicas, educativas, disciplinarias u otras decisiones de vida. Todas las personas tienen fortalezas y debilidades. Use esta información para conectarse con otros que puedan ofrecer sugerencias útiles y buenas conversaciones. Los puntajes elevados de aislamiento pueden ser seguidos por una conversación con líderes religiosos, grupos de autoayuda, terapeutas y profesionales de la salud. Esto puede llevar a que otras personas le realicen entrevistas. La información colateral (familia, escuela, contexto) y la consideración de la etapa de desarrollo, las normas culturales y el acceso a compañeros en persona son áreas de indagación. Un alto nivel de participación en línea no indica inherentemente una patología; la interpretación debe distinguir entre conexión en línea adaptativa versus retraimiento social evitativo o perjudicial. Si las respuestas sugieren angustia significativa, retraimiento o dificultades para aprender, trabajar o amar, considere buscar una evaluación psicosocial integral y una detección de depresión, ansiedad, exposición a trauma o acoso escolar.*")
+            # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
+            
+        st.markdown(cleaned_response)
+
+    elif submit3:
+        QUERY = f"""User context:
+            - Assessment: My Feelings and Needs (NEIL Adult Version)
             - Raw responses: {Q_rawdata} 
             - Total score: {Q_total}
             - Interpretation label from the assessment system (if any): {Q_response}
