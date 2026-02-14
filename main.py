@@ -4,6 +4,10 @@
 #
 # Changelog:
 #
+# 2/13/2026: Modified NEIL child version description, added two
+# questions at the end, and adjusted language on multiple question
+# numbers (Glenn email, 2/12/2026).
+#
 # 1/26/2026: Modified page to accommodate the loneliness and NEIL
 # child version surveys.
 #
@@ -159,48 +163,50 @@ if st.session_state.get('authentication_status'):
     # Create NEIL survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
         with st.form("neilform"):
-            st.write("Think about how you have felt over the **last two weeks**. Look at each sentence and select the answer that shows how often you felt that way. *If you don’t understand a word, you can skip it.*")
+            st.write("Think about how you have felt over the **last week**. Look at each sentence and select the answer that shows how often you felt that way. *If you don’t understand a word, you can skip it.*")
             Q1 = st.selectbox("#1. Other people included me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q2 = st.selectbox("#2. Others want me to be with them.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q3 = st.selectbox("#3. Surprised.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q4 = st.selectbox("#4. Thankful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q5 = st.selectbox("#5. Scared.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q6 = st.selectbox("#6. Excited for what is coming next.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q6 = st.selectbox("#6. Looking forward to something.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q7 = st.selectbox("#7. Mad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q8 = st.selectbox("#8. Safe.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q9 = st.selectbox("#9. Calm and peaceful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q10 = st.selectbox("#10. Worried.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q11 = st.selectbox("#11. Glad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q12 = st.selectbox("#12. Happy with how things are.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q13 = st.selectbox("#13. Very, very excited.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q13 = st.selectbox("#13. Very excited.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q14 = st.selectbox("#14. I believe many people do not like me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q15 = st.selectbox("#15. Uncomfortable or nervous.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q16 = st.selectbox("#16. Really disliking other people.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q17 = st.selectbox("#17. Friendly.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q18 = st.selectbox("#18. Rested and full of energy.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q19 = st.selectbox("#19. Relaxed.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q20 = st.selectbox("#20. Nervous or jittery.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q20 = st.selectbox("#20. Crying a lot.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q21 = st.selectbox("#21. Tired.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q22 = st.selectbox("#22. Lonely.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q23 = st.selectbox("#23. Laughing with others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q24 = st.selectbox("#24. Like I wanted to cry.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q25 = st.selectbox("#25. Hopeful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q26 = st.selectbox("#26. Liked by others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q26 = st.selectbox("#26. Liked.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q27 = st.selectbox("#27. Sad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q28 = st.selectbox("#28. Jealous (wanting what others have).", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q29 = st.selectbox("#29. In a bad mood.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q30 = st.selectbox("#30. Ashamed or embarrassed.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q30 = st.selectbox("#30. Others are better than you.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q31 = st.selectbox("#31. Part of a group.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q32 = st.selectbox("#32. Like I like myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q33 = st.selectbox("#33. Like I have good choices.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q34 = st.selectbox("#34. Interested in learning new things.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q35 = st.selectbox("#35. Hurt by other people.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q36 = st.selectbox("#36. Picked on or made fun of.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
-            Q37 = st.selectbox("#37. Like people understand me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q37 = st.selectbox("#37. Understood.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q38 = st.selectbox("#38. Loved.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q39 = st.selectbox("#39. Happy.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q40 = st.selectbox("#40. Left out.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q41 = st.selectbox("#41. Proud of myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q42 = st.selectbox("#42. Wishing I was someone else.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q43 = st.selectbox("#43. Wishing I wasn’t here anymore.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
 
             submit2 = st.form_submit_button("Submit")
             submit1 = False
@@ -839,25 +845,25 @@ if st.session_state.get('authentication_status'):
         if Q6 == "Not at all": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=Not at all,"
         elif Q6 == "Only a little":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=Only a little,"
         elif Q6 == "Sometimes":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=Sometimes,"
         elif Q6 == "Often":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=Often,"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=Often,"
         elif Q6 == "A lot of the time (almost always)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q6:Excited for what is coming next.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q6:Looking forward to something.=No Answer,"
 
         if Q7 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
@@ -1000,25 +1006,25 @@ if st.session_state.get('authentication_status'):
         if Q13 == "Not at all": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=Not at all,"
         elif Q13 == "Only a little":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=Only a little,"
         elif Q13 == "Sometimes":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=Sometimes,"
         elif Q13 == "Often":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=Often,"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=Often,"
         elif Q13 == "A lot of the time (almost always)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q13:Very, very excited.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q13:Very excited.=No Answer,"
 
         if Q14 == "Not at all": 
             Q_isolation = Q_isolation + 0
@@ -1161,25 +1167,25 @@ if st.session_state.get('authentication_status'):
         if Q20 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=Not at all,"
         elif Q20 == "Only a little":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=Only a little,"
         elif Q20 == "Sometimes":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=Sometimes,"
         elif Q20 == "Often":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=Often,"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=Often,"
         elif Q20 == "A lot of the time (almost always)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q20:Nervous or jittery.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q20:Crying a lot.=No Answer,"
 
         if Q21 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
@@ -1305,29 +1311,29 @@ if st.session_state.get('authentication_status'):
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=Not at all,"
         elif Q26 == "Only a little":
             Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=Only a little,"
         elif Q26 == "Sometimes":
             Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=Sometimes,"
         elif Q26 == "Often":
             Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=Often,"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=Often,"
         elif Q26 == "A lot of the time (almost always)":
             Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q26:Liked by others.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q26:Liked.=No Answer,"
 
         if Q27 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
@@ -1401,25 +1407,25 @@ if st.session_state.get('authentication_status'):
         if Q30 == "Not at all": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Not at all,"
         elif Q30 == "Only a little":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Only a little,"
         elif Q30 == "Sometimes":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Sometimes,"
         elif Q30 == "Often":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=Often,"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Often,"
         elif Q30 == "A lot of the time (almost always)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q30:Ashamed or embarrassed.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=No Answer,"
 
         if Q31 == "Not at all": 
             Q_connection = Q_connection + 0
@@ -1573,29 +1579,29 @@ if st.session_state.get('authentication_status'):
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=Not at all,"
         elif Q37 == "Only a little":
             Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=Only a little,"
         elif Q37 == "Sometimes":
             Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=Sometimes,"
         elif Q37 == "Often":
             Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=Often,"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=Often,"
         elif Q37 == "A lot of the time (almost always)":
             Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q37:Like people understand me.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q37:Understood.=No Answer,"
 
         if Q38 == "Not at all": 
             Q_connection = Q_connection + 0
@@ -1693,6 +1699,52 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q41:Proud of myself.=A lot of the time (almost always),"
         else:
             Q_rawdata = Q_rawdata + "Q41:Proud of myself.=No Answer,"    
+
+        if Q42 == "Not at all": 
+            Q_bad_feelings = Q_bad_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Not at all,"
+        elif Q42 == "Only a little":
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Only a little,"
+        elif Q42 == "Sometimes":
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Sometimes,"
+        elif Q42 == "Often":
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Often,"
+        elif Q42 == "A lot of the time (almost always)":
+            Q_bad_feelings = Q_bad_feelings + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=A lot of the time (almost always),"
+        else:
+            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=No Answer,"
+
+        if Q43 == "Not at all": 
+            Q_bad_feelings = Q_bad_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Not at all,"
+        elif Q43 == "Only a little":
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Only a little,"
+        elif Q43 == "Sometimes":
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Sometimes,"
+        elif Q43 == "Often":
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Often,"
+        elif Q43 == "A lot of the time (almost always)":
+            Q_bad_feelings = Q_bad_feelings + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=A lot of the time (almost always),"
+        else:
+            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=No Answer,"
 
         Q_total = Q_connection + Q_inclusion + Q_happy_feelings - Q_isolation - Q_bad_feelings
 
