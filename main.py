@@ -2312,566 +2312,513 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q20:Tired.=No Answer,"
 
         if Q21 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q21:Tired.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=Not at all,"
         elif Q21 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q21:Tired.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=Only a little,"
         elif Q21 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q21:Tired.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=Sometimes,"
         elif Q21 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q21:Tired.=Often,"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=Often,"
         elif Q21 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q21:Tired.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q21:Tired.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q21:Lonely.=No Answer,"
 
         if Q22 == "Not at all": 
-            Q_isolation = Q_isolation + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=Not at all,"
         elif Q22 == "Only a little":
-            Q_isolation = Q_isolation + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=Only a little,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=Only a little,"
         elif Q22 == "Sometimes":
-            Q_isolation = Q_isolation + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=Sometimes,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=Sometimes,"
         elif Q22 == "Often":
-            Q_isolation = Q_isolation + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=Often,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=Often,"
         elif Q22 == "A lot of the time (almost always)":
-            Q_isolation = Q_isolation + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=A lot of the time (almost always),"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q22:Lonely.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q22:Able to laugh.=No Answer,"
 
         if Q23 == "Not at all": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=Not at all,"
         elif Q23 == "Only a little":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=Only a little,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=Only a little,"
         elif Q23 == "Sometimes":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=Sometimes,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=Sometimes,"
         elif Q23 == "Often":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=Often,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=Often,"
         elif Q23 == "A lot of the time (almost always)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=A lot of the time (almost always),"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q23:Laughing with others.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q23:Tearful.=No Answer,"
 
         if Q24 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=Not at all,"
         elif Q24 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=Only a little,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=Only a little,"
         elif Q24 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=Sometimes,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=Sometimes,"
         elif Q24 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=Often,"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=Often,"
         elif Q24 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=A lot of the time (almost always),"
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q24:Like I wanted to cry.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q24:Hopeful.=No Answer,"
 
         if Q25 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_social_support_security = Q_social_support_security + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=Not at all,"
         elif Q25 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
+            Q_social_support_security = Q_social_support_security + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=Only a little,"
         elif Q25 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
+            Q_social_support_security = Q_social_support_security + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=Sometimes,"
         elif Q25 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
+            Q_social_support_security = Q_social_support_security + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=Often,"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=Often,"
         elif Q25 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
+            Q_social_support_security = Q_social_support_security + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q25:Hopeful.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q25:Respected.=No Answer,"
 
         if Q26 == "Not at all": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q26:Liked.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=Not at all,"
         elif Q26 == "Only a little":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q26:Liked.=Only a little,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=Only a little,"
         elif Q26 == "Sometimes":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q26:Liked.=Sometimes,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=Sometimes,"
         elif Q26 == "Often":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q26:Liked.=Often,"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=Often,"
         elif Q26 == "A lot of the time (almost always)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q26:Liked.=A lot of the time (almost always),"
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q26:Liked.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q26:Sadness.=No Answer,"
 
         if Q27 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q27:Sad.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=Not at all,"
         elif Q27 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q27:Sad.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=Only a little,"
         elif Q27 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q27:Sad.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=Sometimes,"
         elif Q27 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q27:Sad.=Often,"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=Often,"
         elif Q27 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q27:Sad.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q27:Sad.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q27:Envious.=No Answer,"
 
         if Q28 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=Not at all,"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=Not at all,"
         elif Q28 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=Only a little,"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=Only a little,"
         elif Q28 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=Sometimes,"
         elif Q28 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=Often,"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=Often,"
         elif Q28 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q28:Jealous (wanting what others have).=No Answer,"
+            Q_rawdata = Q_rawdata + "Q28:Irritated.=No Answer,"
 
         if Q29 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=Not at all,"
         elif Q29 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=Only a little,"
         elif Q29 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=Sometimes,"
         elif Q29 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=Often,"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=Often,"
         elif Q29 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q29:In a bad mood.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q29:Shame.=No Answer,"
 
         if Q30 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_social_support_security = Q_social_support_security + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=Not at all,"
         elif Q30 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Only a little,"
+            Q_social_support_security = Q_social_support_security + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=Only a little,"
         elif Q30 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Sometimes,"
+            Q_social_support_security = Q_social_support_security + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=Sometimes,"
         elif Q30 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=Often,"
+            Q_social_support_security = Q_social_support_security + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=Often,"
         elif Q30 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=A lot of the time (almost always),"
+            Q_social_support_security = Q_social_support_security + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q30:Others are better than you.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q30:Part of a group.=No Answer,"
 
         if Q31 == "Not at all": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Not at all,"
         elif Q31 == "Only a little":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Only a little,"
         elif Q31 == "Sometimes":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Sometimes,"
         elif Q31 == "Often":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=Often,"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=Often,"
         elif Q31 == "A lot of the time (almost always)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q31:Part of a group.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q31:Liking yourself.=No Answer,"
 
         if Q32 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_social_support_security = Q_social_support_security + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=Not at all,"
         elif Q32 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
+            Q_social_support_security = Q_social_support_security + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=Only a little,"
         elif Q32 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
+            Q_social_support_security = Q_social_support_security + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=Sometimes,"
         elif Q32 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
+            Q_social_support_security = Q_social_support_security + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=Often,"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=Often,"
         elif Q32 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
+            Q_social_support_security = Q_social_support_security + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q32:Like I like myself.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q32:Having good choices.=No Answer,"
 
         if Q33 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=Not at all,"
         elif Q33 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=Only a little,"
         elif Q33 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=Sometimes,"
         elif Q33 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=Often,"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=Often,"
         elif Q33 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q33:Like I have good choices.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q33:Curiosity.=No Answer,"
 
         if Q34 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Not at all,"
         elif Q34 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=Only a little,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Only a little,"
         elif Q34 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=Sometimes,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Sometimes,"
         elif Q34 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=Often,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=Often,"
         elif Q34 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=A lot of the time (almost always),"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q34:Interested in learning new things.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q34:Hurt by others.=No Answer,"
 
         if Q35 == "Not at all": 
-            Q_isolation = Q_isolation + 0
+            Q_social_support_security = Q_social_support_security + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q35:Understood.=Not at all,"
         elif Q35 == "Only a little":
-            Q_isolation = Q_isolation + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=Only a little,"
+            Q_social_support_security = Q_social_support_security + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q35:Understood.=Only a little,"
         elif Q35 == "Sometimes":
-            Q_isolation = Q_isolation + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=Sometimes,"
+            Q_social_support_security = Q_social_support_security + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q35:Understood.=Sometimes,"
         elif Q35 == "Often":
-            Q_isolation = Q_isolation + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=Often,"
+            Q_social_support_security = Q_social_support_security + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q35:Understood.=Often,"
         elif Q35 == "A lot of the time (almost always)":
-            Q_isolation = Q_isolation + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=A lot of the time (almost always),"
+            Q_social_support_security = Q_social_support_security + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q35:Understood.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q35:Hurt by other people.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q35:Understood.=No Answer,"
 
         if Q36 == "Not at all": 
-            Q_isolation = Q_isolation + 0
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_social_support_security = Q_social_support_security + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q36:Loved.=Not at all,"
         elif Q36 == "Only a little":
-            Q_isolation = Q_isolation + 1
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=Only a little,"
+            Q_social_support_security = Q_social_support_security + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q36:Loved.=Only a little,"
         elif Q36 == "Sometimes":
-            Q_isolation = Q_isolation + 2
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=Sometimes,"
+            Q_social_support_security = Q_social_support_security + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q36:Loved.=Sometimes,"
         elif Q36 == "Often":
-            Q_isolation = Q_isolation + 3
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=Often,"
+            Q_social_support_security = Q_social_support_security + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q36:Loved.=Often,"
         elif Q36 == "A lot of the time (almost always)":
-            Q_isolation = Q_isolation + 4
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=A lot of the time (almost always),"
+            Q_social_support_security = Q_social_support_security + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q36:Loved.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q36:Picked on or made fun of.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q36:Loved.=No Answer,"
 
         if Q37 == "Not at all": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q37:Understood.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=Not at all,"
         elif Q37 == "Only a little":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q37:Understood.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=Only a little,"
         elif Q37 == "Sometimes":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q37:Understood.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=Sometimes,"
         elif Q37 == "Often":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q37:Understood.=Often,"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=Often,"
         elif Q37 == "A lot of the time (almost always)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q37:Understood.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q37:Understood.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q37:Happy.=No Answer,"
 
         if Q38 == "Not at all": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q38:Loved.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=Not at all,"
         elif Q38 == "Only a little":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q38:Loved.=Only a little,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=Only a little,"
         elif Q38 == "Sometimes":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q38:Loved.=Sometimes,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=Sometimes,"
         elif Q38 == "Often":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q38:Loved.=Often,"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=Often,"
         elif Q38 == "A lot of the time (almost always)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q38:Loved.=A lot of the time (almost always),"
+            Q_social_isolation_rejection = Q_social_isolation_rejection + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q38:Loved.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q38:Left-out.=No Answer,"
 
         if Q39 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q39:Happy.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=Not at all,"
         elif Q39 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q39:Happy.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=Only a little,"
         elif Q39 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q39:Happy.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=Sometimes,"
         elif Q39 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q39:Happy.=Often,"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=Often,"
         elif Q39 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q39:Happy.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q39:Happy.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q39:Proud.=No Answer,"
 
         if Q40 == "Not at all": 
-            Q_isolation = Q_isolation + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q40:Left out.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Not at all,"
         elif Q40 == "Only a little":
-            Q_isolation = Q_isolation + 1
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q40:Left out.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Only a little,"
         elif Q40 == "Sometimes":
-            Q_isolation = Q_isolation + 2
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q40:Left out.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Sometimes,"
         elif Q40 == "Often":
-            Q_isolation = Q_isolation + 3
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q40:Left out.=Often,"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=Often,"
         elif Q40 == "A lot of the time (almost always)":
-            Q_isolation = Q_isolation + 4
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q40:Left out.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q40:Left out.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q40:Wishing you were not here.=No Answer,"
 
         if Q41 == "Not at all": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Not at all,"
         elif Q41 == "Only a little":
-            Q_happy_feelings = Q_happy_feelings + 1
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Only a little,"
         elif Q41 == "Sometimes":
-            Q_happy_feelings = Q_happy_feelings + 2
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Sometimes,"
         elif Q41 == "Often":
-            Q_happy_feelings = Q_happy_feelings + 3
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=Often,"
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=Often,"
         elif Q41 == "A lot of the time (almost always)":
-            Q_happy_feelings = Q_happy_feelings + 4
+            Q_positive_well_being_resilience = Q_positive_well_being_resilience + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q41:Proud of myself.=No Answer,"    
+            Q_rawdata = Q_rawdata + "Q41:Believing life will get better.=No Answer,"    
 
         if Q42 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Not at all,"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=Not at all,"
         elif Q42 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Only a little,"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=Only a little,"
         elif Q42 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=Sometimes,"
         elif Q42 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=Often,"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=Often,"
         elif Q42 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
+            Q_internal_psychological_somatic_distress = Q_internal_psychological_somatic_distress + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=A lot of the time (almost always),"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=A lot of the time (almost always),"
         else:
-            Q_rawdata = Q_rawdata + "Q42:Wishing I was someone else.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q42:Feeling the discomfort of stress in your body.=No Answer,"
 
-        if Q43 == "Not at all": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Not at all,"
-        elif Q43 == "Only a little":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Only a little,"
-        elif Q43 == "Sometimes":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Sometimes,"
-        elif Q43 == "Often":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=Often,"
-        elif Q43 == "A lot of the time (almost always)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=A lot of the time (almost always),"
-        else:
-            Q_rawdata = Q_rawdata + "Q43:Wishing I wasn’t here anymore.=No Answer,"
-
-        Q_total = Q_connection + Q_inclusion + Q_happy_feelings - Q_isolation - Q_bad_feelings
-
+        Q_total = Q_positive_well_being_resilience + Q_social_support_security - Q_internal_psychological_somatic_distress - Q_social_isolation_rejection
+        
         if Q_total >= 20:
             st.write(f"#### Total Score: {Q_total}")
             Q_response = "Thriving, strong emotional reserves and high resilience."
