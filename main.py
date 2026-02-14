@@ -6,7 +6,8 @@
 #
 # 2/13/2026: Modified NEIL child version description, added two
 # questions at the end, and adjusted language on multiple question
-# numbers (Glenn email, 2/12/2026).
+# numbers (Glenn email, 2/12/2026). Added NEIL adult version
+# (Glenn email, 2/12/2026).
 #
 # 1/26/2026: Modified page to accommodate the loneliness and NEIL
 # child version surveys.
@@ -114,10 +115,11 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Make a selection:",
-        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)"], index=None,
+        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
-            "A questionnaire that helps measure how a child has been feeling and connecting with others over the past two weeks.\n",
+            "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
+            "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
         ],
     )
     
@@ -140,6 +142,7 @@ if st.session_state.get('authentication_status'):
 
             submit1 = st.form_submit_button("Submit")
             submit2 = False
+            submit3 = False
         
     elif tool == "Social Connection & Isolation Questionnaire" and language == "Spanish":
         with st.form("yvform"):
@@ -159,8 +162,9 @@ if st.session_state.get('authentication_status'):
 
             submit1 = st.form_submit_button("Enviar")
             submit2 = False
+            submit3 = False
 
-    # Create NEIL survey form.
+    # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
         with st.form("neilform"):
             st.write("Think about how you have felt over the **last week**. Look at each sentence and select the answer that shows how often you felt that way. *If you don’t understand a word, you can skip it.*")
@@ -210,10 +214,64 @@ if st.session_state.get('authentication_status'):
 
             submit2 = st.form_submit_button("Submit")
             submit1 = False
+            submit3 = False
+    
+    # Create NEIL Adult Version survey form.
+    elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
+        with st.form("neilform"):
+            st.write("Think about how you have felt over the **last week**. Look at each sentence and select the answer that shows how often you felt that way. *If you don’t understand a word, you can skip it.*")
+            Q1 = st.selectbox("#1. Other people included me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q2 = st.selectbox("#2. Others want me to be with them.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q3 = st.selectbox("#3. Surprised.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q4 = st.selectbox("#4. Thankful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q5 = st.selectbox("#5. Scared.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q6 = st.selectbox("#6. Looking forward to something.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q7 = st.selectbox("#7. Mad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q8 = st.selectbox("#8. Safe.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q9 = st.selectbox("#9. Calm and peaceful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q10 = st.selectbox("#10. Worried.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q11 = st.selectbox("#11. Glad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q12 = st.selectbox("#12. Happy with how things are.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q13 = st.selectbox("#13. Very excited.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q14 = st.selectbox("#14. I believe many people do not like me.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q15 = st.selectbox("#15. Uncomfortable or nervous.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q16 = st.selectbox("#16. Really disliking other people.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q17 = st.selectbox("#17. Friendly.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q18 = st.selectbox("#18. Rested and full of energy.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q19 = st.selectbox("#19. Relaxed.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q20 = st.selectbox("#20. Crying a lot.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q21 = st.selectbox("#21. Tired.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q22 = st.selectbox("#22. Lonely.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q23 = st.selectbox("#23. Laughing with others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q24 = st.selectbox("#24. Like I wanted to cry.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q25 = st.selectbox("#25. Hopeful.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q26 = st.selectbox("#26. Liked.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q27 = st.selectbox("#27. Sad.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q28 = st.selectbox("#28. Jealous (wanting what others have).", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q29 = st.selectbox("#29. In a bad mood.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q30 = st.selectbox("#30. Others are better than you.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q31 = st.selectbox("#31. Part of a group.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q32 = st.selectbox("#32. Like I like myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q33 = st.selectbox("#33. Like I have good choices.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q34 = st.selectbox("#34. Interested in learning new things.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q35 = st.selectbox("#35. Hurt by other people.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q36 = st.selectbox("#36. Picked on or made fun of.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q37 = st.selectbox("#37. Understood.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q38 = st.selectbox("#38. Loved.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q39 = st.selectbox("#39. Happy.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q40 = st.selectbox("#40. Left out.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q41 = st.selectbox("#41. Proud of myself.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q42 = st.selectbox("#42. Wishing I was someone else.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q43 = st.selectbox("#43. Wishing I wasn’t here anymore.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+
+            submit3 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
     
     else:
         submit1 = False
         submit2 = False
+        submit3 = False
     
     if submit1 and language == "English":
         Q_total = 0
