@@ -118,7 +118,7 @@ if st.session_state.get('authentication_status'):
     age = row1[0].slider("Age", 7, 99)
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
-    tool = st.radio("Make a selection:",
+    tool = st.radio("Select a tool:",
         ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Future Inferred Narration of Events (FINE)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
