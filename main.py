@@ -4343,45 +4343,54 @@ if st.session_state.get('authentication_status'):
 
     elif submit4:
         QUERY = f"""
-            User context:
+            # User context:
                 - Assessment: Future Inferred Narration of Events (FINE)
                 - Raw scenario-writing responses: {Q_rawdata}
                 - Preferred language: {language}
             
-            Task:
-            Analyze the user’s scenario-writing responses to identify narrative themes that may reflect how they currently imagine their future. Focus specifically on detecting recurring or salient patterns such as:
-            - perceived role (e.g., hero, victim, protector, observer)
-            - anticipated interpersonal dynamics (e.g., conflict, cooperation, avoidance)
-            - emotional tone toward the future (e.g., hope, fear, despair, optimism)
-            - expectations of threat, safety, challenge, or opportunity
-            - agency level (e.g., empowered, passive, uncertain)
-            - temporal orientation (e.g., rapid change, stagnation, unexpected shifts)
-            - dominant metaphors, symbols, or imagery indicating mindset or worldview
+            # Task
+            Analyze the user’s scenario‑writing responses to identify narrative patterns that may reflect how they currently imagine their future. Focus on descriptive, neutral interpretation of what appears in the text—not on inferring clinical meaning.
+            Your analysis should examine content, structure, and tone, specifically including:
+
+            # Narrative Content & Roles
+            + The user’s perceived role (e.g., hero, victim, helper, observer).
+            + Any indication of revenge motivation or desire for payback.
+            + Whether the narrative presents the user as having control, lacking control, or alternating between the two.
+            + The balance of positive vs. negative anticipated outcomes.
+            + Expressions of hope, fear, uncertainty, despair, or optimism.
+            + Whether the narrative emphasizes threat, safety, challenge, opportunity, or avoidance.
+
+            # Emotional & Thematic Tone
+            + Overall emotional atmosphere (e.g., dark, bleak, neutral, hopeful, mixed).
+            + The relative balance of “dark versus hopeful” elements.
+            + Depictions of interpersonal dynamics such as conflict, cooperation, disconnection, or alliance.
+
+            Linguistic & Structural Features
+            + Grammar clarity, complexity, and approximate written grade‑level.
+            + Indications of coherence, organization, or fragmentation in the narrative.
+            + Dominant metaphors, symbols, or imagery that may reflect worldview or mindset.
+            + Any unusual narrative elements, phrasing, or structure—described neutrally and without implying pathology.
+            + Indications of perceived rapid change, stagnation, uncertainty, or unexpected shifts in the future.
+
+            # Requirements
+            + Base all interpretations only on the text provided by the user.
+            + Do not diagnose, imply mental health conditions, or make clinical judgments.
+            + Use observational, non‑directive language (e.g., “The narrative describes…”, “This may suggest…”).
+            + Avoid speculation beyond what is explicitly present.
+            + Use the user’s preferred language for the entire output.
+
+            # Output Structure
+            1. Summary of Key Themes: A concise overview of the major narrative, emotional, and structural patterns observed.
+            2. Interpretive Insights: A neutral explanation of what these patterns may suggest about how the user is imagining their future—without implying certainty, evaluation, or clinical interpretation.
+            3. Linguistic Observations: Brief notes on grammar, grade‑level, clarity, and any unusual or striking structural features.
+            4. Reflective Prompt (Optional): Provide one gentle, non‑directive question the user may consider (e.g., “What part of this imagined future feels most meaningful for you right now?”).
             
-            Requirements:
-            - Base all interpretations **only** on the user’s provided responses.
-            - Do **not** infer clinical meaning, diagnose, or make psychological claims.
-            - Describe patterns neutrally and observationally (e.g., “The narrative emphasizes personal responsibility and resilience,” NOT “You show high resilience.”).
-            - Write clearly, concisely, and in the user’s preferred language.
-            - Frame interpretations as possibilities, not facts (e.g., “This may suggest…”, “This could reflect…”).
-            - Avoid speculation beyond what is explicitly present in the text.
-            
-            Output Structure:
-            1. **Summary of Key Themes**  
-               Provide a short overview of the major narrative patterns you observed.
-            
-            2. **Interpretive Insights**  
-               Explain what these patterns *may* indicate about how the user currently imagines or anticipates their future, using careful and non‑clinical language.
-            
-            3. **Reflective Prompt (Optional)**  
-               Offer one gentle, non‑directive question the user could consider if they choose (e.g., “What part of this future feels most important for you to understand more deeply?”).
-            
-            Edge Cases:
-            - If the responses are too short, vague, contradictory, or incomplete to extract patterns, say so clearly and briefly.
-            
+            # Edge Cases
+            If the responses are too brief, vague, contradictory, or minimal to derive patterns, state this clearly and summarize whatever can be safely observed.            
+
             Now produce the thematic analysis.
             """
-
+        
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
