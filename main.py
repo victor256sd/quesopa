@@ -798,13 +798,13 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q12:Paso la mayor parte de mi tiempo en línea.=No Contesta,"
         
         if Q_total >= 0 and Q_total <= 15:
-            st.write(f"#### Total Score: {Q_total} (Alto aislamiento social)")
+            st.write(f"#### Puntos Totales: {Q_total} (Alto aislamiento social)")
             Q_response = "Alta soledad social."
         elif Q_total >= 16 and Q_total <= 31:
-            st.write(f"#### Total Score: {Q_total} (Conexión social mixta/moderada)")
+            st.write(f"#### Puntos Totales: {Q_total} (Conexión social mixta/moderada)")
             Q_response = "Conexión mixta/moderada."
         elif Q_total >= 32 and Q_total <= 48:
-            st.write(f"#### Total Score: {Q_total} (Conexión social fuerte)")
+            st.write(f"#### Puntos Totales: {Q_total} (Conexión social fuerte)")
             Q_response = "Conexión social fuerte."
 
         st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
@@ -1874,7 +1874,7 @@ if st.session_state.get('authentication_status'):
 
         if (Q36 == "Often" or Q36 == "A lot of the time (almost always)") and Q_connection >= 14:
             st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate \"toxic\" friendships or bullying within a close group.")
-        if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == 0:
+        if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == "Not at all":
             st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is \"Not at all\". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
         if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
             st.write(f"Skewed Responding - the test taker answered \"Not at all\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
@@ -2932,30 +2932,30 @@ if st.session_state.get('authentication_status'):
         Q_total = Q_connection + Q_inclusion + Q_happy_feelings - Q_isolation - Q_bad_feelings
 
         if Q_total >= 20:
-            st.write(f"#### Total Score: {Q_total}")
-            Q_response = "Thriving, strong emotional reserves and high resilience."
+            st.write(f"#### Puntos Totales: {Q_total}")
+            Q_response = "Prosperando, con fuertes reservas emocionales y alta resiliencia."
         elif Q_total >= 0 and Q_total <= 19:
-            st.write(f"#### Total Score: {Q_total}")
-            Q_response = "Stable, typical emotional ups and downs."
+            st.write(f"#### Puntos Totales: {Q_total}")
+            Q_response = "Estables, altibajos emocionales típicos."
         elif Q_total >= -10 and Q_total <= -1:
-            st.write(f"#### Total Score: {Q_total}")
-            Q_response = "At Risk, the child is experiencing more distress than joy."
+            st.write(f"#### Puntos Totales: {Q_total}")
+            Q_response = "En riesgo, el niño está experimentando más angustia que alegría."
         elif Q_total <= -11:
-            st.write(f"#### Total Score: {Q_total}")
-            Q_response = "High Distress, may require immediate clinical or school intervention."
+            st.write(f"#### Puntos Totales: {Q_total}")
+            Q_response = "Alto nivel de angustia, puede requerir intervención clínica o escolar inmediata."
 
-        st.write(f"#### Score Interpretation: {Q_response}")
+        st.write(f"#### Interpretación de la puntuación: {Q_response}")
 
-        if (Q36 == "Often" or Q36 == "A lot of the time (almost always)") and Q_connection >= 14:
-            st.write(f"The Victimization Gap - Question 36 is high ({Q36}) and the Connection Score ({Q_connection}) is also high. *Recommendation*: Investigate \"toxic\" friendships or bullying within a close group.")
-        if (Q21 == "Often" or Q21 == "A lot of the time (almost always)") and Q18 == 0:
-            st.write(f"The Exhaustion Marker - Question 21 (Tired) is high ({Q21}), but Question 18 (Rested) is \"Not at all\". *Recommendation*: Consider screening for sleep issues or high-level environmental stress.")
+        if (Q36 == "Seguido" or Q36 == "Mucho del tiempo (casi siempre)") and Q_connection >= 14:
+            st.write(f"La brecha de victimización - La pregunta 36 es alta ({Q36}) y la Puntuación de Conexión ({Q_connection}) también es alta. *Recomendación*: Investigar las amistades \"tóxicas\" o el acoso dentro de un grupo cercano.")
+        if (Q21 == "Seguido" or Q21 == "Mucho del tiempo (casi siempre)") and Q18 == "Para nada":
+            st.write(f"El marcador de agotamiento - Pregunta 21 (Cansado) es alto ({Q21}), pero la Pregunta 18 (Descansado) es \"Para nada\". *Recomendación*: Considerar la evaluación de problemas de sueño o estrés ambiental elevado.")
         if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
-            st.write(f"Skewed Responding - the test taker answered \"Not at all\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
+            st.write(f"Respuesta Sesgada - el evaluado respondió \"Para nada\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
         elif (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 196:
-            st.write(f"Skewed Responding - the test taker answered \"A lot of the time (almost always)\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
+            st.write(f"Respuesta Sesgada - el evaluado respondió \"Mucho del tiempo (casi siempre)\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
         
-        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
         
     if submit3 and language == "English":
