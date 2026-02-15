@@ -334,21 +334,53 @@ if st.session_state.get('authentication_status'):
             st.write("The sentences below describe events that may happen in your future. Respond to each future event as if you are the main character. Text what you would send describing what happened.")
 
             # Multi-line text input
-            Q1 = st.text_area("Enter your text:", placeholder="Write your thoughts here...", height=150)
-            st.write("Something you always wanted happens.")
-            st.text_area(label="", value=user_text, height=150, disabled=True)
+            Q1 = st.text_area("Something you always wanted happens.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q1, height=150, disabled=True)
 
+            Q2 = st.text_area("A valued possession is damaged.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q2, height=150, disabled=True)
 
+            Q3 = st.text_area("You have an argument/disagreement with someone.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q3, height=150, disabled=True)
 
-            # Q1 = st.selectbox("#1. Included by others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+            Q4 = st.text_area("You go on vacation.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q4, height=150, disabled=True)
 
-
-
+            Q5 = st.text_area("You break something.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q5, height=150, disabled=True)
             
+            Q6 = st.text_area("You are successful.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q6, height=150, disabled=True)
+
+            Q7 = st.text_area("An important relationship changes.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q7, height=150, disabled=True)
+            
+            Q8 = st.text_area("You move.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q8, height=150, disabled=True)
+
+            Q9 = st.text_area("You forgive.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q9, height=150, disabled=True)
+
+            Q10 = st.text_area("You go to court.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q10, height=150, disabled=True)
+
+            Q11 = st.text_area("You go to the doctor.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q11, height=150, disabled=True)
+
+            Q12 = st.text_area("You find something you have been looking for.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q12, height=150, disabled=True)
+
+            Q13 = st.text_area("You are forgiven and feel understood.", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q13, height=150, disabled=True)
+
+            Q14 = st.text_area("How do you see the future?", placeholder="Write your thoughts here...", height=150)
+            st.text_area(label="", value=Q14, height=150, disabled=True)
+
             submit4 = st.form_submit_button("Submit")
             submit1 = False
             submit2 = False
             submit3 = False    
+
     else:
         submit1 = False
         submit2 = False
@@ -4117,7 +4149,28 @@ if st.session_state.get('authentication_status'):
         
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
+    if submit4 and language == "English":
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        Q_rawdata = Q_rawdata + "Q1: Something you always wanted happens.=" + Q1 + ","
+        Q_rawdata = Q_rawdata + "Q2: A valued possession is damaged.=" + Q2 + ","
+        Q_rawdata = Q_rawdata + "Q3: You have an argument/disagreement with someone.=" + Q3 + ","
+        Q_rawdata = Q_rawdata + "Q4: You go on vacation.=" + Q4 + ","
+        Q_rawdata = Q_rawdata + "Q5: You break something.=" + Q5 + ","
+        Q_rawdata = Q_rawdata + "Q6: You are successful.=" + Q6 + ","
+        Q_rawdata = Q_rawdata + "Q7: An important relationship changes.=" + Q7 + ","
+        Q_rawdata = Q_rawdata + "Q8: You move.=" + Q8 + ","
+        Q_rawdata = Q_rawdata + "Q9: You forgive.=" + Q9 + ","
+        Q_rawdata = Q_rawdata + "Q10: You go to court.=" + Q10 + ","
+        Q_rawdata = Q_rawdata + "Q11: You go to the doctor.=" + Q11 + ","
+        Q_rawdata = Q_rawdata + "Q12: You find something you have been looking for.=" + Q12 + ","
+        Q_rawdata = Q_rawdata + "Q13: You are forgiven and feel understood.=" + Q13 + ","
+        Q_rawdata = Q_rawdata + "Q14: How do you see the future?=" + Q14
     
+        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+
     # If submit button is clicked, query the aitam library.            
     if submit1:
         # If form is submitted without a query, stop.
@@ -4316,6 +4369,79 @@ if st.session_state.get('authentication_status'):
             
         st.markdown(cleaned_response)
 
+    elif submit4:
+        QUERY = f"""
+            User context:
+                - Assessment: Future Inferred Narration of Events (FINE)
+                - Raw scenario-writing responses: {Q_rawdata}
+                - Preferred language: {language}
+            
+            Task:
+            Analyze the user’s scenario-writing responses to identify narrative themes that may reflect how they currently imagine their future. Focus specifically on detecting recurring or salient patterns such as:
+            - perceived role (e.g., hero, victim, protector, observer)
+            - anticipated interpersonal dynamics (e.g., conflict, cooperation, avoidance)
+            - emotional tone toward the future (e.g., hope, fear, despair, optimism)
+            - expectations of threat, safety, challenge, or opportunity
+            - agency level (e.g., empowered, passive, uncertain)
+            - temporal orientation (e.g., rapid change, stagnation, unexpected shifts)
+            - dominant metaphors, symbols, or imagery indicating mindset or worldview
+            
+            Requirements:
+            - Base all interpretations **only** on the user’s provided responses.
+            - Do **not** infer clinical meaning, diagnose, or make psychological claims.
+            - Describe patterns neutrally and observationally (e.g., “The narrative emphasizes personal responsibility and resilience,” NOT “You show high resilience.”).
+            - Write clearly, concisely, and in the user’s preferred language.
+            - Frame interpretations as possibilities, not facts (e.g., “This may suggest…”, “This could reflect…”).
+            - Avoid speculation beyond what is explicitly present in the text.
+            
+            Output Structure:
+            1. **Summary of Key Themes**  
+               Provide a short overview of the major narrative patterns you observed.
+            
+            2. **Interpretive Insights**  
+               Explain what these patterns *may* indicate about how the user currently imagines or anticipates their future, using careful and non‑clinical language.
+            
+            3. **Reflective Prompt (Optional)**  
+               Offer one gentle, non‑directive question the user could consider if they choose (e.g., “What part of this future feels most important for you to understand more deeply?”).
+            
+            Edge Cases:
+            - If the responses are too short, vague, contradictory, or incomplete to extract patterns, say so clearly and briefly.
+            
+            Now produce the thematic analysis.
+            """
+
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = INSTRUCTION,
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
+        st.markdown(cleaned_response)
+        
 elif st.session_state.get('authentication_status') is False:
     st.error('Username/password is incorrect')
 
