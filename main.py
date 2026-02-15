@@ -333,48 +333,33 @@ if st.session_state.get('authentication_status'):
         with st.form("fineform"):
             st.write("The sentences below describe events that may happen in your future. Respond to each future event as if you are the main character. Text what you would send describing what happened.")
 
-            # Multi-line text input
             Q1 = st.text_area("Something you always wanted happens.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q1, height=150, disabled=True)
 
             Q2 = st.text_area("A valued possession is damaged.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q2, height=150, disabled=True)
 
             Q3 = st.text_area("You have an argument/disagreement with someone.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q3, height=150, disabled=True)
 
             Q4 = st.text_area("You go on vacation.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q4, height=150, disabled=True)
 
             Q5 = st.text_area("You break something.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q5, height=150, disabled=True)
             
             Q6 = st.text_area("You are successful.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q6, height=150, disabled=True)
 
             Q7 = st.text_area("An important relationship changes.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q7, height=150, disabled=True)
             
             Q8 = st.text_area("You move.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q8, height=150, disabled=True)
 
             Q9 = st.text_area("You forgive.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q9, height=150, disabled=True)
 
             Q10 = st.text_area("You go to court.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q10, height=150, disabled=True)
 
             Q11 = st.text_area("You go to the doctor.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q11, height=150, disabled=True)
 
             Q12 = st.text_area("You find something you have been looking for.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q12, height=150, disabled=True)
 
             Q13 = st.text_area("You are forgiven and feel understood.", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q13, height=150, disabled=True)
 
             Q14 = st.text_area("How do you see the future?", placeholder="Write your thoughts here...", height=150)
-            st.text_area(label="", value=Q14, height=150, disabled=True)
 
             submit4 = st.form_submit_button("Submit")
             submit1 = False
