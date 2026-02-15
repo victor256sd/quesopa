@@ -4,6 +4,10 @@
 #
 # Changelog:
 #
+# 2/15/2026: Started programming Future Inferred Narration of 
+# Events (FINE) tool based on meeting with Glenn and materials 
+# provided on 2/13/2026.
+#
 # 2/13/2026, 2/14/2026: Modified NEIL child version description, 
 # added two questions at the end, and adjusted language on multiple 
 # question numbers (Glenn email, 2/12/2026). Added NEIL adult 
@@ -115,12 +119,12 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Make a selection:",
-        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)"], index=None,
+        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Future Inferred Narration of Events (FINE)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
             "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
-        ],
+            "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        ],
     )
     
     # Create loneliness survey form.
@@ -143,6 +147,7 @@ if st.session_state.get('authentication_status'):
             submit1 = st.form_submit_button("Submit")
             submit2 = False
             submit3 = False
+            submit4 = False
         
     elif tool == "Social Connection & Isolation Questionnaire" and language == "Spanish":
         with st.form("yvform"):
@@ -163,6 +168,7 @@ if st.session_state.get('authentication_status'):
             submit1 = st.form_submit_button("Enviar")
             submit2 = False
             submit3 = False
+            submit4 = False
 
     # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
@@ -215,6 +221,7 @@ if st.session_state.get('authentication_status'):
             submit2 = st.form_submit_button("Submit")
             submit1 = False
             submit3 = False
+            submit4 = False
     
     # Create NEIL Child Version survey form in Spanish.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "Spanish":
@@ -267,6 +274,7 @@ if st.session_state.get('authentication_status'):
             submit2 = st.form_submit_button("Submit")
             submit1 = False
             submit3 = False
+            submit4 = False
 
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
@@ -318,11 +326,34 @@ if st.session_state.get('authentication_status'):
             submit3 = st.form_submit_button("Submit")
             submit1 = False
             submit2 = False
+            submit4 = False
     
+    # Create FINE Version survey form.
+    elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
+        with st.form("fineform"):
+            st.write("The sentences below describe events that may happen in your future. Respond to each future event as if you are the main character. Text what you would send describing what happened.")
+
+            # Multi-line text input
+            Q1 = st.text_area("Enter your text:", placeholder="Write your thoughts here...", height=150)
+            st.write("Something you always wanted happens.")
+            st.text_area(label="", value=user_text, height=150, disabled=True)
+
+
+
+            # Q1 = st.selectbox("#1. Included by others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
+
+
+
+            
+            submit4 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False    
     else:
         submit1 = False
         submit2 = False
         submit3 = False
+        submit4 = False
     
     if submit1 and language == "English":
         Q_total = 0
