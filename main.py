@@ -121,7 +121,7 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Select a tool:",
-        ["Social Connection & Isolation Questionnaire", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Future Inferred Narration of Events (FINE)"], index=None,
+        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Future Inferred Narration of Events (FINE)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
@@ -130,7 +130,7 @@ if st.session_state.get('authentication_status'):
     )
     
     # Create loneliness survey form.
-    if tool == "Social Connection & Isolation Questionnaire" and language == "English":
+    if tool == "Questions About People You Know" and language == "English":
         with st.form("yvform"):
             st.write("Please answer each question based on how you usually feel. Choose one response.")
             Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -151,7 +151,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
         
-    elif tool == "Social Connection & Isolation Questionnaire" and language == "Spanish":
+    elif tool == "Questions About People You Know" and language == "Spanish":
         with st.form("yvform"):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
             Q1 = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
