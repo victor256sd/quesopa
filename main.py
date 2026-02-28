@@ -141,7 +141,7 @@ if st.session_state.get('authentication_status'):
             Q4 = st.selectbox("#4. How often do you feel separate from others, even when you are with them?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q6 = st.selectbox("#6. It is not easy for me to make friends.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
-            Q7 = st.selectbox("#7. How often do you wait a long time for others to contact you or reply to your messages?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            Q7 = st.selectbox("#7. You wait a long time for others to respond to you.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q8 = st.selectbox("#8. Is it easier for you to play games or watch events by yourself?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q9 = st.selectbox("#9. How often do you feel left out when others get together without inviting you?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q10 = st.selectbox("#10. How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -162,7 +162,7 @@ if st.session_state.get('authentication_status'):
             Q4 = st.selectbox("#4. ¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q5 = st.selectbox("#5. Tengo a alguien con quien comer cuando quiero compartir una comida.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q6 = st.selectbox("#6. Es difícil hacer amigos.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
-            Q7 = st.selectbox("#7. ¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
+            Q7 = st.selectbox("#7. Esperas mucho tiempo para que otras personas te respondan.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q8 = st.selectbox("#8. ¿Te resulta más fácil jugar o ver eventos tú solo(a)?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q9 = st.selectbox("#9. ¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q10 = st.selectbox("#10. ¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
@@ -482,21 +482,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q7 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Never,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Never,"
         elif Q7 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Rarely,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Rarely,"
         elif Q7 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Sometimes,"
         elif Q7 == "Often":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Often,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Often,"
         elif Q7 == "Always":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=Always,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q7:How often do you wait a long time for others to contact you or reply to your messages?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=No Answer,"
 
         # Scored in reverse.
         if Q8 == "Never": 
@@ -725,21 +725,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q7 == "Nunca": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=Nunca,"
         elif Q7 == "Rara vez":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=Rara vez,"
         elif Q7 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=A veces,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=A veces,"
         elif Q7 == "A menudo":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=A menudo,"
         elif Q7 == "Siempre":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q7:¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q7:Esperas mucho tiempo para que otras personas te respondan.=No Contesta,"
 
         # Scored in reverse.
         if Q8 == "Nunca": 
