@@ -134,7 +134,8 @@ if st.session_state.get('authentication_status'):
         with st.form("yvform"):
             st.write("Please answer each question based on how you usually feel. Choose one response.")
             Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
-            Q2 = st.selectbox("#2. Do you feel that people understand you, encourage you, and know you well?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            Q2 = st.selectbox("#2. Do you feel that people like you and help you?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            # Q2 = st.selectbox("#2. Do you feel that people understand you, encourage you, and know you well?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q3 = st.selectbox("#3. When you want to talk with someone or do something together, is it easy to connect?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q4 = st.selectbox("#4. How often do you feel separate from others, even when you are with them?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -155,7 +156,7 @@ if st.session_state.get('authentication_status'):
         with st.form("yvform"):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
             Q1 = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
-            Q2 = st.selectbox("#2. ¿Sientes que las personas te entienden, te apoyan y te conocen bien?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
+            Q2 = st.selectbox("#2. ¿Sientes que las personas te quieren y te ayudan?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q3 = st.selectbox("#3. Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q4 = st.selectbox("#4. ¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q5 = st.selectbox("#5. Tengo a alguien con quien comer cuando quiero compartir una comida.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
@@ -387,21 +388,21 @@ if st.session_state.get('authentication_status'):
         
         if Q2 == "Never": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Never,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=Never,"
         elif Q2 == "Rarely":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Rarely,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=Rarely,"
         elif Q2 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=Sometimes,"
         elif Q2 == "Often":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Often,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=Often,"
         elif Q2 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=Always,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q2:Do you feel that people understand you, encourage you, and know you well?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q2:Do you feel that people like you and help you?=No Answer,"
 
         if Q3 == "Never": 
             Q_total = Q_total + 0
@@ -630,21 +631,21 @@ if st.session_state.get('authentication_status'):
         
         if Q2 == "Nunca": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=Nunca,"
         elif Q2 == "Rara vez":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=Rara vez,"
         elif Q2 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=A veces,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=A veces,"
         elif Q2 == "A menudo":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=A menudo,"
         elif Q2 == "Siempre":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te entienden, te apoyan y te conocen bien?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q2:¿Sientes que las personas te quieren y te ayudan?=No Contesta,"
 
         if Q3 == "Nunca": 
             Q_total = Q_total + 0
