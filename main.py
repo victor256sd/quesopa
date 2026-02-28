@@ -142,7 +142,7 @@ if st.session_state.get('authentication_status'):
             Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q6 = st.selectbox("#6. It is not easy for me to make friends.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q7 = st.selectbox("#7. You wait a long time for others to respond to you.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
-            Q8 = st.selectbox("#8. Is it easier for you to play games or watch events by yourself?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            Q8 = st.selectbox("#8. Is it easier for you to play games or do other things by yourself?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q9 = st.selectbox("#9. How often do you feel left out when others get together without inviting you?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q10 = st.selectbox("#10. How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q11 = st.selectbox("#11. Most of my friends are online and not people I see in person.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -163,7 +163,7 @@ if st.session_state.get('authentication_status'):
             Q5 = st.selectbox("#5. Tengo a alguien con quien comer cuando quiero compartir una comida.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q6 = st.selectbox("#6. Es difícil hacer amigos.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q7 = st.selectbox("#7. Esperas mucho tiempo para que otras personas te respondan.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
-            Q8 = st.selectbox("#8. ¿Te resulta más fácil jugar o ver eventos tú solo(a)?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
+            Q8 = st.selectbox("#8. ¿Es más fácil para jugar o hacer otras cosas tú solo(a)?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q9 = st.selectbox("#9. ¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q10 = st.selectbox("#10. ¿Con qué frecuencia te sientes herido(a) porque no tienes a alguien con quien reír o hablar sobre tus pensamientos y sentimientos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q11 = st.selectbox("#11. La mayoría de mis amigos están en línea y no son personas que veo en persona.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
@@ -501,21 +501,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q8 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Never,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Never,"
         elif Q8 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Rarely,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Rarely,"
         elif Q8 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Sometimes,"
         elif Q8 == "Often":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Often,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Often,"
         elif Q8 == "Always":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=Always,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or watch events by yourself?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=No Answer,"
 
         # Scored in reverse.
         if Q9 == "Never": 
@@ -744,21 +744,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q8 == "Nunca": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=Nunca,"
         elif Q8 == "Rara vez":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=Rara vez,"
         elif Q8 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=A veces,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=A veces,"
         elif Q8 == "A menudo":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=A menudo,"
         elif Q8 == "Siempre":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q8:¿Te resulta más fácil jugar o ver eventos tú solo(a)?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q8:¿Es más fácil para jugar o hacer otras cosas tú solo(a)?=No Contesta,"
 
         # Scored in reverse.
         if Q9 == "Nunca": 
