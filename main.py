@@ -1919,6 +1919,9 @@ if st.session_state.get('authentication_status'):
             st.write(f"Skewed Responding - the test taker answered \"Not at all\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
         elif (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 188:
             st.write(f"Skewed Responding - the test taker answered \"A lot of the time (almost always)\" for every single item. The results may be invalid due to \"all-or-nothing\" thinking or a lack of engagement with the questions.")
+
+        Q_raw_score_test = (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings)
+        st.write(f"#### Raw Score Check: {Q_raw_score_test}")
         
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
