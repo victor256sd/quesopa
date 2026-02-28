@@ -101,7 +101,7 @@ if st.session_state.get('authentication_status'):
     st.header(":hibiscus: Qué Sopa AI")
     st.markdown("###### A Starting Point for Understanding Loneliness, Belonging, and Future Outlook")
     # st.markdown("###### Your starting point for educator ethics")
-    st.markdown("*This platform brings together a suite of science‑informed self‑report tools designed to help people understand their emotions, social connections, and future outlook. Each questionnaire is supported by advanced AI to provide personalized, easy‑to‑understand insights, without diagnosing or replacing professional care. Whether exploring social connection, emotional needs, or future scenarios, users receive thoughtful reflections grounded in their own experiences. These tools are designed to assist you in connecting with others, fostering conversations, and seeking resources if you need them.*")
+    st.markdown("*This platform brings together a suite of science‑informed self‑report tools designed to help you understand your emotions, social connections, and future outlook. Each questionnaire is supported by advanced AI to provide personalized, easy‑to‑understand insights, without diagnosing or replacing professional care. Whether exploring social connection, emotional needs, or future scenarios, users receive thoughtful reflections grounded in their own experiences. These tools are designed to assist you in connecting with others, fostering conversations, and seeking resources if you need them.*")
     
     # Field for OpenAI API key.
     openai_api_key = os.environ.get("OPENAI_API_KEY", None)
