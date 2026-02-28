@@ -136,10 +136,11 @@ if st.session_state.get('authentication_status'):
             Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q2 = st.selectbox("#2. Do you feel that people like you and help you?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             # Q2 = st.selectbox("#2. Do you feel that people understand you, encourage you, and know you well?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
-            Q3 = st.selectbox("#3. When you want to talk with someone or do something together, is it easy to connect?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            Q3 = st.selectbox("#3. Is it easy to talk to someone and do something together?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            # Q3 = st.selectbox("#3. When you want to talk with someone or do something together, is it easy to connect?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q4 = st.selectbox("#4. How often do you feel separate from others, even when you are with them?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q5 = st.selectbox("#5. I have someone to eat with when I want to share a meal.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
-            Q6 = st.selectbox("#6. It is not easy for me to make friends?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
+            Q6 = st.selectbox("#6. It is not easy for me to make friends.", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q7 = st.selectbox("#7. How often do you wait a long time for others to contact you or reply to your messages?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q8 = st.selectbox("#8. Is it easier for you to play games or watch events by yourself?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
             Q9 = st.selectbox("#9. How often do you feel left out when others get together without inviting you?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -157,10 +158,10 @@ if st.session_state.get('authentication_status'):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
             Q1 = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q2 = st.selectbox("#2. ¿Sientes que las personas te quieren y te ayudan?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
-            Q3 = st.selectbox("#3. Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
+            Q3 = st.selectbox("#3. ¿Es fácil hablar con alguien y hacer algo juntos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q4 = st.selectbox("#4. ¿Con qué frecuencia te sientes separado(a) de los demás, incluso cuando estás con ellos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q5 = st.selectbox("#5. Tengo a alguien con quien comer cuando quiero compartir una comida.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
-            Q6 = st.selectbox("#6. ¿Te resulta difícil hacer amigos?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
+            Q6 = st.selectbox("#6. Es difícil hacer amigos.", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q7 = st.selectbox("#7. ¿Con qué frecuencia esperas mucho tiempo a que otras personas se comuniquen contigo o respondan a tus mensajes?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q8 = st.selectbox("#8. ¿Te resulta más fácil jugar o ver eventos tú solo(a)?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
             Q9 = st.selectbox("#9. ¿Con qué frecuencia te sientes excluido(a) cuando otras personas se reúnen sin invitarte?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
@@ -406,21 +407,21 @@ if st.session_state.get('authentication_status'):
 
         if Q3 == "Never": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=Never,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=Never,"
         elif Q3 == "Rarely":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=Rarely,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=Rarely,"
         elif Q3 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=Sometimes,"
         elif Q3 == "Often":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=Often,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=Often,"
         elif Q3 == "Always":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=Always,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q3:When you want to talk with someone or do something together, is it easy to connect?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q3:Is it easy to talk to someone and do something together?=No Answer,"
 
         # Scored in reverse.
         if Q4 == "Never": 
@@ -462,21 +463,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q6 == "Never": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=Never,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Never,"
         elif Q6 == "Rarely":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=Rarely,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Rarely,"
         elif Q6 == "Sometimes":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=Sometimes,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Sometimes,"
         elif Q6 == "Often":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=Often,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Often,"
         elif Q6 == "Always":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=Always,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Always,"
         else:
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=No Answer,"
     
         # Scored in reverse.
         if Q7 == "Never": 
@@ -649,21 +650,21 @@ if st.session_state.get('authentication_status'):
 
         if Q3 == "Nunca": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=Nunca,"
         elif Q3 == "Rara vez":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=Rara vez,"
         elif Q3 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=A veces,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=A veces,"
         elif Q3 == "A menudo":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=A menudo,"
         elif Q3 == "Siempre":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q3:Cuando quieres hablar con alguien o hacer algo juntos, ¿te resulta fácil conectar con esa persona?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q3:¿Es fácil hablar con alguien y hacer algo juntos?=No Contesta,"
 
         # Scored in reverse.
         if Q4 == "Nunca": 
@@ -705,21 +706,21 @@ if st.session_state.get('authentication_status'):
         # Scored in reverse.
         if Q6 == "Nunca": 
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Nunca,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=Nunca,"
         elif Q6 == "Rara vez":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Rara vez,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=Rara vez,"
         elif Q6 == "A veces":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=A veces,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=A veces,"
         elif Q6 == "A menudo":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=A menudo,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=A menudo,"
         elif Q6 == "Siempre":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=Siempre,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=Siempre,"
         else:
-            Q_rawdata = Q_rawdata + "Q6:¿Te resulta difícil hacer amigos?=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q6:Es difícil hacer amigos.=No Contesta,"
     
         # Scored in reverse.
         if Q7 == "Nunca": 
