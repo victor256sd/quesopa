@@ -282,7 +282,7 @@ if st.session_state.get('authentication_status'):
 
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
-        with st.form("neilform"):
+        with st.form("neilform-adult"):
             st.write("Please indicate how often you experienced each of the following in the *last month*. Not everyone experiences everything on this list. If you don't understand a word or choose not to answer the question, you can just go ahead and skip the item. Could you try to rate as many as possible?")
             Q1 = st.selectbox("#1. Included by others.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
             Q2 = st.selectbox("#2. Surprised.", ["","Not at all", "Only a little", "Sometimes", "Often", "A lot of the time (almost always)"])
