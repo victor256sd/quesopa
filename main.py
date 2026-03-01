@@ -241,39 +241,39 @@ if st.session_state.get('authentication_status'):
             Q8 = st.selectbox("#8. Seguro(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
             Q9 = st.selectbox("#9. Tranquilo(a) y en paz.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
             Q10 = st.selectbox("#10. Preocupado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q11 = st.selectbox("#11. Contento(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q12 = st.selectbox("#12. Muy emocionado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q13 = st.selectbox("#13. Súper emocionado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q14 = st.selectbox("#14. Sentí que no le caía bien a la gente.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q15 = st.selectbox("#15. Incómodo(a) o nervioso(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q16 = st.selectbox("#16. Siento que me caen mal los demás.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q17 = st.selectbox("#17. Amigable.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q18 = st.selectbox("#18. Descansado(a) y con mucha energía.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q19 = st.selectbox("#19. Relajado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q20 = st.selectbox("#20. Llorando mucho.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q21 = st.selectbox("#21. Cansado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q22 = st.selectbox("#22. Solo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q23 = st.selectbox("#23. Riendo con otros.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q24 = st.selectbox("#24. Con ganas de llorar.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q25 = st.selectbox("#25. Con esperanza.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q26 = st.selectbox("#26. Le agrado a los demás.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q27 = st.selectbox("#27. Triste.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q28 = st.selectbox("#28. Celoso(a) (queriendo lo que otros tienen).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q29 = st.selectbox("#29. De mal humor.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q30 = st.selectbox("#30. Siento que otros son mejores que yo.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q31 = st.selectbox("#31. Parte de un grupo.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q32 = st.selectbox("#32. Siento que me quiero a mí mismo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q33 = st.selectbox("#33. Siento que tengo buenas opciones.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q34 = st.selectbox("#34. Con ganas de aprender cosas nuevas.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q35 = st.selectbox("#35. Lastimado(a) por otras personas.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q36 = st.selectbox("#36. Molestado(a) o que se burlan de mí.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q37 = st.selectbox("#37. Comprendido(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q38 = st.selectbox("#38. Amado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q39 = st.selectbox("#39. Feliz.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q40 = st.selectbox("#40. Dejado(a) fuera.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q41 = st.selectbox("#41. Orgulloso(a) de mí mismo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q42 = st.selectbox("#42. Deseando ser otra persona.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
-            Q43 = st.selectbox("#43. Deseando ya no estar aquí.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q11 = st.selectbox("#11. Feliz.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q12 = st.selectbox("#12. Siento bien con cómo están las cosas.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            #Q13 = st.selectbox("#13. Súper emocionado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q13 = st.selectbox("#13. Siento que no le caía bien a la gente.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q14 = st.selectbox("#14. Incómodo(a) o nervioso(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q15 = st.selectbox("#15. Siento que me caen mal los demás.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q16 = st.selectbox("#16. Amigable.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q17 = st.selectbox("#17. Descansado(a) y con mucha energía.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q18 = st.selectbox("#18. Relajado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q19 = st.selectbox("#19. Llorando mucho.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q20 = st.selectbox("#20. Cansado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q21 = st.selectbox("#21. Solo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q22 = st.selectbox("#22. Riendo con otros.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q23 = st.selectbox("#23. Con ganas de llorar.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q24 = st.selectbox("#24. Con esperanza.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q25 = st.selectbox("#25. Le agrado a los demás.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q26 = st.selectbox("#26. Triste.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q27 = st.selectbox("#27. Celoso(a) (queriendo lo que otros tienen).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q28 = st.selectbox("#28. De mal humor.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q29 = st.selectbox("#29. Siento que otros son mejores que yo.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q30 = st.selectbox("#30. Parte de un grupo.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q31 = st.selectbox("#31. Gustarme a mí mismo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q32 = st.selectbox("#32. Tengo buenas opciones.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q33 = st.selectbox("#33. Con ganas de aprender cosas nuevas.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q34 = st.selectbox("#34. Lastimado(a) por otras personas.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q35 = st.selectbox("#35. Molestado(a) o que se burlan de mí.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q36 = st.selectbox("#36. Comprendido(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q37 = st.selectbox("#37. Amado(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            #Q38 = st.selectbox("#38. Feliz.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q38 = st.selectbox("#38. Dejado(a) fuera.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q39 = st.selectbox("#39. Orgulloso(a) de mí mismo(a).", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q40 = st.selectbox("#40. Deseando ser otra persona.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
+            Q41 = st.selectbox("#41. Deseando ya no estar aquí.", ["", "Para nada", "Solo un poco", "A veces", "Seguido", "Mucho del tiempo (casi siempre)"])
 
             submit2 = st.form_submit_button("Submit")
             submit1 = False
@@ -1933,12 +1933,12 @@ if st.session_state.get('authentication_status'):
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
 
-        # Connection Score is total from questions 1, 2, 23, 26, 31, 37, 38.
-        # Inclusion Score is total from questions 1, 2, 17, 23, 26, 31, 37, 38.
-        # Isolation Score is total from questions 14, 22, 35, 36, 40.
-        # Happy Feelings Score is total from questions 3, 4, 6, 8, 9, 11, 12, 13, 18, 19, 25, 32, 33, 34, 39, 41.
-        # Scores for bad feelings (questions 5, 7, 10, 15, 16, 20, 21, 24, 27, 28, 29, 30, 36) and 
-        # isoluation (questions 14, 22, 35, 36, 40) will be subtracted from other question totals.
+        # Connection Score is total from questions 1, 2, 22, 25, 30, 36, 37.
+        # Inclusion Score is total from questions 1, 2, 16, 22, 25, 30, 36, 37.
+        # Isolation Score is total from questions 13, 21, 34, 35, 38.
+        # Happy Feelings Score is total from questions 3, 4, 6, 8, 9, 11, 12, 17, 18, 24, 31, 32, 33, 39.
+        # Scores for bad feelings (questions 5, 7, 10, 14, 15, 19, 20, 23, 26, 27, 28, 29, 35) and 
+        # isoluation (questions 13, 21, 34, 35, 38) will be subtracted from other question totals.
         if Q1 == "Para nada": 
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
@@ -2182,791 +2182,791 @@ if st.session_state.get('authentication_status'):
         if Q11 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=Para nada,"
         elif Q11 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=Solo un poco,"
         elif Q11 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=A veces,"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=A veces,"
         elif Q11 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=Seguido,"
         elif Q11 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q11:Contento(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q11:Feliz.=No Contesta,"
 
         if Q12 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=Para nada,"
         elif Q12 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=Solo un poco,"
         elif Q12 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=A veces,"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=A veces,"
         elif Q12 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=Seguido,"
         elif Q12 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q12:Muy emocionado(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q12:Siento bien con cómo están las cosas.=No Contesta,"
+
+        #if Q13 == "Para nada": 
+        #    Q_happy_feelings = Q_happy_feelings + 0
+        #    Q_total = Q_total + 0
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Para nada,"
+        #elif Q13 == "Solo un poco":
+        #    Q_happy_feelings = Q_happy_feelings + 1
+        #    Q_total = Q_total + 1
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Solo un poco,"
+        #elif Q13 == "A veces":
+        #    Q_happy_feelings = Q_happy_feelings + 2
+        #    Q_total = Q_total + 2
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=A veces,"
+        #elif Q13 == "Seguido":
+        #    Q_happy_feelings = Q_happy_feelings + 3
+        #    Q_total = Q_total + 3
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Seguido,"
+        #elif Q13 == "Mucho del tiempo (casi siempre)":
+        #    Q_happy_feelings = Q_happy_feelings + 4
+        #    Q_total = Q_total + 4
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Mucho del tiempo (casi siempre),"
+        #else:
+        #    Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=No Contesta,"
 
         if Q13 == "Para nada": 
-            Q_happy_feelings = Q_happy_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Para nada,"
-        elif Q13 == "Solo un poco":
-            Q_happy_feelings = Q_happy_feelings + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Solo un poco,"
-        elif Q13 == "A veces":
-            Q_happy_feelings = Q_happy_feelings + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=A veces,"
-        elif Q13 == "Seguido":
-            Q_happy_feelings = Q_happy_feelings + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Seguido,"
-        elif Q13 == "Mucho del tiempo (casi siempre)":
-            Q_happy_feelings = Q_happy_feelings + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q13:Súper emocionado(a).=No Contesta,"
-
-        if Q14 == "Para nada": 
             Q_isolation = Q_isolation + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=Para nada,"
-        elif Q14 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=Para nada,"
+        elif Q13 == "Solo un poco":
             Q_isolation = Q_isolation + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=Solo un poco,"
-        elif Q14 == "A veces":
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=Solo un poco,"
+        elif Q13 == "A veces":
             Q_isolation = Q_isolation + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=A veces,"
-        elif Q14 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=A veces,"
+        elif Q13 == "Seguido":
             Q_isolation = Q_isolation + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=Seguido,"
-        elif Q14 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=Seguido,"
+        elif Q13 == "Mucho del tiempo (casi siempre)":
             Q_isolation = Q_isolation + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q14:Sentí que no le caía bien a la gente.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q13:Siento que no le caía bien a la gente.=No Contesta,"
+
+        if Q14 == "Para nada": 
+            Q_bad_feelings = Q_bad_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q14:Incómodo(a) o nervioso(a).=Para nada,"
+        elif Q14 == "Solo un poco":
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q14:Incómodo(a) o nervioso(a).=Solo un poco,"
+        elif Q14 == "A veces":
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q14:Incómodo(a) o nervioso(a).=A veces,"
+        elif Q14 == "Seguido":
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q14:Incómodo(a) o nervioso(a).=Seguido,"
+        elif Q14 == "Mucho del tiempo (casi siempre)":
+            Q_bad_feelings = Q_bad_feelings + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q14:Incómodo(a) o nervioso(a).=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=No Contesta,"
 
         if Q15 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=Para nada,"
         elif Q15 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=Solo un poco,"
         elif Q15 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=A veces,"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=A veces,"
         elif Q15 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=Seguido,"
         elif Q15 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q15:Incómodo(a) o nervioso(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q15:Siento que me caen mal los demás.=No Contesta,"
 
         if Q16 == "Para nada": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=Para nada,"
-        elif Q16 == "Solo un poco":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=Solo un poco,"
-        elif Q16 == "A veces":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=A veces,"
-        elif Q16 == "Seguido":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=Seguido,"
-        elif Q16 == "Mucho del tiempo (casi siempre)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q16:Siento que me caen mal los demás.=No Contesta,"
-
-        if Q17 == "Para nada": 
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=Para nada,"
-        elif Q17 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=Para nada,"
+        elif Q16 == "Solo un poco":
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=Solo un poco,"
-        elif Q17 == "A veces":
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=Solo un poco,"
+        elif Q16 == "A veces":
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=A veces,"
-        elif Q17 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=A veces,"
+        elif Q16 == "Seguido":
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=Seguido,"
-        elif Q17 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=Seguido,"
+        elif Q16 == "Mucho del tiempo (casi siempre)":
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q17:Amigable.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q16:Amigable.=No Contesta,"
+
+        if Q17 == "Para nada": 
+            Q_happy_feelings = Q_happy_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=Para nada,"
+        elif Q17 == "Solo un poco":
+            Q_happy_feelings = Q_happy_feelings + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=Solo un poco,"
+        elif Q17 == "A veces":
+            Q_happy_feelings = Q_happy_feelings + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=A veces,"
+        elif Q17 == "Seguido":
+            Q_happy_feelings = Q_happy_feelings + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=Seguido,"
+        elif Q17 == "Mucho del tiempo (casi siempre)":
+            Q_happy_feelings = Q_happy_feelings + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q17:Descansado(a) y con mucha energía.=No Contesta,"
 
         if Q18 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=Para nada,"
         elif Q18 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=Solo un poco,"
         elif Q18 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=A veces,"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=A veces,"
         elif Q18 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=Seguido,"
         elif Q18 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q18:Descansado(a) y con mucha energía.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q18:Relajado(a).=No Contesta,"
 
         if Q19 == "Para nada": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=Para nada,"
         elif Q19 == "Solo un poco":
-            Q_happy_feelings = Q_happy_feelings + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=Solo un poco,"
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=Solo un poco,"
         elif Q19 == "A veces":
-            Q_happy_feelings = Q_happy_feelings + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=A veces,"
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=A veces,"
         elif Q19 == "Seguido":
-            Q_happy_feelings = Q_happy_feelings + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=Seguido,"
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=Seguido,"
         elif Q19 == "Mucho del tiempo (casi siempre)":
-            Q_happy_feelings = Q_happy_feelings + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=Mucho del tiempo (casi siempre),"
+            Q_bad_feelings = Q_bad_feelings + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q19:Relajado(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q19:Llorando mucho.=No Contesta,"
 
         if Q20 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=Para nada,"
         elif Q20 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=Solo un poco,"
         elif Q20 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=A veces,"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=A veces,"
         elif Q20 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=Seguido,"
         elif Q20 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q20:Llorando mucho.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q20:Cansado(a).=No Contesta,"
 
         if Q21 == "Para nada": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=Para nada,"
-        elif Q21 == "Solo un poco":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=Solo un poco,"
-        elif Q21 == "A veces":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=A veces,"
-        elif Q21 == "Seguido":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=Seguido,"
-        elif Q21 == "Mucho del tiempo (casi siempre)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q21:Cansado(a).=No Contesta,"
-
-        if Q22 == "Para nada": 
             Q_isolation = Q_isolation + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=Para nada,"
-        elif Q22 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=Para nada,"
+        elif Q21 == "Solo un poco":
             Q_isolation = Q_isolation + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=Solo un poco,"
-        elif Q22 == "A veces":
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=Solo un poco,"
+        elif Q21 == "A veces":
             Q_isolation = Q_isolation + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=A veces,"
-        elif Q22 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=A veces,"
+        elif Q21 == "Seguido":
             Q_isolation = Q_isolation + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=Seguido,"
-        elif Q22 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=Seguido,"
+        elif Q21 == "Mucho del tiempo (casi siempre)":
             Q_isolation = Q_isolation + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q22:Solo(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q21:Solo(a).=No Contesta,"
+
+        if Q22 == "Para nada": 
+            Q_connection = Q_connection + 0
+            Q_inclusion = Q_inclusion + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=Para nada,"
+        elif Q22 == "Solo un poco":
+            Q_connection = Q_connection + 1
+            Q_inclusion = Q_inclusion + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=Solo un poco,"
+        elif Q22 == "A veces":
+            Q_connection = Q_connection + 2
+            Q_inclusion = Q_inclusion + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=A veces,"
+        elif Q22 == "Seguido":
+            Q_connection = Q_connection + 3
+            Q_inclusion = Q_inclusion + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=Seguido,"
+        elif Q22 == "Mucho del tiempo (casi siempre)":
+            Q_connection = Q_connection + 4
+            Q_inclusion = Q_inclusion + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q22:Riendo con otros.=No Contesta,"
 
         if Q23 == "Para nada": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=Para nada,"
-        elif Q23 == "Solo un poco":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=Solo un poco,"
-        elif Q23 == "A veces":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=A veces,"
-        elif Q23 == "Seguido":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=Seguido,"
-        elif Q23 == "Mucho del tiempo (casi siempre)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q23:Riendo con otros.=No Contesta,"
-
-        if Q24 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=Para nada,"
-        elif Q24 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=Para nada,"
+        elif Q23 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=Solo un poco,"
-        elif Q24 == "A veces":
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=Solo un poco,"
+        elif Q23 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=A veces,"
-        elif Q24 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=A veces,"
+        elif Q23 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=Seguido,"
-        elif Q24 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=Seguido,"
+        elif Q23 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q24:Con ganas de llorar.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q23:Con ganas de llorar.=No Contesta,"
 
-        if Q25 == "Para nada": 
+        if Q24 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=Para nada,"
-        elif Q25 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=Para nada,"
+        elif Q24 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=Solo un poco,"
-        elif Q25 == "A veces":
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=Solo un poco,"
+        elif Q24 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=A veces,"
-        elif Q25 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=A veces,"
+        elif Q24 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=Seguido,"
-        elif Q25 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=Seguido,"
+        elif Q24 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q25:Con esperanza.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q24:Con esperanza.=No Contesta,"
 
-        if Q26 == "Para nada": 
+        if Q25 == "Para nada": 
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=Para nada,"
-        elif Q26 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=Para nada,"
+        elif Q25 == "Solo un poco":
             Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=Solo un poco,"
-        elif Q26 == "A veces":
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=Solo un poco,"
+        elif Q25 == "A veces":
             Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=A veces,"
-        elif Q26 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=A veces,"
+        elif Q25 == "Seguido":
             Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=Seguido,"
-        elif Q26 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=Seguido,"
+        elif Q25 == "Mucho del tiempo (casi siempre)":
             Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q26:Le agrado a los demás.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q25:Le agrado a los demás.=No Contesta,"
+
+        if Q26 == "Para nada": 
+            Q_bad_feelings = Q_bad_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q26:Triste.=Para nada,"
+        elif Q26 == "Solo un poco":
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q26:Triste.=Solo un poco,"
+        elif Q26 == "A veces":
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q26:Triste.=A veces,"
+        elif Q26 == "Seguido":
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q26:Triste.=Seguido,"
+        elif Q26 == "Mucho del tiempo (casi siempre)":
+            Q_bad_feelings = Q_bad_feelings + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q26:Triste.=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q26:Triste.=No Contesta,"
 
         if Q27 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q27:Triste.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=Para nada,"
         elif Q27 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q27:Triste.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=Solo un poco,"
         elif Q27 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q27:Triste.=A veces,"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=A veces,"
         elif Q27 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q27:Triste.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=Seguido,"
         elif Q27 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q27:Triste.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q27:Triste.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q27:Celoso(a) (queriendo lo que otros tienen).=No Contesta,"
 
         if Q28 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=Para nada,"
         elif Q28 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=Solo un poco,"
         elif Q28 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=A veces,"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=A veces,"
         elif Q28 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=Seguido,"
         elif Q28 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q28:Celoso(a) (queriendo lo que otros tienen).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q28:De mal humor.=No Contesta,"
 
         if Q29 == "Para nada": 
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=Para nada,"
         elif Q29 == "Solo un poco":
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=Solo un poco,"
         elif Q29 == "A veces":
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=A veces,"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=A veces,"
         elif Q29 == "Seguido":
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=Seguido,"
         elif Q29 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q29:De mal humor.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q29:Siento que otros son mejores que yo.=No Contesta,"
 
         if Q30 == "Para nada": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=Para nada,"
-        elif Q30 == "Solo un poco":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=Solo un poco,"
-        elif Q30 == "A veces":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=A veces,"
-        elif Q30 == "Seguido":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=Seguido,"
-        elif Q30 == "Mucho del tiempo (casi siempre)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q30:Siento que otros son mejores que yo.=No Contesta,"
-
-        if Q31 == "Para nada": 
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=Para nada,"
-        elif Q31 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=Para nada,"
+        elif Q30 == "Solo un poco":
             Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=Solo un poco,"
-        elif Q31 == "A veces":
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=Solo un poco,"
+        elif Q30 == "A veces":
             Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=A veces,"
-        elif Q31 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=A veces,"
+        elif Q30 == "Seguido":
             Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=Seguido,"
-        elif Q31 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=Seguido,"
+        elif Q30 == "Mucho del tiempo (casi siempre)":
             Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q31:Parte de un grupo.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q30:Parte de un grupo.=No Contesta,"
+
+        if Q31 == "Para nada": 
+            Q_happy_feelings = Q_happy_feelings + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=Para nada,"
+        elif Q31 == "Solo un poco":
+            Q_happy_feelings = Q_happy_feelings + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=Solo un poco,"
+        elif Q31 == "A veces":
+            Q_happy_feelings = Q_happy_feelings + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=A veces,"
+        elif Q31 == "Seguido":
+            Q_happy_feelings = Q_happy_feelings + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=Seguido,"
+        elif Q31 == "Mucho del tiempo (casi siempre)":
+            Q_happy_feelings = Q_happy_feelings + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q31:Gustarme a mí mismo(a).=No Contesta,"
 
         if Q32 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=Para nada,"
         elif Q32 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=Solo un poco,"
         elif Q32 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=A veces,"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=A veces,"
         elif Q32 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=Seguido,"
         elif Q32 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q32:Siento que me quiero a mí mismo(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q32:Tengo buenas opciones.=No Contesta,"
 
         if Q33 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=Para nada,"
         elif Q33 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=Solo un poco,"
         elif Q33 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=A veces,"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=A veces,"
         elif Q33 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=Seguido,"
         elif Q33 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q33:Siento que tengo buenas opciones.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q33:Con ganas de aprender cosas nuevas.=No Contesta,"
 
         if Q34 == "Para nada": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_isolation = Q_isolation + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=Para nada,"
         elif Q34 == "Solo un poco":
-            Q_happy_feelings = Q_happy_feelings + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=Solo un poco,"
+            Q_isolation = Q_isolation + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=Solo un poco,"
         elif Q34 == "A veces":
-            Q_happy_feelings = Q_happy_feelings + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=A veces,"
+            Q_isolation = Q_isolation + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=A veces,"
         elif Q34 == "Seguido":
-            Q_happy_feelings = Q_happy_feelings + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=Seguido,"
+            Q_isolation = Q_isolation + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=Seguido,"
         elif Q34 == "Mucho del tiempo (casi siempre)":
-            Q_happy_feelings = Q_happy_feelings + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=Mucho del tiempo (casi siempre),"
+            Q_isolation = Q_isolation + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q34:Con ganas de aprender cosas nuevas.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q34:Lastimado(a) por otras personas.=No Contesta,"
 
         if Q35 == "Para nada": 
             Q_isolation = Q_isolation + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=Para nada,"
-        elif Q35 == "Solo un poco":
-            Q_isolation = Q_isolation + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=Solo un poco,"
-        elif Q35 == "A veces":
-            Q_isolation = Q_isolation + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=A veces,"
-        elif Q35 == "Seguido":
-            Q_isolation = Q_isolation + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=Seguido,"
-        elif Q35 == "Mucho del tiempo (casi siempre)":
-            Q_isolation = Q_isolation + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q35:Lastimado(a) por otras personas.=No Contesta,"
-
-        if Q36 == "Para nada": 
-            Q_isolation = Q_isolation + 0
             Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=Para nada,"
-        elif Q36 == "Solo un poco":
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=Para nada,"
+        elif Q35 == "Solo un poco":
             Q_isolation = Q_isolation + 1
             Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=Solo un poco,"
-        elif Q36 == "A veces":
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=Solo un poco,"
+        elif Q35 == "A veces":
             Q_isolation = Q_isolation + 2
             Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=A veces,"
-        elif Q36 == "Seguido":
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=A veces,"
+        elif Q35 == "Seguido":
             Q_isolation = Q_isolation + 3
             Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=Seguido,"
-        elif Q36 == "Mucho del tiempo (casi siempre)":
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=Seguido,"
+        elif Q35 == "Mucho del tiempo (casi siempre)":
             Q_isolation = Q_isolation + 4
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q36:Molestado(a) o que se burlan de mí.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q35:Molestado(a) o que se burlan de mí.=No Contesta,"
+
+        if Q36 == "Para nada": 
+            Q_connection = Q_connection + 0
+            Q_inclusion = Q_inclusion + 0
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=Para nada,"
+        elif Q36 == "Solo un poco":
+            Q_connection = Q_connection + 1
+            Q_inclusion = Q_inclusion + 1
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=Solo un poco,"
+        elif Q36 == "A veces":
+            Q_connection = Q_connection + 2
+            Q_inclusion = Q_inclusion + 2
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=A veces,"
+        elif Q36 == "Seguido":
+            Q_connection = Q_connection + 3
+            Q_inclusion = Q_inclusion + 3
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=Seguido,"
+        elif Q36 == "Mucho del tiempo (casi siempre)":
+            Q_connection = Q_connection + 4
+            Q_inclusion = Q_inclusion + 4
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=Mucho del tiempo (casi siempre),"
+        else:
+            Q_rawdata = Q_rawdata + "Q36:Comprendido(a).=No Contesta,"
 
         if Q37 == "Para nada": 
             Q_connection = Q_connection + 0
             Q_inclusion = Q_inclusion + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=Para nada,"
         elif Q37 == "Solo un poco":
             Q_connection = Q_connection + 1
             Q_inclusion = Q_inclusion + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=Solo un poco,"
         elif Q37 == "A veces":
             Q_connection = Q_connection + 2
             Q_inclusion = Q_inclusion + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=A veces,"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=A veces,"
         elif Q37 == "Seguido":
             Q_connection = Q_connection + 3
             Q_inclusion = Q_inclusion + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=Seguido,"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=Seguido,"
         elif Q37 == "Mucho del tiempo (casi siempre)":
             Q_connection = Q_connection + 4
             Q_inclusion = Q_inclusion + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q37:Comprendido(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q37:Amado(a).=No Contesta,"
+
+        #if Q38 == "Para nada": 
+        #    Q_happy_feelings = Q_happy_feelings + 0
+        #    Q_total = Q_total + 0
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=Para nada,"
+        #elif Q38 == "Solo un poco":
+        #    Q_happy_feelings = Q_happy_feelings + 1
+        #    Q_total = Q_total + 1
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=Solo un poco,"
+        #elif Q38 == "A veces":
+        #    Q_happy_feelings = Q_happy_feelings + 2
+        #    Q_total = Q_total + 2
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=A veces,"
+        #elif Q38 == "Seguido":
+        #    Q_happy_feelings = Q_happy_feelings + 3
+        #    Q_total = Q_total + 3
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=Seguido,"
+        #elif Q38 == "Mucho del tiempo (casi siempre)":
+        #    Q_happy_feelings = Q_happy_feelings + 4
+        #    Q_total = Q_total + 4
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=Mucho del tiempo (casi siempre),"
+        #else:
+        #    Q_rawdata = Q_rawdata + "Q38:Feliz.=No Contesta,"
 
         if Q38 == "Para nada": 
-            Q_connection = Q_connection + 0
-            Q_inclusion = Q_inclusion + 0
+            Q_isolation = Q_isolation + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=Para nada,"
         elif Q38 == "Solo un poco":
-            Q_connection = Q_connection + 1
-            Q_inclusion = Q_inclusion + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=Solo un poco,"
+            Q_isolation = Q_isolation + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=Solo un poco,"
         elif Q38 == "A veces":
-            Q_connection = Q_connection + 2
-            Q_inclusion = Q_inclusion + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=A veces,"
+            Q_isolation = Q_isolation + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=A veces,"
         elif Q38 == "Seguido":
-            Q_connection = Q_connection + 3
-            Q_inclusion = Q_inclusion + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=Seguido,"
+            Q_isolation = Q_isolation + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=Seguido,"
         elif Q38 == "Mucho del tiempo (casi siempre)":
-            Q_connection = Q_connection + 4
-            Q_inclusion = Q_inclusion + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=Mucho del tiempo (casi siempre),"
+            Q_isolation = Q_isolation + 4
+            Q_total = Q_total - 4
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q38:Amado(a).=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q38:Dejado(a) fuera.=No Contesta,"
 
         if Q39 == "Para nada": 
             Q_happy_feelings = Q_happy_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=Para nada,"
         elif Q39 == "Solo un poco":
             Q_happy_feelings = Q_happy_feelings + 1
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=Solo un poco,"
         elif Q39 == "A veces":
             Q_happy_feelings = Q_happy_feelings + 2
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=A veces,"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=A veces,"
         elif Q39 == "Seguido":
             Q_happy_feelings = Q_happy_feelings + 3
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=Seguido,"
         elif Q39 == "Mucho del tiempo (casi siempre)":
             Q_happy_feelings = Q_happy_feelings + 4
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q39:Feliz.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q39:Orgulloso(a) de mí mismo(a).=No Contesta,"    
 
         if Q40 == "Para nada": 
-            Q_isolation = Q_isolation + 0
+            Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=Para nada,"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=Para nada,"
         elif Q40 == "Solo un poco":
-            Q_isolation = Q_isolation + 1
+            Q_bad_feelings = Q_bad_feelings + 1
             Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=Solo un poco,"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=Solo un poco,"
         elif Q40 == "A veces":
-            Q_isolation = Q_isolation + 2
+            Q_bad_feelings = Q_bad_feelings + 2
             Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=A veces,"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=A veces,"
         elif Q40 == "Seguido":
-            Q_isolation = Q_isolation + 3
+            Q_bad_feelings = Q_bad_feelings + 3
             Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=Seguido,"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=Seguido,"
         elif Q40 == "Mucho del tiempo (casi siempre)":
-            Q_isolation = Q_isolation + 4
+            Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q40:Dejado(a) fuera.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q40:Deseando ser otra persona.=No Contesta,"
 
         if Q41 == "Para nada": 
-            Q_happy_feelings = Q_happy_feelings + 0
+            Q_bad_feelings = Q_bad_feelings + 0
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=Para nada,"
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=Para nada,"
         elif Q41 == "Solo un poco":
-            Q_happy_feelings = Q_happy_feelings + 1
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=Solo un poco,"
+            Q_bad_feelings = Q_bad_feelings + 1
+            Q_total = Q_total - 1
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=Solo un poco,"
         elif Q41 == "A veces":
-            Q_happy_feelings = Q_happy_feelings + 2
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=A veces,"
+            Q_bad_feelings = Q_bad_feelings + 2
+            Q_total = Q_total - 2
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=A veces,"
         elif Q41 == "Seguido":
-            Q_happy_feelings = Q_happy_feelings + 3
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=Seguido,"
+            Q_bad_feelings = Q_bad_feelings + 3
+            Q_total = Q_total - 3
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=Seguido,"
         elif Q41 == "Mucho del tiempo (casi siempre)":
-            Q_happy_feelings = Q_happy_feelings + 4
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q41:Orgulloso(a) de mí mismo(a).=No Contesta,"    
-
-        if Q42 == "Para nada": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=Para nada,"
-        elif Q42 == "Solo un poco":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=Solo un poco,"
-        elif Q42 == "A veces":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=A veces,"
-        elif Q42 == "Seguido":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=Seguido,"
-        elif Q42 == "Mucho del tiempo (casi siempre)":
             Q_bad_feelings = Q_bad_feelings + 4
             Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=Mucho del tiempo (casi siempre),"
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=Mucho del tiempo (casi siempre),"
         else:
-            Q_rawdata = Q_rawdata + "Q42:Deseando ser otra persona.=No Contesta,"
-
-        if Q43 == "Para nada": 
-            Q_bad_feelings = Q_bad_feelings + 0
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=Para nada,"
-        elif Q43 == "Solo un poco":
-            Q_bad_feelings = Q_bad_feelings + 1
-            Q_total = Q_total - 1
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=Solo un poco,"
-        elif Q43 == "A veces":
-            Q_bad_feelings = Q_bad_feelings + 2
-            Q_total = Q_total - 2
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=A veces,"
-        elif Q43 == "Seguido":
-            Q_bad_feelings = Q_bad_feelings + 3
-            Q_total = Q_total - 3
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=Seguido,"
-        elif Q43 == "Mucho del tiempo (casi siempre)":
-            Q_bad_feelings = Q_bad_feelings + 4
-            Q_total = Q_total - 4
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=Mucho del tiempo (casi siempre),"
-        else:
-            Q_rawdata = Q_rawdata + "Q43:Deseando ya no estar aquí.=No Contesta,"
+            Q_rawdata = Q_rawdata + "Q41:Deseando ya no estar aquí.=No Contesta,"
 
         Q_total = Q_connection + Q_inclusion + Q_happy_feelings - Q_isolation - Q_bad_feelings
 
@@ -2985,14 +2985,14 @@ if st.session_state.get('authentication_status'):
 
         st.write(f"#### Interpretación de la puntuación: {Q_response}")
 
-        if (Q36 == "Seguido" or Q36 == "Mucho del tiempo (casi siempre)") and Q_connection >= 14:
-            st.write(f"La brecha de victimización - La pregunta 36 es alta ({Q36}) y la Puntuación de Conexión ({Q_connection}) también es alta. *Recomendación*: Investigar las amistades \"tóxicas\" o el acoso dentro de un grupo cercano.")
-        if (Q21 == "Seguido" or Q21 == "Mucho del tiempo (casi siempre)") and Q18 == "Para nada":
-            st.write(f"El marcador de agotamiento - Pregunta 21 (Cansado) es alto ({Q21}), pero la Pregunta 18 (Descansado) es \"Para nada\". *Recomendación*: Considerar la evaluación de problemas de sueño o estrés ambiental elevado.")
+        if (Q35 == "Seguido" or Q35 == "Mucho del tiempo (casi siempre)") and Q_connection >= 14:
+            st.write(f"**La brecha de victimización** - La pregunta 35 es alta ({Q35}) y la Puntuación de Conexión ({Q_connection}) también es alta. *Recomendación*: Investigar las amistades \"tóxicas\" o el acoso dentro de un grupo cercano.")
+        if (Q20 == "Seguido" or Q20 == "Mucho del tiempo (casi siempre)") and Q17 == "Para nada":
+            st.write(f"**El marcador de agotamiento** - Pregunta 20 (Cansado) es alto ({Q20}), pero la Pregunta 17 (Descansado) es \"Para nada\". *Recomendación*: Considerar la evaluación de problemas de sueño o estrés ambiental elevado.")
         if (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 0:
-            st.write(f"Respuesta Sesgada - el evaluado respondió \"Para nada\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
+            st.write(f"**Respuesta Sesgada** - el evaluado respondió \"Para nada\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
         elif (Q_connection + Q_inclusion + Q_happy_feelings + Q_isolation + Q_bad_feelings) == 196:
-            st.write(f"Respuesta Sesgada - el evaluado respondió \"Mucho del tiempo (casi siempre)\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
+            st.write(f"**Respuesta Sesgada** - el evaluado respondió \"Mucho del tiempo (casi siempre)\" en cada ítem. Los resultados pueden ser inválidos debido a un pensamiento de \"todo o nada\" o a la falta de compromiso con las preguntas.")
         
         st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
