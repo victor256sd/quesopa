@@ -4894,7 +4894,9 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=Extremely True,"
         else:
             Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=No Answer,"
-    
+
+        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        
     if submit4 and language == "English":
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -5114,6 +5116,60 @@ if st.session_state.get('authentication_status'):
             
         st.markdown(cleaned_response)
 
+    elif submit5:
+        QUERY = f"""
+            # User context:
+                - Assessment: Daily Digital Connected Life (DDCL)
+                - Raw responses: {Q_rawdata}
+                - Preferred language: {language}
+            
+            Task:
+            Using only the retrieved content from the vector store—prioritizing:
+            1) "US Surgeon General - Our Epidemic of Loneliness and Isolation 2023"
+            2) "Cacioppo - Easing Your Way Out of Loneliness.pdf"—
+            provide a supportive, concise response in {language} following the “Answer Structure” rules defined in the system instructions. Tailor the response based on the raw responses.
+            
+            Requirements:
+            - Include at least one **direct quote** with proper citation (quotation marks + source + year + page/section if available).
+            - Do not speculate or use outside knowledge.
+            - Be emotionally sensitive and avoid clinical or diagnostic language.
+            
+            Edge cases:
+            - If the retrieved content is insufficient for a safe, useful answer, say so briefly and offer a compassionate general pointer drawn from what *is* available (with citations).
+            - If the user language is right-to-left, ensure readability and correct punctuation direction.
+            
+            Now produce the response."""
+
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = INSTRUCTION,
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
+        st.markdown(cleaned_response)
+    
     elif submit4:
         QUERY = f"""
             # User context:
