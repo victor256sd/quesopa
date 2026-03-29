@@ -4,6 +4,9 @@
 #
 # Changelog:
 #
+# 3/29/2026: Added DDCL and Prong 2 Competency questionnaires after
+# discussing with Glenn at Panera.
+#
 # 2/28/2026: Updates with Glenn at Starbucks.
 #
 # 2/15/2026: Started programming Future Inferred Narration of 
@@ -121,10 +124,11 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Select a tool:",
-        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Future Inferred Narration of Events (FINE)"], index=None,
+        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
+            "A structured assessment that evaluates patterns of digital device use and online behavior.\n",
             "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
             "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        ],
     )
@@ -152,6 +156,7 @@ if st.session_state.get('authentication_status'):
             submit2 = False
             submit3 = False
             submit4 = False
+            submit5 = False
         
     elif tool == "Questions About People You Know" and language == "Spanish":
         with st.form("yvform"):
@@ -173,6 +178,7 @@ if st.session_state.get('authentication_status'):
             submit2 = False
             submit3 = False
             submit4 = False
+            submit5 = False
 
     # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
@@ -226,6 +232,7 @@ if st.session_state.get('authentication_status'):
             submit1 = False
             submit3 = False
             submit4 = False
+            submit5 = False
     
     # Create NEIL Child Version survey form in Spanish.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "Spanish":
@@ -279,6 +286,7 @@ if st.session_state.get('authentication_status'):
             submit1 = False
             submit3 = False
             submit4 = False
+            submit5 = False
 
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
@@ -331,7 +339,58 @@ if st.session_state.get('authentication_status'):
             submit1 = False
             submit2 = False
             submit4 = False
+            submit5 = False
     
+    # Create DDCL survey form.
+    elif tool == "Daily Digital Connected Life (DDCL)" and language == "English":
+        with st.form("ddclform"):
+            st.write("These qusetions provide an overview of your Daily Digital Connected Life (DDCL). Please rate the following.")
+            Q1 = st.selectbox("#1. I use my DDCL devices as the primary source of the music I listen to.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q2 = st.selectbox("#2. I frequently use digital devices to entertain myself when I'm bored.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q3 = st.selectbox("#3. With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q4 = st.selectbox("#4. Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q5 = st.selectbox("#5. It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q6 = st.selectbox("#6. My strongest connections with others are facilitated through the apps that I am using.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q7 = st.selectbox("#7. Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q8 = st.selectbox("#8. I manage my anxiety by reading posts or articles on my DDCL devices.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q9 = st.selectbox("#9. When I need to distract myself, I use my DDCL devices.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q10 = st.selectbox("#10. Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q11 = st.selectbox("#11. I am using my DDCL devices to meet new people.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q12 = st.selectbox("#12. I have never been on the Internet.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q13 = st.selectbox("#13. I use the World Wide Web often to fuel my most intimate fantasies.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q14 = st.selectbox("#14. To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q15 = st.selectbox("#15. The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q16 = st.selectbox("#16. Have you ever used an app to meet someone?", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q17 = st.selectbox("#17. Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q18 = st.selectbox("#18. I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q19 = st.selectbox("#19. When I'm not feeling well, I go online to research my symptoms.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q20 = st.selectbox("#20. I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q21 = st.selectbox("#21. I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q22 = st.selectbox("#22. I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q23 = st.selectbox("#23. Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q24 = st.selectbox("#24. At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q25 = st.selectbox("#25. I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q26 = st.selectbox("#26. I have downloaded an online dating app.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q27 = st.selectbox("#27. I'd rather purchase items online than go to a neighborhood store.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q28 = st.selectbox("#28. I have needed to block the access of someone I know to my DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q29 = st.selectbox("#29. I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q30 = st.selectbox("#30. I have pictures and other items on my DDCL devices that I do not want other people to see.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q31 = st.selectbox("#31. Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q32 = st.selectbox("#32. I have looked at the images of others online to feel better about my weight and size.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q33 = st.selectbox("#33. It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q34 = st.selectbox("#34. I have deleted photographs and/or videos from my DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q35 = st.selectbox("#35. I'd rather purchase items in a store than online.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q36 = st.selectbox("#36. I enjoy fooling others online by pretending to be a different person.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q37 = st.selectbox("#37. I use apps to help me find new places to eat or drink.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q38 = st.selectbox("#38. I have another phone or device that no one knows about to keep aspects of my life private.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q39 = st.selectbox("#39. I look at more items online than I actually purchase.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+
+            submit5 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+
     # Create FINE Version survey form.
     elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
         with st.form("fineform"):
@@ -356,12 +415,14 @@ if st.session_state.get('authentication_status'):
             submit1 = False
             submit2 = False
             submit3 = False    
+            submit5 = False
 
     else:
         submit1 = False
         submit2 = False
         submit3 = False
         submit4 = False
+        submit5 = False
     
     if submit1 and language == "English":
         Q_total = 0
@@ -4126,6 +4187,714 @@ if st.session_state.get('authentication_status'):
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
 
+    if submit5 and language == "English":
+        Q_total = 0
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        # Questions scored in reverse?
+        if Q1 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=False,"
+        elif Q1 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=Seldom True,"
+        elif Q1 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=At Times True,"
+        elif Q1 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=Frequently True,"
+        elif Q1 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q1:I use my DDCL devices as the primary source of the music I listen to.=No Answer,"
+
+        if Q2 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=False,"
+        elif Q2 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=Seldom True,"
+        elif Q2 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=At Times True,"
+        elif Q2 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=Frequently True,"
+        elif Q2 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q2:I frequently use digital devices to entertain myself when I'm bored.=No Answer,"
+
+        if Q3 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=False,"
+        elif Q3 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=Seldom True,"
+        elif Q3 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=At Times True,"
+        elif Q3 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=Frequently True,"
+        elif Q3 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q3:With the pace of my life, it is much easier to text and digitally chat than talk on the phone or sometimes find the time to meet in person.=No Answer,"
+
+        if Q4 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=False,"
+        elif Q4 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=Seldom True,"
+        elif Q4 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=At Times True,"
+        elif Q4 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=Frequently True,"
+        elif Q4 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q4:Have you ever downloaded an app like Tinder, OkCupid, Bumble, Grindr, Her, BeNaughty, Plenty of Fish, etc.?=No Answer,"
+
+        if Q5 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=False,"
+        elif Q5 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=Seldom True,"
+        elif Q5 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=At Times True,"
+        elif Q5 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=Frequently True,"
+        elif Q5 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q5:It is easier for me to express my feelings in the messages I send rather than trying to express them to someone in person.=No Answer,"
+
+        if Q6 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=False,"
+        elif Q6 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=Seldom True,"
+        elif Q6 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=At Times True,"
+        elif Q6 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=Frequently True,"
+        elif Q6 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q6:My strongest connections with others are facilitated through the apps that I am using.=No Answer,"
+
+        if Q7 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=False,"
+        elif Q7 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Seldom True,"
+        elif Q7 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=At Times True,"
+        elif Q7 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Frequently True,"
+        elif Q7 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q7:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=No Answer,"
+
+        if Q8 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=False,"
+        elif Q8 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=Seldom True,"
+        elif Q8 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=At Times True,"
+        elif Q8 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=Frequently True,"
+        elif Q8 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q8:I manage my anxiety by reading posts or articles on my DDCL devices.=No Answer,"
+
+        if Q9 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=False,"
+        elif Q9 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=Seldom True,"
+        elif Q9 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=At Times True,"
+        elif Q9 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=Frequently True,"
+        elif Q9 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q9:When I need to distract myself, I use my DDCL devices.=No Answer,"
+
+        if Q10 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=False,"
+        elif Q10 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=Seldom True,"
+        elif Q10 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=At Times True,"
+        elif Q10 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=Frequently True,"
+        elif Q10 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q10:Some of what I enjoy is illegal and I appreciate that online I can anonymously interact with others with similar interests.=No Answer,"
+
+        if Q11 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=False,"
+        elif Q11 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=Seldom True,"
+        elif Q11 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=At Times True,"
+        elif Q11 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=Frequently True,"
+        elif Q11 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q11:I am using my DDCL devices to meet new people.=No Answer,"
+
+        if Q12 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=False,"
+        elif Q12 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=Seldom True,"
+        elif Q12 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=At Times True,"
+        elif Q12 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=Frequently True,"
+        elif Q12 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q12:I have never been on the Internet.=No Answer,"
+
+        if Q13 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=False,"
+        elif Q13 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=Seldom True,"
+        elif Q13 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=At Times True,"
+        elif Q13 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=Frequently True,"
+        elif Q13 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q13:I use the World Wide Web often to fuel my most intimate fantasies.=No Answer,"
+
+        if Q14 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=False,"
+        elif Q14 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=Seldom True,"
+        elif Q14 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=At Times True,"
+        elif Q14 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=Frequently True,"
+        elif Q14 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q14:To be prepared, I have looked online at ways to protect myself and also at ways to harm others that may be a real threat to me.=No Answer,"
+
+        if Q15 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=False,"
+        elif Q15 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=Seldom True,"
+        elif Q15 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=At Times True,"
+        elif Q15 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=Frequently True,"
+        elif Q15 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q15:The best way to get to know me is through what I post and the pictures or videos I share. These are availabe online or through my messaging.=No Answer,"
+
+        if Q16 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=False,"
+        elif Q16 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=Seldom True,"
+        elif Q16 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=At Times True,"
+        elif Q16 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=Frequently True,"
+        elif Q16 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q16:Have you ever used an app to meet someone?=No Answer,"
+
+        if Q17 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=False,"
+        elif Q17 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=Seldom True,"
+        elif Q17 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=At Times True,"
+        elif Q17 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=Frequently True,"
+        elif Q17 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q17:Because explaining to someone my reactions to what they said or did can be difficult, I often send messages rather than meet face-to-face.=No Answer,"
+
+        if Q18 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=False,"
+        elif Q18 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=Seldom True,"
+        elif Q18 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=At Times True,"
+        elif Q18 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=Frequently True,"
+        elif Q18 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q18:I often lose track of time, go to bed too late, or lose windows of opportunity for other activities because I'm at times engaged in the digital world or with messaging.=No Answer,"
+
+        if Q19 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=False,"
+        elif Q19 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=Seldom True,"
+        elif Q19 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=At Times True,"
+        elif Q19 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=Frequently True,"
+        elif Q19 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q19:When I'm not feeling well, I go online to research my symptoms.=No Answer,"
+    
+        if Q20 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=False,"
+        elif Q20 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=Seldom True,"
+        elif Q20 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=At Times True,"
+        elif Q20 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=Frequently True,"
+        elif Q20 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q20:I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.=No Answer,"
+
+        if Q21 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=False,"
+        elif Q21 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=Seldom True,"
+        elif Q21 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=At Times True,"
+        elif Q21 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=Frequently True,"
+        elif Q21 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q21:I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.=No Answer,"
+
+        if Q22 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=False,"
+        elif Q22 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Seldom True,"
+        elif Q22 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=At Times True,"
+        elif Q22 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Frequently True,"
+        elif Q22 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=No Answer,"
+    
+        if Q23 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=False,"
+        elif Q23 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Seldom True,"
+        elif Q23 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=At Times True,"
+        elif Q23 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Frequently True,"
+        elif Q23 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q23:Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.=No Answer,"
+
+        if Q24 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=False,"
+        elif Q24 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=Seldom True,"
+        elif Q24 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=At Times True,"
+        elif Q24 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=Frequently True,"
+        elif Q24 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q24:At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.=No Answer,"
+
+        if Q25 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=False,"
+        elif Q25 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=Seldom True,"
+        elif Q25 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=At Times True,"
+        elif Q25 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=Frequently True,"
+        elif Q25 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q25:I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.=No Answer,"
+
+        if Q26 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=False,"
+        elif Q26 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=Seldom True,"
+        elif Q26 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=At Times True,"
+        elif Q26 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=Frequently True,"
+        elif Q26 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q26:I have downloaded an online dating app.=No Answer,"
+    
+        if Q27 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=False,"
+        elif Q27 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=Seldom True,"
+        elif Q27 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=At Times True,"
+        elif Q27 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=Frequently True,"
+        elif Q27 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q27:I'd rather purchase items online than go to a neighborhood store.=No Answer,"
+
+        if Q28 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=False,"
+        elif Q28 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=Seldom True,"
+        elif Q28 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=At Times True,"
+        elif Q28 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=Frequently True,"
+        elif Q28 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q28:I have needed to block the access of someone I know to my DDCL.=No Answer,"
+    
+        if Q29 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=False,"
+        elif Q29 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=Seldom True,"
+        elif Q29 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=At Times True,"
+        elif Q29 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=Frequently True,"
+        elif Q29 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q29:I have multiple social network accounts with different names that I selectively share with only a few of my friends or family.=No Answer,"
+
+        if Q30 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=False,"
+        elif Q30 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=Seldom True,"
+        elif Q30 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=At Times True,"
+        elif Q30 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=Frequently True,"
+        elif Q30 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q30:I have pictures and other items on my DDCL devices that I do not want other people to see.=No Answer,"
+    
+        if Q31 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=False,"
+        elif Q31 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=Seldom True,"
+        elif Q31 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=At Times True,"
+        elif Q31 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=Frequently True,"
+        elif Q31 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q31:Some of the people who say they care about me would disapprove of the webpages I visit, the peope I chat with online, or some of what I post anonymously.=No Answer,"
+
+        if Q32 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=False,"
+        elif Q32 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=Seldom True,"
+        elif Q32 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=At Times True,"
+        elif Q32 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=Frequently True,"
+        elif Q32 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q32:I have looked at the images of others online to feel better about my weight and size.=No Answer,"
+
+        if Q33 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=False,"
+        elif Q33 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=Seldom True,"
+        elif Q33 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=At Times True,"
+        elif Q33 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=Frequently True,"
+        elif Q33 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q33:It is hard for me to imagine staying current with those in my networks without extensively using my DDCL devices.=No Answer,"
+
+        if Q34 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=False,"
+        elif Q34 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=Seldom True,"
+        elif Q34 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=At Times True,"
+        elif Q34 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=Frequently True,"
+        elif Q34 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q34:I have deleted photographs and/or videos from my DDCL.=No Answer,"
+
+        if Q35 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=False,"
+        elif Q35 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=Seldom True,"
+        elif Q35 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=At Times True,"
+        elif Q35 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=Frequently True,"
+        elif Q35 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q35:I'd rather purchase items in a store than online.=No Answer,"
+
+        if Q36 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=False,"
+        elif Q36 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=Seldom True,"
+        elif Q36 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=At Times True,"
+        elif Q36 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=Frequently True,"
+        elif Q36 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q36:I enjoy fooling others online by pretending to be a different person.=No Answer,"
+
+        if Q37 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=False,"
+        elif Q37 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=Seldom True,"
+        elif Q37 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=At Times True,"
+        elif Q37 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=Frequently True,"
+        elif Q37 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q37:I use apps to help me find new places to eat or drink.=No Answer,"
+
+        if Q38 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=False,"
+        elif Q38 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=Seldom True,"
+        elif Q38 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=At Times True,"
+        elif Q38 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=Frequently True,"
+        elif Q38 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q38:I have another phone or device that no one knows about to keep aspects of my life private.=No Answer,"
+
+        if Q39 == "False": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=False,"
+        elif Q39 == "Seldom True":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=Seldom True,"
+        elif Q39 == "At Times True":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=At Times True,"
+        elif Q39 == "Frequently True":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=Frequently True,"
+        elif Q39 == "Extremely True":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=Extremely True,"
+        else:
+            Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=No Answer,"
+    
     if submit4 and language == "English":
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
