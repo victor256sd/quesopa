@@ -124,13 +124,15 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Select a tool:",
-        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)"], index=None,
+        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
             "A structured assessment that evaluates patterns of digital device use and online behavior.\n",
             "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
-            "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        ],
+            "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        
+            "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n"
+        ],
     )
     
     # Create loneliness survey form.
@@ -157,6 +159,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
             submit5 = False
+            submit6 = False
         
     elif tool == "Questions About People You Know" and language == "Spanish":
         with st.form("yvform"):
@@ -179,6 +182,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
             submit5 = False
+            submit6 = False
 
     # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
@@ -233,6 +237,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
             submit5 = False
+            submit6 = False
     
     # Create NEIL Child Version survey form in Spanish.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "Spanish":
@@ -287,6 +292,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
             submit5 = False
+            submit6 = False
 
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
@@ -340,6 +346,7 @@ if st.session_state.get('authentication_status'):
             submit2 = False
             submit4 = False
             submit5 = False
+            submit6 = False
     
     # Create DDCL survey form.
     elif tool == "Daily Digital Connected Life (DDCL)" and language == "English":
@@ -366,7 +373,7 @@ if st.session_state.get('authentication_status'):
             Q19 = st.selectbox("#19. When I'm not feeling well, I go online to research my symptoms.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
             Q20 = st.selectbox("#20. I frequently spend my downtime gaming, watching videos, or reading on my DDCL devices.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
             Q21 = st.selectbox("#21. I have felt hurt by what other people, including friends, have posted or shared in our mutual DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
-            Q22 = st.selectbox("#22. I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
+            Q22 = st.selectbox("#22. I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
             Q23 = st.selectbox("#23. Just in case I ever feel it is necessary at some point, I have looked online at ways I might be able to end my own life.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
             Q24 = st.selectbox("#24. At times I wish there were an \"unsend\" or \"delete\" button for a text that I have sent or for something that I posted on a social media outlet.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
             Q25 = st.selectbox("#25. I am aware that others have felt upset with what I have posted or shared in our mutual DDCL.", ["","False", "Seldom True", "At Times True", "Frequently True", "Extremely True"])
@@ -390,6 +397,7 @@ if st.session_state.get('authentication_status'):
             submit2 = False
             submit3 = False
             submit4 = False
+            submit6 = False
 
     # Create FINE Version survey form.
     elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
@@ -416,6 +424,35 @@ if st.session_state.get('authentication_status'):
             submit2 = False
             submit3 = False    
             submit5 = False
+            submit6 = False
+
+    # Create FINE Version survey form.
+    elif tool == "Competency to Stand Trial" and language == "English":
+        with st.form("competencyform"):
+            st.write("These questions help assess whether a defendant can understand the legal proceedings and communicate rationally with counsel to assist in their defense. Please answer the following.")
+            Q1 = st.selectbox("#1. Does the defendant remember officers of the court?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q2 = st.selectbox("#2. Does the defendant remember their own counsel and team members?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q3 = st.selectbox("#3. Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q4 = st.selectbox("#4. Does the defendant recall prior conversations and can explain why their perceptions have changed?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q5 = st.selectbox("#5. In the investigation, was the defendant able to answer the questions asked?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q6 = st.selectbox("#6. Did the defendant appear to understand the seriousness of the accusations or allegations?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q7 = st.selectbox("#7. Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q8 = st.selectbox("#8. Does the defendant have better interactions with others that you work with?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q9 = st.selectbox("#9. Is the defendant able to calm down if needed?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q10 = st.selectbox("#10. If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q11 = st.selectbox("#11. Do you believe court outbursts by the defendant are intentional?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q12 = st.selectbox("#12. Does the defendant respond appropriately to those present in the courthouse?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q13 = st.selectbox("#13. Does the defendant appear to comprehend what is taking place?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q14 = st.selectbox("#14. Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q15 = st.selectbox("#15. Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+            Q16 = st.selectbox("#16. Does the defendant remember the charges with breaks in contact?", ["","Cannot Answer", "Affirmative of Ability", "Compromised", "Inability"])
+
+            submit6 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False    
+            submit4 = False
+            submit5 = False
 
     else:
         submit1 = False
@@ -423,6 +460,7 @@ if st.session_state.get('authentication_status'):
         submit3 = False
         submit4 = False
         submit5 = False
+        submit6 = False
     
     if submit1 and language == "English":
         Q_total = 0
@@ -4573,21 +4611,21 @@ if st.session_state.get('authentication_status'):
 
         if Q22 == "False": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=False,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=False,"
         elif Q22 == "Seldom True":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Seldom True,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Seldom True,"
         elif Q22 == "At Times True":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=At Times True,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=At Times True,"
         elif Q22 == "Frequently True":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Frequently True,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Frequently True,"
         elif Q22 == "Extremely True":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Extremely True,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=Extremely True,"
         else:
-            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (Hololense, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=No Answer,"
+            Q_rawdata = Q_rawdata + "Q22:I am currently using virtual reality gear (HoloLens, Oculus Rift, Samsung Gear VR, Google DayDream View, PlayStation VR, etc.).=No Answer,"
     
         if Q23 == "False": 
             Q_total = Q_total + 0
@@ -4918,6 +4956,255 @@ if st.session_state.get('authentication_status'):
     
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
 
+    if submit6 and language == "English":
+        Q_total = 0
+        Q_rawdata = name + "," + str(age) + ","
+
+        # Question 11 scored in reverse.
+        if Q1 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q1:Does the defendant remember officers of the court?=Cannot Answer,"
+        elif Q1 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q1:Does the defendant remember officers of the court?=Affirmative of Ability,"
+        elif Q1 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q1:Does the defendant remember officers of the court?=Compromised,"
+        elif Q1 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q1:Does the defendant remember officers of the court?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q1:Does the defendant remember officers of the court?=No Answer,"
+        
+        if Q2 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q2:Does the defendant remember their own counsel and team members?=Cannot Answer,"
+        elif Q2 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q2:Does the defendant remember their own counsel and team members?=Affirmative of Ability,"
+        elif Q2 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q2:Does the defendant remember their own counsel and team members?=Compromised,"
+        elif Q2 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q2:Does the defendant remember their own counsel and team members?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q2:Does the defendant remember their own counsel and team members?=No Answer,"
+
+        if Q3 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q3:Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?=Cannot Answer,"
+        elif Q3 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q3:Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?=Affirmative of Ability,"
+        elif Q3 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q3:Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?=Compromised,"
+        elif Q3 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q3:Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q3:Does the defendant follow advisement, such as not discussing their case with anyone not involved while it is being adjudicated?=No Answer,"
+
+        if Q4 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q4:Does the defendant recall prior conversations and can explain why their perceptions have changed?=Cannot Answer,"
+        elif Q4 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q4:Does the defendant recall prior conversations and can explain why their perceptions have changed?=Affirmative of Ability,"
+        elif Q4 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q4:Does the defendant recall prior conversations and can explain why their perceptions have changed?=Compromised,"
+        elif Q4 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q4:Does the defendant recall prior conversations and can explain why their perceptions have changed?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q4:Does the defendant recall prior conversations and can explain why their perceptions have changed?=No Answer,"
+
+        if Q5 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q5:In the investigation, was the defendant able to answer the questions asked?=Cannot Answer,"
+        elif Q5 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q5:In the investigation, was the defendant able to answer the questions asked?=Affirmative of Ability,"
+        elif Q5 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q5:In the investigation, was the defendant able to answer the questions asked?=Compromised,"
+        elif Q5 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q5:In the investigation, was the defendant able to answer the questions asked?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q5:In the investigation, was the defendant able to answer the questions asked?=No Answer,"
+
+        if Q6 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q6:Did the defendant appear to understand the seriousness of the accusations or allegations?=Cannot Answer,"
+        elif Q6 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q6:Did the defendant appear to understand the seriousness of the accusations or allegations?=Affirmative of Ability,"
+        elif Q6 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6:Did the defendant appear to understand the seriousness of the accusations or allegations?=Compromised,"
+        elif Q6 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6:Did the defendant appear to understand the seriousness of the accusations or allegations?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q6:Did the defendant appear to understand the seriousness of the accusations or allegations?=No Answer,"
+        
+        if Q7 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q7:Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?=Cannot Answer,"
+        elif Q7 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q7:Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?=Affirmative of Ability,"
+        elif Q7 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q7:Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?=Compromised,"
+        elif Q7 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q7:Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q7:Do you believe the defendant can assist counsel or provide information addressing the circumstances of the current charges being considered?=No Answer,"
+
+        if Q8 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q8:Does the defendant have better interactions with others that you work with?=Cannot Answer,"
+        elif Q8 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q8:Does the defendant have better interactions with others that you work with?=Affirmative of Ability,"
+        elif Q8 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q8:Does the defendant have better interactions with others that you work with?=Compromised,"
+        elif Q8 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q8:Does the defendant have better interactions with others that you work with?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q8:Does the defendant have better interactions with others that you work with?=No Answer,"
+
+        if Q9 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q9:Is the defendant able to calm down if needed?=Cannot Answer,"
+        elif Q9 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q9:Is the defendant able to calm down if needed?=Affirmative of Ability,"
+        elif Q9 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9:Is the defendant able to calm down if needed?=Compromised,"
+        elif Q9 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9:Is the defendant able to calm down if needed?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q9:Is the defendant able to calm down if needed?=No Answer,"
+
+        if Q10 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q10:If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?=Cannot Answer,"
+        elif Q10 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q10:If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?=Affirmative of Ability,"
+        elif Q10 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10:If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?=Compromised,"
+        elif Q10 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10:If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q10:If the defendant is acting inappropriately, is counsel, the bailiff, sheriff, marshal, or judge able to address the conduct of the defendant in a manner that facilitates due process?=No Answer,"
+
+        # Reverse scored.
+        if Q11 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q11:Do you believe court outbursts by the defendant are intentional?=Cannot Answer,"
+        elif Q11 == "Affirmative of Ability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q11:Do you believe court outbursts by the defendant are intentional?=Affirmative of Ability,"
+        elif Q11 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q11:Do you believe court outbursts by the defendant are intentional?=Compromised,"
+        elif Q11 == "Inability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q11:Do you believe court outbursts by the defendant are intentional?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q11:Do you believe court outbursts by the defendant are intentional?=No Answer,"
+
+        if Q12 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q12:Does the defendant respond appropriately to those present in the courthouse?=Cannot Answer,"
+        elif Q12 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q12:Does the defendant respond appropriately to those present in the courthouse?=Affirmative of Ability,"
+        elif Q12 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q12:Does the defendant respond appropriately to those present in the courthouse?=Compromised,"
+        elif Q12 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q12:Does the defendant respond appropriately to those present in the courthouse?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q12:Does the defendant respond appropriately to those present in the courthouse?=No Answer,"
+
+        if Q13 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q13:Does the defendant appear to comprehend what is taking place?=Cannot Answer,"
+        elif Q13 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q13:Does the defendant appear to comprehend what is taking place?=Affirmative of Ability,"
+        elif Q13 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q13:Does the defendant appear to comprehend what is taking place?=Compromised,"
+        elif Q13 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q13:Does the defendant appear to comprehend what is taking place?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q13:Does the defendant appear to comprehend what is taking place?=No Answer,"
+
+        if Q14 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q14:Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?=Cannot Answer,"
+        elif Q14 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q14:Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?=Affirmative of Ability,"
+        elif Q14 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q14:Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?=Compromised,"
+        elif Q14 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q14:Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q14:Does the defendant appear as if in their own world, responding to internal stimuli inappropriately, such as laughing, talking to themselves, or uttering unrestrained words or statements?=No Answer,"
+
+        if Q15 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q15:Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?=Cannot Answer,"
+        elif Q15 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q15:Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?=Affirmative of Ability,"
+        elif Q15 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q15:Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?=Compromised,"
+        elif Q15 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q15:Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q15:Are others uneasy in the presence of the defendant as if they may suddenly act inappropriately, whether verbally or physically?=No Answer,"
+
+        if Q16 == "Cannot Answer": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=Cannot Answer,"
+        elif Q16 == "Affirmative of Ability":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=Affirmative of Ability,"
+        elif Q16 == "Compromised":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=Compromised,"
+        elif Q16 == "Inability":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=Inability,"
+        else:
+            Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=No Answer,"
+        
+        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+    
     # If submit button is clicked, query the aitam library.            
     if submit1:
         # If form is submitted without a query, stop.
@@ -5116,7 +5403,7 @@ if st.session_state.get('authentication_status'):
             
         st.markdown(cleaned_response)
 
-    elif submit5:
+    elif submit5 and language == "English":
         QUERY = f"""
             # User context:
                 - Assessment: Daily Digital Connected Life (DDCL)
@@ -5170,7 +5457,7 @@ if st.session_state.get('authentication_status'):
         st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
     
-    elif submit4:
+    elif submit4 and language == "English":
         QUERY = f"""
             # User context:
                 - Assessment: Future Inferred Narration of Events (FINE)
@@ -5251,7 +5538,78 @@ if st.session_state.get('authentication_status'):
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
+
+    elif submit6 and language == "English":
+        QUERY = f"""
+            # User context:
+                - Assessment: Competency to Stand Trial
+                - Raw scenario-writing responses: {Q_rawdata}
+                - Preferred language: {language}
+            
+            # Purpose:
+            Review responses to assess whether the defendant can understand legal proceedings and communicate rationally with counsel to assist in their defense.
+
+            # What to Evaluate
+            Assess responses for evidence of:
+            + Understanding of the Legal Process - Basic awareness of court roles, charges, and consequences
+            + Communication with Counsel - Ability to express information, understand explanations, and collaborate with an attorney
+            + Rational Thinking - Logical, coherent responses without disorganization or fixed false beliefs that interfere with legal decision‑making
+            + Functional Emotional Regulation - Emotional or behavioral factors that may impede working with counsel
+
+            # How to Rate
+            Based on overall response patterns (not single answers), classify functioning as:
+            + Adequate
+            + Questionable
+            + Impaired
+            Do not assign diagnoses or make legal determinations.
+
+            # Output
+            Provide:
+            + A brief summary of strengths and concerns
+            + An overall impression of ability to assist counsel
+            + Notation of any responses requiring clinical follow‑up
+
+            # Requirements
+            + Do not diagnose, imply mental health conditions, or make clinical judgments.
+            + Use observational, non‑directive language (e.g., “This may suggest…”).
+            + Avoid speculation beyond what is explicitly present.
+            + Use the user’s preferred language for the entire output.
+
+            Now produce the competency analysis.
+            """
         
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = INSTRUCTION,
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This analysis supports, but does not replace, a qualified forensic evaluator’s opinion or the court’s determination of competency.*")            
+        st.markdown(cleaned_response)
+
 elif st.session_state.get('authentication_status') is False:
     st.error('Username/password is incorrect')
 
