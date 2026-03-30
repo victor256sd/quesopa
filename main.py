@@ -5203,7 +5203,7 @@ if st.session_state.get('authentication_status'):
         else:
             Q_rawdata = Q_rawdata + "Q16:Does the defendant remember the charges with breaks in contact?=No Answer,"
         
-        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
     
     # If submit button is clicked, query the aitam library.            
