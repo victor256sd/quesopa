@@ -4,6 +4,8 @@
 #
 # Changelog:
 #
+# 4/24/2026: Corrected NEIL Adult description, switched with DDCL.
+#
 # 3/29/2026: Added DDCL and Prong 2 Competency questionnaires after
 # discussing with Glenn at Panera.
 #
@@ -129,8 +131,8 @@ if st.session_state.get('authentication_status'):
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
-            "A structured assessment that evaluates patterns of digital device use and online behavior.\n",
             "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
+            "A structured assessment that evaluates patterns of digital device use and online behavior.\n",
             "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        
             "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n"
         ],
