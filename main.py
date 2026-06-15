@@ -4,37 +4,30 @@
 #
 # Changelog:
 #
+# 6/15/2026: Changed named of Questions About People You Know to
+# Questions About Yourself and Others.
 # 4/24/2026: Corrected NEIL Adult description, switched with DDCL.
-#
 # 3/29/2026: Added DDCL and Prong 2 Competency questionnaires after
 # discussing with Glenn at Panera.
-#
 # 2/28/2026: Updates with Glenn at Starbucks.
-#
 # 2/15/2026: Started programming Future Inferred Narration of 
 # Events (FINE) tool based on meeting with Glenn and materials 
 # provided on 2/13/2026.
-#
 # 2/13/2026, 2/14/2026: Modified NEIL child version description, 
 # added two questions at the end, and adjusted language on multiple 
 # question numbers (Glenn email, 2/12/2026). Added NEIL adult 
 # version (Glenn email, 2/12/2026).
-#
 # 1/26/2026: Modified page to accommodate the loneliness and NEIL
 # child version surveys.
-#
 # 1/21/2026: Modifications to survey, question wording and adding
 # two questions, verbiage for prompts changed, interpretation of
 # scores changed (Glenn email, 1/21/2026).
-#
 # 1/19/2026: Changed Medium interpretation to Low, point AI to 
 # consider specific questions and answers on the assessment. Modi-
 # fied the query prompt. Resources are 
-#
 # 1/18/2026: Changed age range from 10 to 99, adjusted questions 
 # to short form of 10 questions (GL provided) and included Spanish 
 # option (GL provided), changed verbiage from Often to Always.
-#
 # 1/17/2026: Initial development.
 #-------------------------------------------------------------------
 
@@ -127,7 +120,7 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Select a tool:",
-        ["Questions About People You Know", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial"], index=None,
+        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
