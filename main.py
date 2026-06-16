@@ -4,6 +4,7 @@
 #
 # Changelog:
 #
+# 6/16/2026: Added POC to questionnaires.
 # 6/15/2026: Changed named of Questions About People You Know to
 # Questions About Yourself and Others.
 # 4/24/2026: Corrected NEIL Adult description, switched with DDCL.
@@ -120,14 +121,15 @@ if st.session_state.get('authentication_status'):
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
     tool = st.radio("Select a tool:",
-        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial"], index=None,
+        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Concern (POC)"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
             "A questionnaire that helps measure how an adult has been feeling and connecting with others over the past month.\n",
             "A structured assessment that evaluates patterns of digital device use and online behavior.\n",
             "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        
-            "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n"
+            "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n",
+            "Help identify concerns in the community and prevent harm before it occurs.\n",
         ],
     )
     
@@ -156,6 +158,7 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit7 = False
         
     elif tool == "Questions About People You Know" and language == "Spanish":
         with st.form("yvform"):
@@ -179,7 +182,8 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
-
+            submit7 = False
+            
     # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
         with st.form("neilform"):
@@ -234,6 +238,7 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit7 = False
     
     # Create NEIL Child Version survey form in Spanish.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "Spanish":
@@ -289,6 +294,7 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit7 = False
 
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
@@ -343,6 +349,7 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit7 = False
     
     # Create DDCL survey form.
     elif tool == "Daily Digital Connected Life (DDCL)" and language == "English":
@@ -394,6 +401,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False
             submit4 = False
             submit6 = False
+            submit7 = False
 
     # Create FINE Version survey form.
     elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
@@ -421,6 +429,7 @@ if st.session_state.get('authentication_status'):
             submit3 = False    
             submit5 = False
             submit6 = False
+            submit7 = False
 
     # Create FINE Version survey form.
     elif tool == "Competency to Stand Trial" and language == "English":
@@ -449,6 +458,52 @@ if st.session_state.get('authentication_status'):
             submit3 = False    
             submit4 = False
             submit5 = False
+            submit7 = False
+
+    # Create POC survey form.
+    elif tool == "Perceptions of Concern (POC)" and language == "English":
+        with st.form("pocform"):
+            st.write("This survey is a tool for early intervention and prevention. We aim to address concerns, distrust, and potential conflicts before they escalate. This is not a platform for blame, but a proactive way to ensure a safe environment for everyone.")
+
+            Q1 = st.text_area("#1. Is there an individual or group causing you to fear for your safety or the safety of others?", placeholder="Write your thoughts here...", height=150)
+            Q2 = st.text_area("#2. Have you observed any behaviors or incidents of concern? Please describe them briefly (as if writing a text message).", placeholder="Write your thoughts here...", height=150)
+            Q3 = st.text_area("#3. Have you heard or read anything (in person, online, or in writing) suggestive of potential harm or violence? Please share what was said and where it was found.", placeholder="Write your thoughts here...", height=150)
+            Q4 = st.text_area("#4. Are you aware of this person/group possessing or mentioning weapons (firearms, etc.), or have you heard reports of gunfire or explosions?", placeholder="Write your thoughts here...", height=150)
+            Q5 = st.text_area("#5. Has the individual shown signs of instability, such as extreme mood swings, sudden isolation, or reactions to a major personal loss (job, relationship, etc.)?", placeholder="Write your thoughts here...", height=150)
+            Q6 = st.text_area("#6. Does this person/group target specific individuals or communities with blame, insults, or expressions of hatred?", placeholder="Write your thoughts here...", height=150)
+            Q7 = st.text_area("#7. Has this situation impacted your daily routine, physical health (sleep/stress), or caused you to change your habits to avoid contact?", placeholder="Write your thoughts here...", height=150)
+            Q8 = st.text_area("#8. Based on what you know, what is the \"story\" of what might happen? Who is involved and what is the specific concern?", placeholder="Write your thoughts here...", height=150)
+            Q9 = st.text_area("#9. What intervention or solution do you believe would best resolve this conflict in your neighborhood or workplace?", placeholder="Write your thoughts here...", height=150)
+
+            submit7 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+            submit5 = False
+            submit6 = False
+    
+    elif tool == "Perceptions of Concern (POC)" and language == "Spanish":
+        with st.form("pocform"):
+            st.write("Esta encuesta es una herramienta para la intervención temprana y la prevención. Nuestro objetivo es abordar inquietudes, desconfianza y posibles conflictos antes de que se intensifiquen. Esta no es una plataforma para culpar, sino una forma proactiva de garantizar un entorno seguro para todos.")
+
+            Q1 = st.text_area("#1. ¿Existe alguna persona o grupo que le haga temer por su seguridad o la de los demás?", placeholder="Escriba aquí...", height=150)
+            Q2 = st.text_area("#2. ¿Ha observado algún comportamiento o incidente preocupante? Por favor, descríbalos brevemente (como si escribiera un mensaje de texto).", placeholder="Escriba aquí...", height=150)
+            Q3 = st.text_area("#3. ¿Ha escuchado o leído algo (en persona, en línea o por escrito) que sugiera un posible daño o violencia? Por favor, comparta lo que se dijo y dónde se encontró.", placeholder="Escriba aquí...", height=150)
+            Q4 = st.text_area("#4. ¿Tiene conocimiento de que esta persona o grupo posea o mencione armas (armas de fuego, etc.), o ha escuchado informes de disparos o explosiones?", placeholder="Escriba aquí...", height=150)
+            Q5 = st.text_area("#5. ¿Ha mostrado el individuo signos de inestabilidad, como cambios extremos de humor, aislamiento repentino o reacciones ante una pérdida personal importante (trabajo, relación, etc.)?", placeholder="Escriba aquí...", height=150)
+            Q6 = st.text_area("#6. ¿Esta persona o grupo ataca a individuos o comunidades específicas con culpas, insultos o expresiones de odio?", placeholder="Escriba aquí...", height=150)
+            Q7 = st.text_area("#7. ¿Ha afectado esta situación su rutina diaria, su salud física (sueño/estrés) o le ha obligado a cambiar sus hábitos para evitar el contacto?", placeholder="Escriba aquí...", height=150)
+            Q8 = st.text_area("#8. Según lo que sabe, ¿cuál es la \"historia\" de lo que podría suceder? ¿Quién está involucrado y cuál es la preocupación específica?", placeholder="Escriba aquí...", height=150)
+            Q9 = st.text_area("#9. ¿Qué intervención o solución cree que resolvería mejor este conflicto en su vecindario o lugar de trabajo?", placeholder="Escriba aquí...", height=150)
+
+            submit7 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+            submit5 = False
+            submit6 = False
 
     else:
         submit1 = False
@@ -457,6 +512,7 @@ if st.session_state.get('authentication_status'):
         submit4 = False
         submit5 = False
         submit6 = False
+        submit7 = False
     
     if submit1 and language == "English":
         Q_total = 0
@@ -5200,6 +5256,38 @@ if st.session_state.get('authentication_status'):
         
         # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
+    if submit7 and language == "English":
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        Q_rawdata = Q_rawdata + "Q1: Is there an individual or group causing you to fear for your safety or the safety of others?=" + Q1 + ","
+        Q_rawdata = Q_rawdata + "Q2: Have you observed any behaviors or incidents of concern? Please describe them briefly (as if writing a text message).=" + Q2 + ","
+        Q_rawdata = Q_rawdata + "Q3: Have you heard or read anything (in person, online, or in writing) suggestive of potential harm or violence? Please share what was said and where it was found.=" + Q3 + ","
+        Q_rawdata = Q_rawdata + "Q4: Are you aware of this person/group possessing or mentioning weapons (firearms, etc.), or have you heard reports of gunfire or explosions?=" + Q4 + ","
+        Q_rawdata = Q_rawdata + "Q5: Has the individual shown signs of instability, such as extreme mood swings, sudden isolation, or reactions to a major personal loss (job, relationship, etc.)?=" + Q5 + ","
+        Q_rawdata = Q_rawdata + "Q6: Does this person/group target specific individuals or communities with blame, insults, or expressions of hatred?=" + Q6 + ","
+        Q_rawdata = Q_rawdata + "Q7: Has this situation impacted your daily routine, physical health (sleep/stress), or caused you to change your habits to avoid contact?=" + Q7 + ","
+        Q_rawdata = Q_rawdata + "Q8: Based on what you know, what is the \"story\" of what might happen? Who is involved and what is the specific concern?=" + Q8 + ","
+        Q_rawdata = Q_rawdata + "Q9: What intervention or solution do you believe would best resolve this conflict in your neighborhood or workplace?=" + Q9 + ","
+    
+        # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+
+    if submit7 and language == "Spanish":
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        Q_rawdata = Q_rawdata + "Q1: ¿Existe alguna persona o grupo que le haga temer por su seguridad o la de los demás?=" + Q1 + ","
+        Q_rawdata = Q_rawdata + "Q2: ¿Ha observado algún comportamiento o incidente preocupante? Por favor, descríbalos brevemente (como si escribiera un mensaje de texto).=" + Q2 + ","
+        Q_rawdata = Q_rawdata + "Q3: ¿Ha escuchado o leído algo (en persona, en línea o por escrito) que sugiera un posible daño o violencia? Por favor, comparta lo que se dijo y dónde se encontró.=" + Q3 + ","
+        Q_rawdata = Q_rawdata + "Q4: ¿Tiene conocimiento de que esta persona o grupo posea o mencione armas (armas de fuego, etc.), o ha escuchado informes de disparos o explosiones?=" + Q4 + ","
+        Q_rawdata = Q_rawdata + "Q5: ¿Ha mostrado el individuo signos de inestabilidad, como cambios extremos de humor, aislamiento repentino o reacciones ante una pérdida personal importante (trabajo, relación, etc.)?=" + Q5 + ","
+        Q_rawdata = Q_rawdata + "Q6: ¿Esta persona o grupo ataca a individuos o comunidades específicas con culpas, insultos o expresiones de odio?=" + Q6 + ","
+        Q_rawdata = Q_rawdata + "Q7: ¿Ha afectado esta situación su rutina diaria, su salud física (sueño/estrés) o le ha obligado a cambiar sus hábitos para evitar el contacto?=" + Q7 + ","
+        Q_rawdata = Q_rawdata + "Q8: Según lo que sabe, ¿cuál es la \"historia\" de lo que podría suceder? ¿Quién está involucrado y cuál es la preocupación específica?=" + Q8 + ","
+        Q_rawdata = Q_rawdata + "Q9: ¿Qué intervención o solución cree que resolvería mejor este conflicto en su vecindario o lugar de trabajo?=" + Q9 + ","
+    
+        # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
     
     # If submit button is clicked, query the aitam library.            
     if submit1:
@@ -5604,6 +5692,143 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This analysis supports, but does not replace, a qualified forensic evaluator’s opinion or the court’s determination of competency.*")            
+        st.markdown(cleaned_response)
+
+    elif submit7:
+        QUERY = f"""
+            # User context:
+                - Assessment: Perceptions of Concern (POC)
+                - Raw scenario-writing responses: {Q_rawdata}
+                - Preferred language: {language}
+            
+            # Purpose
+            Analyze user responses from the Perceptions of Concern Questionnaire to identify observable narrative, emotional, and thematic patterns that reflect how the individual understands or describes safety concerns within their environment.
+            This analysis supports early awareness and prevention, not judgment or blame, and should remain grounded strictly in the provided text.
+            
+            # Analysis Scope
+            1. Narrative Content & Roles
+            Evaluate how the respondent frames people, situations, and outcomes:
+            + The respondent’s perceived role (e.g., observer, witness, helper, target, or uncertain role).
+            + Descriptions of others (e.g., “person of concern,” peer group, authority figures).
+            + Any references to conflict, grievance, or interpersonal tension.
+            + Presence of language suggesting retaliation, escalation, or “payback.”
+            + Indicators of perceived control, lack of control, or unpredictability in situations.
+            + Emphasis on risk vs. safety, including awareness of potential harm or prevention.
+            
+            2. Safety-Relevant Indicators (Contextual, Not Diagnostic)
+            Identify observable elements aligned with prevention and risk awareness:
+            + Mentions of specific threats, weapons, or planned actions.
+            + References to targets (individuals or groups) or assignment of blame.
+            + Indications of behavioral changes, distress, or conflict escalation.
+            + Evidence of“leakage” (sharing of concerning intent, stories, or warnings).
+            + Descriptions of impact on the respondent (e.g., fear, avoidance, heightened awareness).
+            
+            These observations should remain descriptive and may align with structured risk signals used in prevention models, such as imminence, capability, and intent, but should not assign scores or risk levels unless explicitly instructed.
+            
+            3. Emotional & Thematic Tone
+            Assess the overall tone and emotional qualities of the response:
+            + General atmosphere (e.g., concerned, neutral, tense, uncertain, reassured).
+            + Presence of fear, unease, vigilance, confidence, or trust/distrust.
+            + Balance between concern vs. reassurance.
+            + Depictions of social dynamics (e.g., conflict, isolation, cooperation, support).
+            
+            4. Linguistic & Structural Features
+            Review how the response is expressed:
+            + Clarity, grammar, and approximate communication complexity.
+            + Organization and coherence (structured vs. fragmented responses).
+            + Repetition, emphasis patterns, or notable phrasing.
+            + Use of imagery, metaphors, or narrative framing (if present).
+            + Indicators of perceived change over time (e.g., escalation, stability, uncertainty).
+            
+            # Operational Requirements
+            + Base all observations only on the provided text.
+            + Use neutral, descriptive, and non-directive language:
+            ++ Examples:“The response describes…”,“This may suggest…”,“The respondent notes…”
+            + Do not:
+            ++ Diagnose or imply mental health conditions
+            ++ Assign intent beyond what is explicitly stated
+            ++ Make judgments about credibility or truth
+            + Avoid speculation; clearly distinguish between explicit statements and cautious interpretation.
+            + Maintain language consistency with the user’s input.
+            
+            # Output Structure
+            1. Summary of Key Themes
+            Provide a concise overview of:
+            + Primary concerns raised
+            + Notable narrative patterns
+            + Overall tone and focus (safety, conflict, uncertainty, etc.)
+            
+            2. Observational Insights
+            Offer a neutral interpretation of what the patterns may indicate about:
+            + How the respondent perceives safety or risk
+            + Their awareness of potential threats or prevention needs
+            + Interpersonal or environmental dynamics described
+            
+            3. Safety-Relevant Observations
+            Summarize any clearly identifiable prevention signals, such as:
+            + Mentioned threats, targets, or concerning behaviors
+            + Descriptions of escalation, distress, or warning signs
+            + Reported personal impact (e.g., avoidance, fear, behavioral changes)
+            
+            4. Linguistic Observations
+            Briefly note:
+            + Clarity and organization
+            + Language complexity
+            + Any unusual or notable structural features
+            
+            5. Reflective Prompt (Optional)
+            Provide one gentle, non-directive question to support reflection:
+            + Example:“What part of this situation feels most important to address right now?”
+            
+            # Edge Case Handling
+            If responses are:
+            + Very brief
+            + Vague or unclear
+            + Contradictory
+            
+            Then:
+            + State that pattern identification is limited
+            + Describe only what is explicitly observable
+            + Avoid extending interpretation beyond available information
+            
+            # Alignment with Prevention Framework
+            This analysis supports a broader threat assessment and prevention workflow, where AI serves as an initial pattern-recognition layer, not a final decision-maker. [Facilitator Guide | Word]
+            Any significant safety indicators identified here may be reviewed by a designated team for further context and appropriate action.
+            
+            # Final Instruction
+            Produce a clear, structured, and neutral thematic analysis that prioritizes early awareness, clarity, and responsible interpretation of the respondent’s concerns.
+            """
+        
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = "Follow query instructions",
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID],
+                }],
+                include=["output[*].file_search_call.search_results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
 
 elif st.session_state.get('authentication_status') is False:
