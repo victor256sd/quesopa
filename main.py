@@ -2,34 +2,48 @@
 # Copyright (c) 2026 victor256sd
 # All rights reserved.
 #
-# Changelog:
+# CHANGELOG:
 #
-# 6/16/2026: Added POC to questionnaires.
-# 6/15/2026: Changed named of Questions About People You Know to
+# 07.26.2026: Adjusted FINE based on emails from Glenn on 7/17/2026.
+# Also cleaned up the commenting.
+#
+# 06.16.2026: Added POC to questionnaires.
+#
+# 06.15.2026: Changed named of Questions About People You Know to
 # Questions About Yourself and Others.
-# 4/24/2026: Corrected NEIL Adult description, switched with DDCL.
-# 3/29/2026: Added DDCL and Prong 2 Competency questionnaires after
+#
+# 04.24.2026: Corrected NEIL Adult description, switched with DDCL.
+#
+# 03.29.2026: Added DDCL and Prong 2 Competency questionnaires after
 # discussing with Glenn at Panera.
-# 2/28/2026: Updates with Glenn at Starbucks.
-# 2/15/2026: Started programming Future Inferred Narration of 
+#
+# 02.28.2026: Updates with Glenn at Starbucks.
+#
+# 02.15.2026: Started programming Future Inferred Narration of 
 # Events (FINE) tool based on meeting with Glenn and materials 
 # provided on 2/13/2026.
-# 2/13/2026, 2/14/2026: Modified NEIL child version description, 
+#
+# 02.13.2026, 2/14/2026: Modified NEIL child version description, 
 # added two questions at the end, and adjusted language on multiple 
 # question numbers (Glenn email, 2/12/2026). Added NEIL adult 
 # version (Glenn email, 2/12/2026).
-# 1/26/2026: Modified page to accommodate the loneliness and NEIL
+#
+# 01/26/2026: Modified page to accommodate the loneliness and NEIL
 # child version surveys.
-# 1/21/2026: Modifications to survey, question wording and adding
+#
+# 01.21.2026: Modifications to survey, question wording and adding
 # two questions, verbiage for prompts changed, interpretation of
 # scores changed (Glenn email, 1/21/2026).
-# 1/19/2026: Changed Medium interpretation to Low, point AI to 
+#
+# 01.19.2026: Changed Medium interpretation to Low, point AI to 
 # consider specific questions and answers on the assessment. Modi-
 # fied the query prompt. Resources are 
-# 1/18/2026: Changed age range from 10 to 99, adjusted questions 
+#
+# 01.18.2026: Changed age range from 10 to 99, adjusted questions 
 # to short form of 10 questions (GL provided) and included Spanish 
 # option (GL provided), changed verbiage from Often to Always.
-# 1/17/2026: Initial development.
+#
+# 01.17.2026: Initial development.
 #-------------------------------------------------------------------
 
 import streamlit as st
@@ -120,6 +134,10 @@ if st.session_state.get('authentication_status'):
     age = row1[0].slider("Age", 7, 99)
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
+    #-------------------------------------------------------------------
+    # TOOL SELECTION MENU
+    #-------------------------------------------------------------------
+    
     tool = st.radio("Select a tool:",
         ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Concern (POC)"], index=None,
         captions=[
@@ -132,6 +150,11 @@ if st.session_state.get('authentication_status'):
             "Help identify concerns in the community and prevent harm before it occurs.\n",
         ],
     )
+    
+    #-------------------------------------------------------------------
+    # TOOL: Questions About People You Know
+    # DESRIPTION: To assess for lonliness.
+    #-------------------------------------------------------------------
     
     # Create loneliness survey form.
     if tool == "Questions About People You Know" and language == "English":
@@ -158,8 +181,13 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
-            submit7 = False
-        
+            submit7 = False    
+
+    #-------------------------------------------------------------------
+    # TOOL: Questions About People You Know in Spanish
+    # DESRIPTION: To assess for lonliness.
+    #-------------------------------------------------------------------
+
     elif tool == "Questions About People You Know" and language == "Spanish":
         with st.form("yvform"):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
@@ -184,6 +212,11 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             
+    #-------------------------------------------------------------------
+    # TOOL: My Feelings and Needs, NEIL Child Version
+    # DESRIPTION: To be used to assess for lonliness in children.
+    #-------------------------------------------------------------------
+
     # Create NEIL Child Version survey form.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "English":
         with st.form("neilform"):
@@ -240,6 +273,11 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
     
+    #-------------------------------------------------------------------
+    # TOOL: My Feelings and Needs, NEIL Child Version, in Spanish
+    # DESRIPTION: To be used to assess for lonliness in children.
+    #-------------------------------------------------------------------
+
     # Create NEIL Child Version survey form in Spanish.
     elif tool == "My Feelings and Needs (NEIL Child Version)" and language == "Spanish":
         with st.form("neilform"):
@@ -296,6 +334,11 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
 
+    #-------------------------------------------------------------------
+    # TOOL: My Feelings and Needs, NEIL Adult Version
+    # DESRIPTION: To be used to assess for lonliness in adults.
+    #-------------------------------------------------------------------
+
     # Create NEIL Adult Version survey form.
     elif tool == "My Feelings and Needs (NEIL Adult Version)" and language == "English":
         with st.form("neilform-adult"):
@@ -351,6 +394,12 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
     
+    #-------------------------------------------------------------------
+    # TOOL: Daily Digital Connected life, DDCL
+    # DESRIPTION: To be used to assess for isolation due to online
+    # activity.
+    #-------------------------------------------------------------------
+
     # Create DDCL survey form.
     elif tool == "Daily Digital Connected Life (DDCL)" and language == "English":
         with st.form("ddclform"):
@@ -403,6 +452,11 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
 
+    #-------------------------------------------------------------------
+    # TOOL: Future Inferred Narration of Events, FINE
+    # DESRIPTION: To assess for an individual's perception of self.
+    #-------------------------------------------------------------------
+
     # Create FINE Version survey form.
     elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
         with st.form("fineform"):
@@ -431,7 +485,13 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
 
-    # Create FINE Version survey form.
+    #-------------------------------------------------------------------
+    # TOOL: Competency to Stand Trial
+    # DESRIPTION: To assess for an individual's competency to stand 
+    # trial, prong two test.
+    #-------------------------------------------------------------------
+
+    # Create Competency to Stand Trial, prong two assessment.
     elif tool == "Competency to Stand Trial" and language == "English":
         with st.form("competencyform"):
             st.write("These questions help assess whether a defendant can understand the legal proceedings and communicate rationally with counsel to assist in their defense. Please answer the following.")
@@ -460,6 +520,12 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit7 = False
 
+    #-------------------------------------------------------------------
+    # TOOL: Perceptions of Concern, POC
+    # DESRIPTION: To survey possible witnesses about concerning
+    # behaviors.
+    #-------------------------------------------------------------------
+
     # Create POC survey form.
     elif tool == "Perceptions of Concern (POC)" and language == "English":
         with st.form("pocform"):
@@ -483,6 +549,12 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
     
+    #-------------------------------------------------------------------
+    # TOOL: Perceptions of Concern, POC, in Spanish
+    # DESRIPTION: To survey possible witnesses about concerning
+    # behaviors.
+    #-------------------------------------------------------------------
+
     elif tool == "Perceptions of Concern (POC)" and language == "Spanish":
         with st.form("pocform"):
             st.write("Esta encuesta es una herramienta para la intervención temprana y la prevención. Nuestro objetivo es abordar inquietudes, desconfianza y posibles conflictos antes de que se intensifiquen. Esta no es una plataforma para culpar, sino una forma proactiva de garantizar un entorno seguro para todos.")
@@ -514,6 +586,10 @@ if st.session_state.get('authentication_status'):
         submit6 = False
         submit7 = False
     
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    #-------------------------------------------------------------------
+
     if submit1 and language == "English":
         Q_total = 0
         Q_response = ""
