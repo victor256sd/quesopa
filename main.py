@@ -4,7 +4,8 @@
 #
 # CHANGELOG:
 #
-# 07.26.2026: Cleaned up the commenting.
+# 07.26.2026: Cleaned up the commenting. Adjusted language on FINE
+# Q14.
 #
 # 06.16.2026: Added POC to questionnaires.
 #
@@ -493,7 +494,7 @@ if st.session_state.get('authentication_status'):
             Q11 = st.text_area("#11. You go to the doctor.", placeholder="Write your thoughts here...", height=150)
             Q12 = st.text_area("#12. You find something you have been looking for.", placeholder="Write your thoughts here...", height=150)
             Q13 = st.text_area("#13. You are forgiven and feel understood.", placeholder="Write your thoughts here...", height=150)
-            Q14 = st.text_area("#14. How do you see the future?", placeholder="Write your thoughts here...", height=150)
+            Q14 = st.text_area("#14. You believe life is on track to accomplish what?", placeholder="Write your thoughts here...", height=150)
 
             submit4 = st.form_submit_button("Submit")
             submit1 = False
@@ -5131,7 +5132,7 @@ if st.session_state.get('authentication_status'):
         Q_rawdata = Q_rawdata + "Q11: You go to the doctor.=" + Q11 + ","
         Q_rawdata = Q_rawdata + "Q12: You find something you have been looking for.=" + Q12 + ","
         Q_rawdata = Q_rawdata + "Q13: You are forgiven and feel understood.=" + Q13 + ","
-        Q_rawdata = Q_rawdata + "Q14: How do you see the future?=" + Q14
+        Q_rawdata = Q_rawdata + "Q14: You believe life is on track to accomplish what?=" + Q14
     
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
 
