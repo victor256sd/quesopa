@@ -4,8 +4,7 @@
 #
 # CHANGELOG:
 #
-# 07.26.2026: Adjusted FINE based on emails from Glenn on 7/17/2026.
-# Also cleaned up the commenting.
+# 07.26.2026: Cleaned up the commenting.
 #
 # 06.16.2026: Added POC to questionnaires.
 #
@@ -134,6 +133,8 @@ if st.session_state.get('authentication_status'):
     age = row1[0].slider("Age", 7, 99)
     language = row1[1].selectbox("Language",["English", "Spanish"])
 
+    #===================================================================
+
     #-------------------------------------------------------------------
     # TOOL SELECTION MENU
     #-------------------------------------------------------------------
@@ -150,6 +151,8 @@ if st.session_state.get('authentication_status'):
             "Help identify concerns in the community and prevent harm before it occurs.\n",
         ],
     )
+    
+    #===================================================================
     
     #-------------------------------------------------------------------
     # TOOL: Questions About People You Know
@@ -585,9 +588,12 @@ if st.session_state.get('authentication_status'):
         submit5 = False
         submit6 = False
         submit7 = False
-    
+
+    #===================================================================
+
     #-------------------------------------------------------------------
     # TOOL SCORING
+    # TOOL: Questions About Yourself and Others
     #-------------------------------------------------------------------
 
     if submit1 and language == "English":
@@ -833,6 +839,11 @@ if st.session_state.get('authentication_status'):
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
 
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Questions About Yourself and Others, in Spanish
+    #-------------------------------------------------------------------
+
     if submit1 and language == "Spanish":
         Q_total = 0
         Q_response = ""
@@ -1075,6 +1086,11 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: My Feelings and Needs, NEIL Child Version
+    #-------------------------------------------------------------------
 
     if submit2 and language == "English":
         Q_connection = 0
@@ -2149,7 +2165,12 @@ if st.session_state.get('authentication_status'):
         
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
-    
+
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: My Feelings and Needs, NEIL Child Version, in Spanish
+    #-------------------------------------------------------------------
+
     if submit2 and language == "Spanish":
         Q_connection = 0
         Q_inclusion = 0
@@ -3224,6 +3245,11 @@ if st.session_state.get('authentication_status'):
         st.markdown("Para más información y recursos, favor de visitar: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
         
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: My Feelings and Needs, NEIL Adult Version
+    #-------------------------------------------------------------------
+
     if submit3 and language == "English":
         Q_positive_well_being_resilience = 0
         Q_internal_psychological_somatic_distress = 0
@@ -4353,6 +4379,11 @@ if st.session_state.get('authentication_status'):
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
 
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Daily Digital Connected Life, DDCL
+    #-------------------------------------------------------------------
+
     if submit5 and language == "English":
         Q_total = 0
         Q_response = ""
@@ -5062,7 +5093,12 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q39:I look at more items online than I actually purchase.=No Answer,"
 
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
-        
+
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Future Inferred Narration of Events, FINE
+    #-------------------------------------------------------------------
+
     if submit4 and language == "English":
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -5083,6 +5119,11 @@ if st.session_state.get('authentication_status'):
         Q_rawdata = Q_rawdata + "Q14: How do you see the future?=" + Q14
     
         st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Competency to Stand Trial
+    #-------------------------------------------------------------------
 
     if submit6 and language == "English":
         Q_total = 0
@@ -5333,6 +5374,11 @@ if st.session_state.get('authentication_status'):
         # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
 
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Perceptions of Concern, POC
+    #-------------------------------------------------------------------
+
     if submit7 and language == "English":
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -5349,6 +5395,11 @@ if st.session_state.get('authentication_status'):
     
         # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
 
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Perceptions of Concern, POC, in Spanish
+    #-------------------------------------------------------------------
+
     if submit7 and language == "Spanish":
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
@@ -5362,9 +5413,14 @@ if st.session_state.get('authentication_status'):
         Q_rawdata = Q_rawdata + "Q7: ¿Ha afectado esta situación su rutina diaria, su salud física (sueño/estrés) o le ha obligado a cambiar sus hábitos para evitar el contacto?=" + Q7 + ","
         Q_rawdata = Q_rawdata + "Q8: Según lo que sabe, ¿cuál es la \"historia\" de lo que podría suceder? ¿Quién está involucrado y cuál es la preocupación específica?=" + Q8 + ","
         Q_rawdata = Q_rawdata + "Q9: ¿Qué intervención o solución cree que resolvería mejor este conflicto en su vecindario o lugar de trabajo?=" + Q9 + ","
-    
-        # st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
-    
+
+    #===================================================================
+
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Questions About Yourself and Others
+    #-------------------------------------------------------------------
+
     # If submit button is clicked, query the aitam library.            
     if submit1:
         # If form is submitted without a query, stop.
@@ -5435,6 +5491,11 @@ if st.session_state.get('authentication_status'):
             
         st.markdown(cleaned_response)
 
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: My Feelings and Needs, NEIL Child Version
+    #-------------------------------------------------------------------
+
     elif submit2:
         QUERY = f"""User context:
             - Assessment: My Feelings and Needs (NEIL Child Version)
@@ -5498,6 +5559,11 @@ if st.session_state.get('authentication_status'):
             # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
             
         st.markdown(cleaned_response)
+
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: My Feelings and Needs, NEIL Adult Version
+    #-------------------------------------------------------------------
 
     elif submit3:
         QUERY = f"""User context:
@@ -5563,6 +5629,11 @@ if st.session_state.get('authentication_status'):
             
         st.markdown(cleaned_response)
 
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Daily Digital Connected Life, DDCL
+    #-------------------------------------------------------------------
+
     elif submit5 and language == "English":
         QUERY = f"""
             # User context:
@@ -5616,7 +5687,12 @@ if st.session_state.get('authentication_status'):
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
-    
+
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Future Inferred Narration of Events, FINE
+    #-------------------------------------------------------------------
+
     elif submit4 and language == "English":
         QUERY = f"""
             # User context:
@@ -5699,6 +5775,11 @@ if st.session_state.get('authentication_status'):
         st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
 
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Competency to Stand Trial
+    #-------------------------------------------------------------------
+
     elif submit6 and language == "English":
         QUERY = f"""
             # User context:
@@ -5769,6 +5850,11 @@ if st.session_state.get('authentication_status'):
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This analysis supports, but does not replace, a qualified forensic evaluator’s opinion or the court’s determination of competency.*")            
         st.markdown(cleaned_response)
+
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Perceptions of Concern, POC
+    #-------------------------------------------------------------------
 
     elif submit7:
         QUERY = f"""
@@ -5906,6 +5992,8 @@ if st.session_state.get('authentication_status'):
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
         st.markdown(cleaned_response)
+
+    #===================================================================
 
 elif st.session_state.get('authentication_status') is False:
     st.error('Username/password is incorrect')
