@@ -45,6 +45,21 @@
 # 01.17.2026: Initial development.
 #-------------------------------------------------------------------
 
+#-------------------------------------------------------------------
+# Correlation of Tools to form Submit #s:
+#
+# Submit1 - Questions About Yourself and Others
+# Submit1 - Questions About Yourself and Others, in Spanish
+# Submit2 - My Feelings and Needs, NEIL Child Version
+# Submit2 - My Feelings and Needs, NEIL Child Version, in Spanish
+# Submit3 - My Feelings and Needs, NEIL Adult Version
+# Submit5 - Daily Digital Connected Life, DDCL
+# Submit4 - Future Inferred Narration of Events, FINE
+# Submit6 - Competency to Stand Trial
+# Submit7 - Perceptions of Concern, POC
+# Submit7 - Perceptions of Concern, POC, in Spanish
+#-------------------------------------------------------------------
+
 import streamlit as st
 import streamlit_authenticator as stauth
 import openai
