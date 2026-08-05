@@ -4,6 +4,9 @@
 #
 # CHANGELOG:
 #
+# 08.04.2026: Fixed Questions about yourself and others (loneliness)
+# tool, where form wasn't showing on selection.
+#
 # 07.26.2026: Cleaned up the commenting. Adjusted language on FINE
 # Q14.
 #
@@ -176,7 +179,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     # Create loneliness survey form.
-    if tool == "Questions About People You Know" and language == "English":
+    if tool == "Questions About Yourself and Others" and language == "English":
         with st.form("yvform"):
             st.write("Please answer each question based on how you usually feel. Choose one response.")
             Q1 = st.selectbox("#1. How often do people respond kindly when you share your feelings or worries?", ["","Never", "Rarely", "Sometimes", "Often", "Always"])
@@ -207,7 +210,7 @@ if st.session_state.get('authentication_status'):
     # DESRIPTION: To assess for lonliness.
     #-------------------------------------------------------------------
 
-    elif tool == "Questions About People You Know" and language == "Spanish":
+    elif tool == "Questions About Yourself and Others" and language == "Spanish":
         with st.form("yvform"):
             st.write("Por favor, responde cada pregunta según cómo te sientes normalmente. Elige una respuesta.")
             Q1 = st.selectbox("#1. ¿Con qué frecuencia las personas responden con amabilidad cuando compartes tus sentimientos o preocupaciones?", ["", "Nunca", "Rara vez", "A veces", "A menudo", "Siempre"])
