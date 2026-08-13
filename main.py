@@ -5,7 +5,8 @@
 # CHANGELOG:
 #
 # 08.13.2026: Added ability to copy response. Updated issues with
-# API calls to OpenAI.
+# API calls to OpenAI. Maintained response on page after a 
+# streamlit refresh.
 #
 # 08.04.2026: Fixed Questions about yourself and others (loneliness)
 # tool, where form wasn't showing on selection.
@@ -151,6 +152,10 @@ if st.session_state.get('authentication_status'):
         st.error("Please enter your OpenAI API key!")
         st.stop()
 
+    # Initialize state once
+    if "cleaned_response" not in st.session_state:
+        st.session_state.cleaned_response = None
+    
     name = st.text_input("Name")
     row1 = st.columns([2,2])
     age = row1[0].slider("Age", 7, 99)
@@ -6096,6 +6101,17 @@ if st.session_state.get('authentication_status'):
                 copied_label="Copied!",
                 icon="st",
             )
+
+    elif st.session_state.cleaned_response:
+        st.markdown(st.session_state.cleaned_response)
+                    
+        # Add a small copy icon button
+        copy_button(
+            text=st.session_state.cleaned_response,
+            tooltip="Copy this text",
+            copied_label="Copied!",
+            icon="st",
+        )
 
     #===================================================================
 
