@@ -4,7 +4,8 @@
 #
 # CHANGELOG:
 #
-# 08.13.2026: Added ability to copy response.
+# 08.13.2026: Added ability to copy response. Updated issues with
+# API calls to OpenAI.
 #
 # 08.04.2026: Fixed Questions about yourself and others (loneliness)
 # tool, where form wasn't showing on selection.
@@ -5917,7 +5918,7 @@ if st.session_state.get('authentication_status'):
                             "type": "file_search",
                             "vector_store_ids": [VECTOR_STORE_ID2],
                 }],
-                include=["output[*].file_search_call.search_results"]
+                include=["file_search_call.results"]
             )
         # Write response to the answer column.    
         # with answer_col:
