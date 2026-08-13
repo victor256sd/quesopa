@@ -4,6 +4,8 @@
 #
 # CHANGELOG:
 #
+# 08.13.2026: Added ability to copy response.
+#
 # 08.04.2026: Fixed Questions about yourself and others (loneliness)
 # tool, where form wasn't showing on selection.
 #
@@ -75,6 +77,7 @@ from yaml.loader import SafeLoader
 from pathlib import Path
 from cryptography.fernet import Fernet
 import re
+from st_copy import copy_button
 
 # Disable the button called via on_click attribute.
 def disable_button():
@@ -5508,8 +5511,19 @@ if st.session_state.get('authentication_status'):
             st.write("*Este instrumento es una herramienta de detección, no una medida diagnóstica. Los puntajes nunca deben utilizarse de manera aislada para tomar decisiones clínicas, educativas, disciplinarias u otras decisiones de vida. Todas las personas tienen fortalezas y debilidades. Use esta información para conectarse con otros que puedan ofrecer sugerencias útiles y buenas conversaciones. Los puntajes elevados de aislamiento pueden ser seguidos por una conversación con líderes religiosos, grupos de autoayuda, terapeutas y profesionales de la salud. Esto puede llevar a que otras personas le realicen entrevistas. La información colateral (familia, escuela, contexto) y la consideración de la etapa de desarrollo, las normas culturales y el acceso a compañeros en persona son áreas de indagación. Un alto nivel de participación en línea no indica inherentemente una patología; la interpretación debe distinguir entre conexión en línea adaptativa versus retraimiento social evitativo o perjudicial. Si las respuestas sugieren angustia significativa, retraimiento o dificultades para aprender, trabajar o amar, considere buscar una evaluación psicosocial integral y una detección de depresión, ansiedad, exposición a trauma o acoso escolar.*")
             # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
             
-        st.markdown(cleaned_response)
-
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
+    
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
     # TOOL: My Feelings and Needs, NEIL Child Version
@@ -5576,9 +5590,20 @@ if st.session_state.get('authentication_status'):
             st.markdown("#### Qué Sopa AI Información")
             st.write("*Este instrumento es una herramienta de detección, no una medida diagnóstica. Los puntajes nunca deben utilizarse de manera aislada para tomar decisiones clínicas, educativas, disciplinarias u otras decisiones de vida. Todas las personas tienen fortalezas y debilidades. Use esta información para conectarse con otros que puedan ofrecer sugerencias útiles y buenas conversaciones. Los puntajes elevados de aislamiento pueden ser seguidos por una conversación con líderes religiosos, grupos de autoayuda, terapeutas y profesionales de la salud. Esto puede llevar a que otras personas le realicen entrevistas. La información colateral (familia, escuela, contexto) y la consideración de la etapa de desarrollo, las normas culturales y el acceso a compañeros en persona son áreas de indagación. Un alto nivel de participación en línea no indica inherentemente una patología; la interpretación debe distinguir entre conexión en línea adaptativa versus retraimiento social evitativo o perjudicial. Si las respuestas sugieren angustia significativa, retraimiento o dificultades para aprender, trabajar o amar, considere buscar una evaluación psicosocial integral y una detección de depresión, ansiedad, exposición a trauma o acoso escolar.*")
             # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
-            
-        st.markdown(cleaned_response)
 
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
+    
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
     # TOOL: My Feelings and Needs, NEIL Adult Version
@@ -5646,7 +5671,18 @@ if st.session_state.get('authentication_status'):
             st.write("*Este instrumento es una herramienta de detección, no una medida diagnóstica. Los puntajes nunca deben utilizarse de manera aislada para tomar decisiones clínicas, educativas, disciplinarias u otras decisiones de vida. Todas las personas tienen fortalezas y debilidades. Use esta información para conectarse con otros que puedan ofrecer sugerencias útiles y buenas conversaciones. Los puntajes elevados de aislamiento pueden ser seguidos por una conversación con líderes religiosos, grupos de autoayuda, terapeutas y profesionales de la salud. Esto puede llevar a que otras personas le realicen entrevistas. La información colateral (familia, escuela, contexto) y la consideración de la etapa de desarrollo, las normas culturales y el acceso a compañeros en persona son áreas de indagación. Un alto nivel de participación en línea no indica inherentemente una patología; la interpretación debe distinguir entre conexión en línea adaptativa versus retraimiento social evitativo o perjudicial. Si las respuestas sugieren angustia significativa, retraimiento o dificultades para aprender, trabajar o amar, considere buscar una evaluación psicosocial integral y una detección de depresión, ansiedad, exposición a trauma o acoso escolar.*")
             # st.write("*La información y las respuestas proporcionadas por esta aplicación son generadas por IA y se basan en el informe del Cirujano General de EE. UU., Nuestro Epidemia de Soledad y Aislamiento, y en recursos profesionales relacionados. Están destinadas únicamente a fines informativos y educativos y no constituyen asesoramiento legal, interpretación oficial de políticas ni un sustituto del juicio profesional. Los usuarios deben consultar sus políticas profesionales, regulaciones estatales o asesoría legal para obtener orientación autorizada sobre asuntos de soledad y aislamiento. Esta herramienta está diseñada para asistir, no para reemplazar, la toma de decisiones profesional o los procesos de revisión formal.*")
             
-        st.markdown(cleaned_response)
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
 
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
@@ -5705,7 +5741,19 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Scores should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations. Elevated isolation scores may be followed up with  a conversation with clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. High online engagement does not inherently indicate pathology; interpretation should distinguish between: adaptive online connection vs. avoidant or impairing social withdrawal. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
-        st.markdown(cleaned_response)
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
 
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
@@ -5792,7 +5840,19 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
-        st.markdown(cleaned_response)
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
 
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
@@ -5868,7 +5928,19 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This analysis supports, but does not replace, a qualified forensic evaluator’s opinion or the court’s determination of competency.*")            
-        st.markdown(cleaned_response)
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
 
     #-------------------------------------------------------------------
     # TOOL ASSESSMENT
@@ -6010,7 +6082,19 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("#### Qué Sopa AI Guidance")
         st.write("*This instrument is a screening tool, not a diagnostic measure. Guidance should never be used in isolation to make clinical, educational, or disciplinary or other life decisions. Every one has both strengths and weaknesses. Use this information to connect with others who might provide useful suggestions and good conversations, such as clergy, self-help groups, therapists, and health care professionals. This may lead to others interviewing you. Collateral information (family, school, context), and consideration of developmental stage, cultural norms, and access to in-person peers are areas of inquiry. If responses suggest significant distress, withdrawal, or difficulties in learning, working and loving consider seeking a comprehensive psychosocial assessment and screening for depression, anxiety, trauma exposure, or bullying.*")            
-        st.markdown(cleaned_response)
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
 
     #===================================================================
 
