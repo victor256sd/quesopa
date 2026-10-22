@@ -4,6 +4,8 @@
 #
 # CHANGELOG:
 #
+# 10.22.2026: Updated FINE language from text to message.
+#
 # 08.13.2026: Added ability to copy response. Updated issues with
 # API calls to OpenAI. Maintained response on page after a 
 # streamlit refresh.
@@ -491,7 +493,7 @@ if st.session_state.get('authentication_status'):
     # Create FINE Version survey form.
     elif tool == "Future Inferred Narration of Events (FINE)" and language == "English":
         with st.form("fineform"):
-            st.write("The sentences below describe events that may happen in your future. Respond to each future event as if you are the main character. Text what you would send describing what happened.")
+            st.write("The sentences below describe events that may happen in your future. Respond to each future event as if you are the main character. What would be the text or message you would send to someone describing what is happenning?")
 
             Q1 = st.text_area("#1. Something you always wanted happens.", placeholder="Write your thoughts here...", height=150)
             Q2 = st.text_area("#2. A valued possession is damaged.", placeholder="Write your thoughts here...", height=150)
