@@ -5533,7 +5533,7 @@ if st.session_state.get('authentication_status'):
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Somewhat,"
         elif Q1 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+#            Q_protective_balanace = Q_protective_balanace + 3
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Mostly true,"
         elif Q1 == "Extremely true":
             Q_total = Q_total + 4
