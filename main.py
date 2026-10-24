@@ -5499,6 +5499,284 @@ if st.session_state.get('authentication_status'):
         Q_rawdata = Q_rawdata + "Q8: Según lo que sabe, ¿cuál es la \"historia\" de lo que podría suceder? ¿Quién está involucrado y cuál es la preocupación específica?=" + Q8 + ","
         Q_rawdata = Q_rawdata + "Q9: ¿Qué intervención o solución cree que resolvería mejor este conflicto en su vecindario o lugar de trabajo?=" + Q9 + ","
 
+    #-------------------------------------------------------------------
+    # TOOL SCORING
+    # TOOL: Gratefulness and Forgiveness
+    #-------------------------------------------------------------------
+
+    if submit8 and language == "English":
+        Q_total = 0
+        Q_protective_balance = 0
+        Q_retaliatory_concern = 0
+        Q_response = ""
+        Q_rawdata = name + "," + str(age) + ","
+
+        # Questions 2, 3, 6, 7, 9, 10, 13, 14, 16, 17, scored in reverse.
+        if Q1 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=No answer,"
+        elif Q1 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=False,"
+        elif Q1 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=A little,"
+        elif Q1 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Somewhat,"
+        elif Q1 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Mostly true,"
+        elif Q1 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Skipped,"
+
+        # Scored in reverse.
+        if Q2 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=No answer,"
+        elif Q2 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=False,"
+        elif Q2 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=A little,"
+        elif Q2 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Somewhat,"
+        elif Q2 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Mostly true,"
+        elif Q2 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Skipped,"
+
+        # Scored in reverse.
+        if Q3 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=No answer,"
+        elif Q3 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=False,"
+        elif Q3 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=A little,"
+        elif Q3 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Somewhat,"
+        elif Q3 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Mostly true,"
+        elif Q3 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Skipped,"
+
+        if Q4 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Never,"
+        elif Q4 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Rarely,"
+        elif Q4 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Sometimes,"
+        elif Q4 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Often,"
+        elif Q4 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=No Answer,"
+
+        if Q5 == "Never": 
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Never,"
+        elif Q5 == "Rarely":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Rarely,"
+        elif Q5 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Sometimes,"
+        elif Q5 == "Often":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Often,"
+        elif Q5 == "Always":
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=No Answer,"
+        
+        # Scored in reverse.
+        if Q6 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Never,"
+        elif Q6 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Rarely,"
+        elif Q6 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Sometimes,"
+        elif Q6 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Often,"
+        elif Q6 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=No Answer,"
+    
+        # Scored in reverse.
+        if Q7 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Never,"
+        elif Q7 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Rarely,"
+        elif Q7 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Sometimes,"
+        elif Q7 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Often,"
+        elif Q7 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=No Answer,"
+
+        # Scored in reverse.
+        if Q8 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Never,"
+        elif Q8 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Rarely,"
+        elif Q8 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Sometimes,"
+        elif Q8 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Often,"
+        elif Q8 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=No Answer,"
+
+        # Scored in reverse.
+        if Q9 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Never,"
+        elif Q9 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Rarely,"
+        elif Q9 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Sometimes,"
+        elif Q9 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Often,"
+        elif Q9 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=No Answer,"
+
+        # Scored in reverse.
+        if Q10 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Never,"
+        elif Q10 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Rarely,"
+        elif Q10 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Sometimes,"
+        elif Q10 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Often,"
+        elif Q10 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=No Answer,"
+
+        # Scored in reverse.
+        if Q11 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Never,"
+        elif Q11 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Rarely,"
+        elif Q11 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Sometimes,"
+        elif Q11 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Often,"
+        elif Q11 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=No Answer,"
+        
+        # Scored in reverse.
+        if Q12 == "Never": 
+            Q_total = Q_total + 4
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Never,"
+        elif Q12 == "Rarely":
+            Q_total = Q_total + 3
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Rarely,"
+        elif Q12 == "Sometimes":
+            Q_total = Q_total + 2
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Sometimes,"
+        elif Q12 == "Often":
+            Q_total = Q_total + 1
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Often,"
+        elif Q12 == "Always":
+            Q_total = Q_total + 0
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Always,"
+        else:
+            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=No Answer,"
+
+        if Q_total >= 0 and Q_total <= 15:
+            st.write(f"#### Total Score: {Q_total} (High social isolation)")
+            Q_response = "High social isolation."
+        elif Q_total >= 16 and Q_total <= 31:
+            st.write(f"#### Total Score: {Q_total} (Mixed/moderate social connection)")
+            Q_response = "Mixed/moderate connection."
+        elif Q_total >= 32 and Q_total <= 48:
+            st.write(f"#### Total Score: {Q_total} (Strong social connection)")
+            Q_response = "Strong social connection."
+
+        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+    
     #===================================================================
 
     #-------------------------------------------------------------------
