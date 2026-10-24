@@ -5595,175 +5595,366 @@ if st.session_state.get('authentication_status'):
         else:
             Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Skipped,"
 
-        if Q4 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Never,"
-        elif Q4 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Rarely,"
-        elif Q4 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Sometimes,"
-        elif Q4 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Often,"
-        elif Q4 == "Always":
+        if Q4 == "No answer":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=Always,"
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=No answer,"
+        elif Q4 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=False,"
+        elif Q4 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=A little,"
+        elif Q4 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Somewhat,"
+        elif Q4 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Mostly true,"
+        elif Q4 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Extremely true,"
         else:
-            Q_rawdata = Q_rawdata + "Q4:How often do you feel separate from others, even when you are with them?=No Answer,"
+            Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Skipped,"
 
-        if Q5 == "Never": 
+        if Q5 == "No answer":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Never,"
-        elif Q5 == "Rarely":
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=No answer,"
+        elif Q5 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=False,"
+        elif Q5 == "A little":
             Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Rarely,"
-        elif Q5 == "Sometimes":
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=A little,"
+        elif Q5 == "Somewhat":
             Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Sometimes,"
-        elif Q5 == "Often":
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Somewhat,"
+        elif Q5 == "Mostly true":
             Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Often,"
-        elif Q5 == "Always":
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Mostly true,"
+        elif Q5 == "Extremely true":
             Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=Always,"
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Extremely true,"
         else:
-            Q_rawdata = Q_rawdata + "Q5:I have someone to eat with when I want to share a meal.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Skipped,"
         
         # Scored in reverse.
-        if Q6 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Never,"
-        elif Q6 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Rarely,"
-        elif Q6 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Sometimes,"
-        elif Q6 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Often,"
-        elif Q6 == "Always":
+        if Q6 == "No answer":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=Always,"
-        else:
-            Q_rawdata = Q_rawdata + "Q6:It is not easy for me to make friends.=No Answer,"
-    
-        # Scored in reverse.
-        if Q7 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Never,"
-        elif Q7 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Rarely,"
-        elif Q7 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Sometimes,"
-        elif Q7 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Often,"
-        elif Q7 == "Always":
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=No answer,"
+        elif Q6 == "False": 
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=Always,"
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=False,"
+        elif Q6 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=A little,"
+        elif Q6 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Somewhat,"
+        elif Q6 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Mostly true,"
+        elif Q6 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Extremely true,"
         else:
-            Q_rawdata = Q_rawdata + "Q7:You wait a long time for others to respond to you.=No Answer,"
-
-        # Scored in reverse.
-        if Q8 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Never,"
-        elif Q8 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Rarely,"
-        elif Q8 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Sometimes,"
-        elif Q8 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Often,"
-        elif Q8 == "Always":
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=Always,"
-        else:
-            Q_rawdata = Q_rawdata + "Q8:Is it easier for you to play games or do other things by yourself?=No Answer,"
-
-        # Scored in reverse.
-        if Q9 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Never,"
-        elif Q9 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Rarely,"
-        elif Q9 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Sometimes,"
-        elif Q9 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Often,"
-        elif Q9 == "Always":
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=Always,"
-        else:
-            Q_rawdata = Q_rawdata + "Q9:How often do you feel left out when others get together without inviting you?=No Answer,"
-
-        # Scored in reverse.
-        if Q10 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Never,"
-        elif Q10 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Rarely,"
-        elif Q10 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Sometimes,"
-        elif Q10 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Often,"
-        elif Q10 == "Always":
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=Always,"
-        else:
-            Q_rawdata = Q_rawdata + "Q10:How often do you feel hurt because you don’t have someone to laugh with or talk to about your thoughts and feelings?=No Answer,"
-
-        # Scored in reverse.
-        if Q11 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Never,"
-        elif Q11 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Rarely,"
-        elif Q11 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Sometimes,"
-        elif Q11 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Often,"
-        elif Q11 == "Always":
-            Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=Always,"
-        else:
-            Q_rawdata = Q_rawdata + "Q11:Most of my friends are online and not people I see in person.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Skipped,"    
         
         # Scored in reverse.
-        if Q12 == "Never": 
-            Q_total = Q_total + 4
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Never,"
-        elif Q12 == "Rarely":
-            Q_total = Q_total + 3
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Rarely,"
-        elif Q12 == "Sometimes":
-            Q_total = Q_total + 2
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Sometimes,"
-        elif Q12 == "Often":
-            Q_total = Q_total + 1
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Often,"
-        elif Q12 == "Always":
+        if Q7 == "No answer":
             Q_total = Q_total + 0
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=Always,"
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=No answer,"
+        elif Q7 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=False,"
+        elif Q7 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=A little,"
+        elif Q7 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Somewhat,"
+        elif Q7 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Mostly true,"
+        elif Q7 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Extremely true,"
         else:
-            Q_rawdata = Q_rawdata + "Q12:I spend most of my time online.=No Answer,"
+            Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Skipped,"    
 
+        if Q8 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=No answer,"
+        elif Q8 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=False,"
+        elif Q8 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=A little,"
+        elif Q8 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Somewhat,"
+        elif Q8 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Mostly true,"
+        elif Q8 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Skipped,"
+
+        # Scored in reverse.
+        if Q9 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=No answer,"
+        elif Q9 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=False,"
+        elif Q9 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=A little,"
+        elif Q9 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Somewhat,"
+        elif Q9 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Mostly true,"
+        elif Q9 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Skipped,"
+            
+        # Scored in reverse.
+        if Q10 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=No answer,"
+        elif Q10 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=False,"
+        elif Q10 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=A little,"
+        elif Q10 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Somewhat,"
+        elif Q10 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Mostly true,"
+        elif Q10 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Skipped,"
+
+        if Q11 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=No answer,"
+        elif Q11 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=False,"
+        elif Q11 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=A little,"
+        elif Q11 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Somewhat,"
+        elif Q11 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Mostly true,"
+        elif Q11 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Skipped,"
+        
+        if Q12 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=No answer,"
+        elif Q12 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=False,"
+        elif Q12 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=A little,"
+        elif Q12 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Somewhat,"
+        elif Q12 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Mostly true,"
+        elif Q12 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Skipped,"
+
+        # Scored in reverse.
+        if Q13 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=No answer,"
+        elif Q13 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=False,"
+        elif Q13 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=A little,"
+        elif Q13 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Somewhat,"
+        elif Q13 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Mostly true,"
+        elif Q13 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Skipped,"
+
+        # Scored in reverse.
+        if Q14 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=No answer,"
+        elif Q14 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=False,"
+        elif Q14 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=A little,"
+        elif Q14 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Somewhat,"
+        elif Q14 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Mostly true,"
+        elif Q14 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Skipped,"
+
+        if Q15 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=No answer,"
+        elif Q15 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=False,"
+        elif Q15 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=A little,"
+        elif Q15 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Somewhat,"
+        elif Q15 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Mostly true,"
+        elif Q15 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Skipped,"
+
+        # Scored in reverse.
+        if Q16 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=No answer,"
+        elif Q16 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=False,"
+        elif Q16 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=A little,"
+        elif Q16 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Somewhat,"
+        elif Q16 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Mostly true,"
+        elif Q16 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Extremely true,"
+        else:
+            Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Skipped,"
+
+
+        
         if Q_total >= 0 and Q_total <= 15:
             st.write(f"#### Total Score: {Q_total} (High social isolation)")
             Q_response = "High social isolation."
