@@ -5516,28 +5516,28 @@ if st.session_state.get('authentication_status'):
         # Questions 2, 3, 6, 7, 9, 10, 13, 14, 16, 17, scored in reverse.
         if Q1 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=No answer,"
         elif Q1 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=False,"
         elif Q1 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=A little,"
         elif Q1 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Somewhat,"
         elif Q1 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Mostly true,"
         elif Q1 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5605,28 +5605,28 @@ if st.session_state.get('authentication_status'):
 
         if Q4 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=No answer,"
         elif Q4 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=False,"
         elif Q4 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=A little,"
         elif Q4 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Somewhat,"
         elif Q4 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Mostly true,"
         elif Q4 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5634,28 +5634,28 @@ if st.session_state.get('authentication_status'):
 
         if Q5 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=No answer,"
         elif Q5 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=False,"
         elif Q5 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=A little,"
         elif Q5 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Somewhat,"
         elif Q5 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Mostly true,"
         elif Q5 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5723,28 +5723,28 @@ if st.session_state.get('authentication_status'):
 
         if Q8 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=No answer,"
         elif Q8 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=False,"
         elif Q8 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=A little,"
         elif Q8 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Somewhat,"
         elif Q8 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Mostly true,"
         elif Q8 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5812,28 +5812,28 @@ if st.session_state.get('authentication_status'):
 
         if Q11 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=No answer,"
         elif Q11 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=False,"
         elif Q11 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=A little,"
         elif Q11 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Somewhat,"
         elif Q11 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Mostly true,"
         elif Q11 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5841,28 +5841,28 @@ if st.session_state.get('authentication_status'):
         
         if Q12 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=No answer,"
         elif Q12 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=False,"
         elif Q12 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=A little,"
         elif Q12 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Somewhat,"
         elif Q12 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Mostly true,"
         elif Q12 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -5930,28 +5930,28 @@ if st.session_state.get('authentication_status'):
 
         if Q15 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=No answer,"
         elif Q15 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=False,"
         elif Q15 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=A little,"
         elif Q15 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Somewhat,"
         elif Q15 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Mostly true,"
         elif Q15 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -6019,28 +6019,28 @@ if st.session_state.get('authentication_status'):
 
         if Q18 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=No answer,"
         elif Q18 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=False,"
         elif Q18 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=A little,"
         elif Q18 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Somewhat,"
         elif Q18 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Mostly true,"
         elif Q18 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -6048,28 +6048,28 @@ if st.session_state.get('authentication_status'):
 
         if Q19 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=No answer,"
         elif Q19 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=False,"
         elif Q19 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=A little,"
         elif Q19 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Somewhat,"
         elif Q19 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Mostly true,"
         elif Q19 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
@@ -6077,28 +6077,28 @@ if st.session_state.get('authentication_status'):
 
         if Q20 == "No answer":
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=No answer,"
         elif Q20 == "False": 
             Q_total = Q_total + 0
-            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance = Q_protective_balance + 0
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=False,"
         elif Q20 == "A little":
             Q_total = Q_total + 1
-            Q_protective_balanace = Q_protective_balanace + 1
+            Q_protective_balance = Q_protective_balance + 1
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=A little,"
         elif Q20 == "Somewhat":
             Q_total = Q_total + 2
-            Q_protective_balanace = Q_protective_balanace + 2
+            Q_protective_balance = Q_protective_balance + 2
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Somewhat,"
         elif Q20 == "Mostly true":
             Q_total = Q_total + 3
-            Q_protective_balanace = Q_protective_balanace + 3
+            Q_protective_balance = Q_protective_balance + 3
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Mostly true,"
         elif Q20 == "Extremely true":
             Q_total = Q_total + 4
-            Q_protective_balanace = Q_protective_balanace + 4
+            Q_protective_balance = Q_protective_balance + 4
             Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Extremely true,"
         else:
             Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
