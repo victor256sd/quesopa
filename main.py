@@ -5508,6 +5508,8 @@ if st.session_state.get('authentication_status'):
         Q_total = 0
         Q_protective_balance = 0
         Q_retaliatory_concern = 0
+        Q_protective_balance_noanswer = 0
+        Q_retaliatory_concern_noanswer = 0
         Q_response = ""
         Q_rawdata = name + "," + str(age) + ","
 
@@ -5515,6 +5517,7 @@ if st.session_state.get('authentication_status'):
         if Q1 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=No answer,"
         elif Q1 == "False": 
             Q_total = Q_total + 0
@@ -5537,12 +5540,14 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q1:I think each day about things I am thankful for in my life.=Skipped,"
 
         # Scored in reverse.
         if Q2 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=No answer,"
         elif Q2 == "False": 
             Q_total = Q_total + 0
@@ -5565,12 +5570,14 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q2:What I cannot fogive is a central focus of my day.=Skipped,"
 
         # Scored in reverse.
         if Q3 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=No answer,"
         elif Q3 == "False": 
             Q_total = Q_total + 0
@@ -5593,11 +5600,13 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q3:I can forgive only if others understand or acknowledge the pain they caused.=Skipped,"
 
         if Q4 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=No answer,"
         elif Q4 == "False": 
             Q_total = Q_total + 0
@@ -5620,11 +5629,13 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q4:I am mostly grateful for where I live, my community, and the people in my life.=Skipped,"
 
         if Q5 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=No answer,"
         elif Q5 == "False": 
             Q_total = Q_total + 0
@@ -5647,12 +5658,14 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q5:I can forgive myself when I make a mistake.=Skipped,"
         
         # Scored in reverse.
         if Q6 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=No answer,"
         elif Q6 == "False": 
             Q_total = Q_total + 0
@@ -5675,12 +5688,14 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q6:The system or people in power need to change before I can let go of what has happened to me.=Skipped,"    
         
         # Scored in reverse.
         if Q7 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=No answer,"
         elif Q7 == "False": 
             Q_total = Q_total + 0
@@ -5703,11 +5718,13 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q7:I feel justified in striking back at people who have harmed me.=Skipped,"    
 
         if Q8 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=No answer,"
         elif Q8 == "False": 
             Q_total = Q_total + 0
@@ -5730,12 +5747,14 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q8:I can forgive without pretending that nothing happened.=Skipped,"
 
         # Scored in reverse.
         if Q9 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=No answer,"
         elif Q9 == "False": 
             Q_total = Q_total + 0
@@ -5758,12 +5777,14 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q9:What other people have done or are doing makes it difficult for me to feel thankful.=Skipped,"
             
         # Scored in reverse.
         if Q10 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=No answer,"
         elif Q10 == "False": 
             Q_total = Q_total + 0
@@ -5786,11 +5807,13 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q10:Revenge can be better than forgiveness.=Skipped,"
 
         if Q11 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=No answer,"
         elif Q11 == "False": 
             Q_total = Q_total + 0
@@ -5813,11 +5836,13 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q11:I am thankful for the kindness others have shown me.=Skipped,"
         
         if Q12 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=No answer,"
         elif Q12 == "False": 
             Q_total = Q_total + 0
@@ -5840,12 +5865,14 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q12:I believe people can make mistakes and still warrant forgiveness.=Skipped,"
 
         # Scored in reverse.
         if Q13 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=No answer,"
         elif Q13 == "False": 
             Q_total = Q_total + 0
@@ -5868,12 +5895,14 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q13:I cannot forgive people I believe have conspired against me or others.=Skipped,"
 
         # Scored in reverse.
         if Q14 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=No answer,"
         elif Q14 == "False": 
             Q_total = Q_total + 0
@@ -5896,11 +5925,13 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q14:My complaints and resentments matter more in my life than the things I am thankful for.=Skipped,"
 
         if Q15 == "No answer":
             Q_total = Q_total + 0
             Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=No answer,"
         elif Q15 == "False": 
             Q_total = Q_total + 0
@@ -5923,12 +5954,14 @@ if st.session_state.get('authentication_status'):
             Q_protective_balanace = Q_protective_balanace + 4
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Extremely true,"
         else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
             Q_rawdata = Q_rawdata + "Q15:Gratitude helps me handle disappointments and difficult times.=Skipped,"
 
         # Scored in reverse.
         if Q16 == "No answer":
             Q_total = Q_total + 0
             Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=No answer,"
         elif Q16 == "False": 
             Q_total = Q_total + 0
@@ -5951,21 +5984,161 @@ if st.session_state.get('authentication_status'):
             Q_retaliatory_concern = Q_retaliatory_concern + 4
             Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Extremely true,"
         else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
             Q_rawdata = Q_rawdata + "Q16:Only major changes in the world or my circumstances would allow me to feel grateful and thrive.=Skipped,"
 
+        # Scored in reverse.
+        if Q17 == "No answer":
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=No answer,"
+        elif Q17 == "False": 
+            Q_total = Q_total + 0
+            Q_retaliatory_concern = Q_retaliatory_concern + 0
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=False,"
+        elif Q17 == "A little":
+            Q_total = Q_total - 1
+            Q_retaliatory_concern = Q_retaliatory_concern + 1
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=A little,"
+        elif Q17 == "Somewhat":
+            Q_total = Q_total - 2
+            Q_retaliatory_concern = Q_retaliatory_concern + 2
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=Somewhat,"
+        elif Q17 == "Mostly true":
+            Q_total = Q_total - 3
+            Q_retaliatory_concern = Q_retaliatory_concern + 3
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=Mostly true,"
+        elif Q17 == "Extremely true":
+            Q_total = Q_total - 4
+            Q_retaliatory_concern = Q_retaliatory_concern + 4
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=Extremely true,"
+        else:
+            Q_retaliatory_concern_noanswer = Q_retaliatory_concern_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q17:It is hard for me to stop thinking about what I resent or what is wrong.=Skipped,"
 
+        if Q18 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=No answer,"
+        elif Q18 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=False,"
+        elif Q18 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=A little,"
+        elif Q18 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Somewhat,"
+        elif Q18 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Mostly true,"
+        elif Q18 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Extremely true,"
+        else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q18:I can keep a balanced view of my life and still find reasons for hope and enjoyment.=Skipped,"
+
+        if Q19 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=No answer,"
+        elif Q19 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=False,"
+        elif Q19 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=A little,"
+        elif Q19 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Somewhat,"
+        elif Q19 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Mostly true,"
+        elif Q19 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Extremely true,"
+        else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q19:I can forgive myself and others for at least some of the problems I have encountered.=Skipped,"
+
+        if Q20 == "No answer":
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=No answer,"
+        elif Q20 == "False": 
+            Q_total = Q_total + 0
+            Q_protective_balanace = Q_protective_balanace + 0
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=False,"
+        elif Q20 == "A little":
+            Q_total = Q_total + 1
+            Q_protective_balanace = Q_protective_balanace + 1
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=A little,"
+        elif Q20 == "Somewhat":
+            Q_total = Q_total + 2
+            Q_protective_balanace = Q_protective_balanace + 2
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Somewhat,"
+        elif Q20 == "Mostly true":
+            Q_total = Q_total + 3
+            Q_protective_balanace = Q_protective_balanace + 3
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Mostly true,"
+        elif Q20 == "Extremely true":
+            Q_total = Q_total + 4
+            Q_protective_balanace = Q_protective_balanace + 4
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Extremely true,"
+        else:
+            Q_protective_balance_noanswer = Q_protective_balance_noanswer + 1
+            Q_rawdata = Q_rawdata + "Q20:I can remember a wrong without needing to stay angry or seek payback.=Skipped,"
+
+        Avg_protective_balance = Q_protective_balance / 10
+        Avg_retaliatory_concern = Q_retaliatory_concern / 10
         
-        if Q_total >= 0 and Q_total <= 15:
-            st.write(f"#### Total Score: {Q_total} (High social isolation)")
-            Q_response = "High social isolation."
-        elif Q_total >= 16 and Q_total <= 31:
-            st.write(f"#### Total Score: {Q_total} (Mixed/moderate social connection)")
-            Q_response = "Mixed/moderate connection."
-        elif Q_total >= 32 and Q_total <= 48:
-            st.write(f"#### Total Score: {Q_total} (Strong social connection)")
-            Q_response = "Strong social connection."
+        if Avg_protective_balance >= 3:
+            st.write(f"#### Protective Balance Average: {Avg_protective_balance} (Strong; a higher score reflects greater endorsement of gratefulness, forgiveness, hope, perspective, and ability to move forward)")
+        elif Avg_protective_balance >= 2 and Avg_protective_balance < 3:
+            st.write(f"#### Protective Balance Average: {Avg_protective_balance} (Moderate; a higher score reflects greater endorsement of gratefulness, forgiveness, hope, perspective, and ability to move forward)")
+        elif Avg_protective_balance >= 1 and Avg_protective_balance < 2:
+            st.write(f"#### Protective Balance Average: {Avg_protective_balance} (Limited; a higher score reflects greater endorsement of gratefulness, forgiveness, hope, perspective, and ability to move forward)")
+        elif Avg_protective_balance >= 0 and Avg_protective_balance < 1:
+            st.write(f"#### Protective Balance Average: {Avg_protective_balance} (Few; a higher score reflects greater endorsement of gratefulness, forgiveness, hope, perspective, and ability to move forward)")
 
-        st.markdown("For additional information and resources, please visit: [US Surgeon General Report](https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf), [The Trevor Project](https://www.thetrevorproject.org/), [211](https://www.211.org/), [988](https://988lifeline.org/get-help/), [Virtual Hope Box](https://mobile.health.mil/Apps/Native-Apps/Virtual-Hope-Box)")
+        if Avg_retaliatory_concern >= 3:
+            st.write(f"#### Concern Average: {Avg_retaliatory_concern} (Strong; a higher score reflects greater endorsement of resentment, preoccupation with perceived wrongs, difficulty letting go, mistrust, or retaliatory thinking)")
+        elif Avg_retaliatory_concern >= 2 and Avg_retaliatory_concern < 3:
+            st.write(f"#### Concern Average: {Avg_retaliatory_concern} (Notable; a higher score reflects greater endorsement of resentment, preoccupation with perceived wrongs, difficulty letting go, mistrust, or retaliatory thinking)")
+        elif Avg_retaliatory_concern >= 1 and Avg_retaliatory_concern < 2:
+            st.write(f"#### Concern Average: {Avg_retaliatory_concern} (Some; a higher score reflects greater endorsement of resentment, preoccupation with perceived wrongs, difficulty letting go, mistrust, or retaliatory thinking)")
+        elif Avg_retaliatory_concern >= 0 and Avg_retaliatory_concern < 1:
+            st.write(f"#### Concern Average: {Avg_retaliatory_concern} (Little; a higher score reflects greater endorsement of resentment, preoccupation with perceived wrongs, difficulty letting go, mistrust, or retaliatory thinking)")
+
+        st.markdown("An elevated response pattern means: possible risk factor -> consider deeper assessment. It does not mean: high score -> dangerous person. Protective responses should not mathematically cancel a strong retaliation-related response.")
+
+        if Q_retaliatory_concern_noanswer >= 2 and Q_protective_balance_noanswer >= 2:
+            st.write(f"#### Missing Responses from Questions of Protective Balance: {Q_protective_balance_noanswer}")        
+            st.write(f"#### Missing Responses from Questions of Retaliatory Concern: {Q_retaliatory_concern_noanswer}")        
+            st.markdown("If more than 2 items within either 10-item scale are unanswered, consider that scale incomplete. Hesitation or refusal to answer may warrant clarification but should not automatically be interpreted as evidence of risk.")
+        elif Q_retaliatory_concern_noanswer >= 2:
+            st.write(f"#### Missing Responses from Questions of Retaliatory Concern: {Q_retaliatory_concern_noanswer}")        
+            st.markdown("If more than 2 items within either 10-item scale are unanswered, consider that scale incomplete. Hesitation or refusal to answer may warrant clarification but should not automatically be interpreted as evidence of risk.")
+        elif Q_protective_balance_noanswer >= 2:
+            st.write(f"#### Missing Responses from Questions of Protective Balance: {Q_protective_balance_noanswer}")        
+            st.markdown("If more than 2 items within either 10-item scale are unanswered, consider that scale incomplete. Hesitation or refusal to answer may warrant clarification but should not automatically be interpreted as evidence of risk.")
+
+        st.markdown("QUE SOPA nonprofit - developmental instrument. This questionnaire has not yet established psychometric norms, reliability, validity, sensitivity, specificity, predictive validity, or empirically derived cut scores. Use it to organize information, identify possible protective or risk-relevant factors, and determine whether additional assessment may be appropriate. It should not be used as a stand-alone basis for diagnosis, prediction of violence, or dispositive clinical, employment, educational, forensic, or legal decisions.")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
     
     #===================================================================
