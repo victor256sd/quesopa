@@ -4,6 +4,9 @@
 #
 # CHANGELOG:
 #
+# 10.24.2026: Added Gratefulness and Forgiveness questionnaire.
+# Updated name of POC to Perceptions of Community Concern (POCC).
+#
 # 10.22.2026: Updated FINE language from text to message.
 #
 # 08.13.2026: Added ability to copy response. Updated issues with
@@ -66,8 +69,9 @@
 # Submit5 - Daily Digital Connected Life, DDCL
 # Submit4 - Future Inferred Narration of Events, FINE
 # Submit6 - Competency to Stand Trial
-# Submit7 - Perceptions of Concern, POC
-# Submit7 - Perceptions of Concern, POC, in Spanish
+# Submit7 - Perceptions of Community Concern, POCC
+# Submit7 - Perceptions of Community Concern, POCC, in Spanish
+# Submit8 - Gratefulness and Forgiveness
 #-------------------------------------------------------------------
 
 import streamlit as st
@@ -170,7 +174,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     tool = st.radio("Select a tool:",
-        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Concern (POC)"], index=None,
+        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Community Concern (POCC)", "Gratefulness and Forgiveness"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
@@ -179,6 +183,7 @@ if st.session_state.get('authentication_status'):
             "A scenario writing questionnaire that guides users to imagine detailed narratives of possible future events in order to clarify their current mindset.\n",        
             "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n",
             "Help identify concerns in the community and prevent harm before it occurs.\n",
+            "A questionnaire to evaluate an individuals personal measure of gratefulness and forgiveness.\n",
         ],
     )
     
@@ -215,6 +220,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False    
+            submit8 = False
 
     #-------------------------------------------------------------------
     # TOOL: Questions About People You Know in Spanish
@@ -244,6 +250,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit8 = False
             
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Child Version
@@ -305,6 +312,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit8 = False
     
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Child Version, in Spanish
@@ -366,6 +374,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit8 = False
 
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Adult Version
@@ -426,6 +435,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit8 = False
     
     #-------------------------------------------------------------------
     # TOOL: Daily Digital Connected life, DDCL
@@ -484,6 +494,7 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit6 = False
             submit7 = False
+            submit8 = False
 
     #-------------------------------------------------------------------
     # TOOL: Future Inferred Narration of Events, FINE
@@ -517,6 +528,7 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit8 = False
 
     #-------------------------------------------------------------------
     # TOOL: Competency to Stand Trial
@@ -552,15 +564,16 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit7 = False
+            submit8 = False
 
     #-------------------------------------------------------------------
-    # TOOL: Perceptions of Concern, POC
+    # TOOL: Perceptions of Community Concern, POCC
     # DESRIPTION: To survey possible witnesses about concerning
     # behaviors.
     #-------------------------------------------------------------------
 
     # Create POC survey form.
-    elif tool == "Perceptions of Concern (POC)" and language == "English":
+    elif tool == "Perceptions of Community Concern (POCC)" and language == "English":
         with st.form("pocform"):
             st.write("This survey is a tool for early intervention and prevention. We aim to address concerns, distrust, and potential conflicts before they escalate. This is not a platform for blame, but a proactive way to ensure a safe environment for everyone.")
 
@@ -581,14 +594,15 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit8 = False
     
     #-------------------------------------------------------------------
-    # TOOL: Perceptions of Concern, POC, in Spanish
+    # TOOL: Perceptions of Community Concern, POCC, in Spanish
     # DESRIPTION: To survey possible witnesses about concerning
     # behaviors.
     #-------------------------------------------------------------------
 
-    elif tool == "Perceptions of Concern (POC)" and language == "Spanish":
+    elif tool == "Perceptions of Community Concern (POCC)" and language == "Spanish":
         with st.form("pocform"):
             st.write("Esta encuesta es una herramienta para la intervención temprana y la prevención. Nuestro objetivo es abordar inquietudes, desconfianza y posibles conflictos antes de que se intensifiquen. Esta no es una plataforma para culpar, sino una forma proactiva de garantizar un entorno seguro para todos.")
 
@@ -609,7 +623,47 @@ if st.session_state.get('authentication_status'):
             submit4 = False
             submit5 = False
             submit6 = False
+            submit8 = False
 
+    #-------------------------------------------------------------------
+    # TOOL: Gratefulness and Forgiveness
+    # DESRIPTION: To survey possible witnesses about concerning
+    # behaviors.
+    #-------------------------------------------------------------------
+
+    elif tool == "Gratefulness and Forgiveness" and language == "English":
+        with st.form("pocform"):
+            st.write("Thinking about your life recently, particularly during the past 30 days, mark the response that best describes how true each statement has been for you. There are no right or wrong answers.")
+            Q1 = st.selectbox("#1. I think each day about things I am thankful for in my life.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q2 = st.selectbox("#2. What I cannot fogive is a central focus of my day.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q3 = st.selectbox("#3. I can forgive only if others understand or acknowledge the pain they caused.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q4 = st.selectbox("#4. I am mostly grateful for where I live, my community, and the people in my life.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q5 = st.selectbox("#5. I can forgive myself when I make a mistake.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q6 = st.selectbox("#6. The system or people in power need to change before I can let go of what has happened to me.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q7 = st.selectbox("#7. I feel justified in striking back at people who have harmed me.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q8 = st.selectbox("#8. I can forgive without pretending that nothing happened.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q9 = st.selectbox("#9. What other people have done or are doing makes it difficult for me to feel thankful.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q10 = st.selectbox("#10. Revenge can be better than forgiveness.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q11 = st.selectbox("#11. I am thankful for the kindness others have shown me.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q12 = st.selectbox("#12. I believe people can make mistakes and still warrant forgiveness.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q13 = st.selectbox("#13. I cannot forgive people I believe have conspired against me or others.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q14 = st.selectbox("#14. My complaints and resentments matter more in my life than the things I am thankful for.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q15 = st.selectbox("#15. Gratitude helps me handle disappointments and difficult times.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q16 = st.selectbox("#16. Only major changes in the world or my circumstances would allow me to feel grateful and thrive.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q17 = st.selectbox("#17. It is hard for me to stop thinking about what I resent or what is wrong.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q18 = st.selectbox("#18. I can keep a balanced view of my life and still find reasons for hope and enjoyment.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q19 = st.selectbox("#19. I can forgive myself and others for at least some of the problems I have encountered.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+            Q20 = st.selectbox("#20. I can remember a wrong without needing to stay angry or seek payback.", ["","No answer", "False", "A little", "Somewhat", "Mostly true", "Extremely true"])
+
+            submit8 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+            submit5 = False
+            submit6 = False
+            submit7 = False
+    
     else:
         submit1 = False
         submit2 = False
@@ -618,6 +672,7 @@ if st.session_state.get('authentication_status'):
         submit5 = False
         submit6 = False
         submit7 = False
+        submit8 = False
 
     #===================================================================
 
