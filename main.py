@@ -6886,6 +6886,7 @@ if st.session_state.get('authentication_status'):
         QUERY = f"""
             # User context:
                 - User: Threat Assessment Professional
+                - User Query: {Q1}
                 - Preferred language: {language}
             
             # Purpose:
@@ -6960,6 +6961,7 @@ if st.session_state.get('authentication_status'):
         QUERY = f"""
             # User context:
                 - User: Hospital Professional
+                - User Query: {Q1}
                 - Preferred language: {language}
             
             # Purpose:
