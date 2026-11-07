@@ -6915,7 +6915,8 @@ if st.session_state.get('authentication_status'):
 
             Now produce a response to the threat assessment ethics query.
             """
-        
+
+        st.write("About to send query to AI...")
         # Setup output columns to display results.
         # answer_col, sources_col = st.columns(2)
         # Create new client for this submission.
@@ -6937,6 +6938,8 @@ if st.session_state.get('authentication_status'):
                 }],
                 include=["file_search_call.results"]
             )
+
+        st.write("Cleaning response...")        
         # Write response to the answer column.    
         # with answer_col:
         try:
