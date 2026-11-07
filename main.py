@@ -76,6 +76,8 @@
 # Submit7 - Perceptions of Community Concern, POCC
 # Submit7 - Perceptions of Community Concern, POCC, in Spanish
 # Submit8 - Gratefulness and Forgiveness
+# Submit9 - ATAP Ethics Chatbot
+# Submit10 - Hospital Ethics Chatbot
 #-------------------------------------------------------------------
 
 import streamlit as st
@@ -137,6 +139,8 @@ if st.session_state.get('authentication_status'):
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
     VECTOR_STORE_ID = st.secrets["VECTOR_STORE_ID"]
     VECTOR_STORE_ID2 = st.secrets["VECTOR_STORE_ID2"]
+    VECTOR_STORE_ID3 = st.secrets["VECTOR_STORE_ID3"]
+    VECTOR_STORE_ID4 = st.secrets["VECTOR_STORE_ID4"]
     INSTRUCTION_ENCRYPTED = b'gAAAAABpeDtGCB8EbbnDDzlWIzayPCcwJoxujN9dg-_2QxxlCfu5oeBrXaGoUHOCfOb_OL_U57vHhtHtjsPIoYPjn2TN5WQ0v_NRbF8r4UbsyMMoG_Hl-xaFzjLsT00SAxCA0KL1KMPOpxevnRoUGnHlZ48n0lrDf-1Wccfc7zXPVga_2bOS2J3BefcXM8u7mwbNUbdXJ69eIRAfTybBA57D0mGxodGp_uSR1EYHRVB8K3HjV1BD3FY0F6NKdbgOAd2zhpXD8BwCQBnz4ZQQMIkYgqdlvWwDgh0wNwKSUTMs-7A8I-vurKLvF12AwpBN6KRDZcBBGf49kwKExQa8N7Dnt6xR0XUUJ5Wq_vR0vZaf5jbEI1_E0-At4vrraqbIYHDhQP7xAnjUruhwmRwWN52cY-c8u7Rp8a8XXjciOEngxK2dhrd9KiU89dfShPko8qXVu2Url9UARuWz85YgLH6WChOIFo7DRtfabhiYv7_K36RykMbXITgqLV4AQvfOub1DiBE8lEVp83WqiqKrBVm2_DdDzzQXpuvJ0PizEAH5QAPYOWXqawZBLAqRG90s9PeCqR4ll9rWESPuRb66jWDmTzrzBZy1lWxL78TnW3KlPhOxxtCikc_suUy5DnSdiT_mR7WaQLqlgbwtfub5gMnfO3Ox7HlRF5WCDkJueCx0pj9UrwymGWpucmJk5-_hbCY_ZN0PSPp0lestHyjleSoVgfY23zbZe-VSrENrOcwmBl2no85OPVBshO_7TzfKQ0VUaQqNZyObHjuF_u_ShpVHMX8qF8PiebQBRzxNDkXfXPOoC-eagdSzuyOmLurzSj8C2RibnVPelA9K0hkggohzrgWTgNhA9BDf55P-VPMkT3vnGj6umP0udeWyi_VzcFXHhI7_tgMJtOvycPQv61Hy7GcYu0KWikirerfX9utS1CqonZEn8fqZYfTLTrCm8-5JJPZ1vbp19CpzNi4kNWMuq7ukc4b-L-f_W9yPOV5zY3fU78WWLrxJFN4kaJf1NOk-NFLNWpj8Ia7fvX54lt94oU5DnyzUKXORukwMmKf8SkirawLIzYwepi5mZEFP17IB4iUZdz8nhTbIpgETIoMMga_zGKFdd74541UkUxJ3APgA6AwoJ7rm5RM52lo-7_Hnx656J1rEAQYxmc4OtiTX90hno2gWz3lNO7zXommSf4J2zIJuCEorYI6X2xkF-Pj52fdepz8ExHQEh6CMCyq08cWNQy7Il_5MDsTJSUhxCgukJ0twNN5tW39rry25a5w7Ky2uVJsb1xxF20d4S6BDFT9fL38hudlg9OOWhmJx6ukFGLGywLXdRgsCSNxILuIAyTO8wlNNnh_-AWX-niApUcZ7b8mZQCgHt7vf1k0DZ_ZkgxcqjxjBXLUabKzIB2zadsa_geyEB84M9kFig-j5d_4pCcMWYO-l5rI1d0ydNBNt-PqSNUPX85v2oLb8wvOEqPMfL2Z_H0mmEDp_aQ3AftfE0O-4S9F5ZsjDlJON2lTee2_Oj6sQQHrSqXmb_I-lm7TC1Kr0oEv4dDT8jjrnv8BApjkUVjsPBTpQbONHAPeqF4CA_9h7K79PKoCqXXtAtenHh2Sf0yyfoTkNfWiKdBojTNBdulUlTzEDrI7Tz7Dox3fyBmXX82NZekov1hgMLHgSYTIx2iejdo3r3pHNVI94L0PUcArWoq8oWEWr4HRkhip4jcXVygNDY_7Jen9zB0xa47F0K80VLpbJKTLwF-xvSaSe3bes_aKK-DdY0UvqFxZunXeRfiNJ16_wbTYk2S1edl_8ciJ26AgAO6t-AP8aBBNj7R97f5gztiJG21b-C7z6K4-RoB8wZ0cWH4tCvR8W1VYob1NSsogjqPBvGuLYMtcLaID2UOY4au5dqCSuxSKPXQbKXhJCvtCJNy_Am6L4dRHllyEnzAbcON7-JiQjB63OnrwmWeFldvnN0fidrT0u5JDiAgSRHMWJC65n3CDd7D3OXRMaTxrrNLZ2cVSNXlF_6CjKpJbDnx--a4JxikD_qfOI-cOL2p4NnVLehA6GRQ8T890FH4CfCVZpK49IQSbxJ9dhkkyNKOlPRG5-QZ0vNf_MI4ARd2nGWju8bwYcK0rDIX6ZNKmHZNulxdy6yJqYvmOn_c7C3cl6K5345fG7EX77ucZ_d9_HqfnRxnMIRS_wqJQ3uv6uA9-ILkEPE4jlUnoXg8bFcdfmHJsmJa92PbhHXJsg53n_q_lmG17hnyF-y-xjYXwj6BOdRofxGbUruUimO6V8QQGwl4T8wA5AsVqj9IAlJNHLEfH2Xs-hb58XMfiAd7JT6pJJYCCerwnMfCbBnYilmUvkwPFkmIIBjQVYkWgKOmPTCYMRyDSpI1cp7WoTen-FcHO81fwUbPK00eRSf_jSB2qCk9fZ5J_UD8ArMTQDRhNyQOw-4V7FslhIZ9i4ThoGJ4vYkmcwrn_beKvKSttZej37J0AsIHos52NVYtw7mtiQVOCoNX99oGNmpFDxLSN57AxB1apD9XKbmbtrgBaqgQoZJ3ChNmWFC57xqG7YN0UmvUzOZs5PJifxPqs7KMOgqmW7xFBImRT5aAXgucwDmAbtOm09d3PnhT4V8kQ5v1Vaj04NwqHOWMBU_YWbN6yAHDwP0X__A7IPp-vbpeaqcFKwf7MVk0abCuyFdZInTL5rZ29F-ivWVxa6tJCdVxPVAELB5-_ilq9L9SsLfKKQsCMT8NURuWlo0isH4_KqTDMO_S82OYW1NAj__H_GxhsKxmveR3EI3pU9WMK-nwzjGRJVrk_ry8dU6nTwyJjv5ctEbUR3BR_n4LMDWLnAfzTVEZZUCsWhjxcilgN9sHJ7TCFr27-oXhCkzFz9R1aNNHgCbq_0I-w4doYJVpGI_9LWAOj-A7wEAGTBetii1oxbsgBMTxj7cYOd2oGRL7trBnaGllL15q84IX_yd7_2hKKd_DlUnbdg18WEMfdl_LVJ8WFalaRuQij2utdULVAP8CBHBINKcx4BQMlJE3I4pq2DJDSCbcjrgZedYP_-I3rvscWSUQWqvyv5Wjf1ZjFkF5YGjWqQ-9f378xPTrB5wzd4ef2D5QG9VfcNkv1dSVJdOqd-UN3Fvny-oF2mfMnnFrOMWAxXcHhURhj5FmuX49_AW6lyQdBWiWo9aJWV4c2juHAdg88hYHTNXNfLgdTxcIOixG-u0ONiBEbHWJES_zMFkffOG3VOeP9IXr4LHaFOMWq8g1S8zcPBGHAZb-Oi1stw0Gm1PaE7xQxdwsqkTCsj-N0Ie5DvgfzIFyWaPA6plIIb5xzrGvIbiVvbJOeuORLO9RNLMHW1JVVJarBkGUytIWFj1OlOFFOFBDvyU3M-N3WU1_svYlEr5ZdWzOQkL6PATCL7fceEOeZVYxd5SkE93CHnRxQdf9R1y7CT_jLA0gvy_k9jOYp095RB65iOLzc_DYTPMUX0hvyJbCfd7EMS_BnmqN9aFf6dMmcd5LAyu6KXzswyai8YzXYI-9W4RyKHjMq7zqAEpqIuwIlHuUFBPiyssScLk2MITeQuV9P55I6jjpFXrW5LgaB4zFeSWB3GpDAuSUBfM4M18QtSkQVY9T-pNF2iZqLabpXwNw-DPVuNUsq6wfTcfPqK1YE-O27COMOP-6S57bQI-6hxXXLVMOqa9fzJ2vtL_br-s_SsN0thEZttyhurDqSdgsT7Zod39xEJ8QONyR9Ji-tkgaESIcGzwMy8E8AdlsRnN9BczGDriO5WwCJVdcCLbjGzzSArCFDPb-8rjwbw_Bv0ziZ8dqM68csdrLiOzmgJQn5c--Y3ufaTWE1qfwA6mEvezzmiYO0kDZZN9a5DpdZj6q3mf-Lohf2OnP5apU-7Dy6hQFaz18U2c2iGK8dxHEcRzRcyFCkHr99Gqp8UWQq69oxOb4RvvWg7XwN48UjpC_DuHKIhfJCvUzgvU2yJ9zVNCIkzvL-q0sqGt-SxHNPzX0ZoHeAQdh77StCU-s1Z-xkyUBESTlHQ-qbN64u7CpJRBcAIt7qoCkKm3n5xSh7K7KaYtDK5suhYs1PD2zvGQt3JKW97wi8q42uGqwDVxkOZBDZer-SEOphJ1QAYI-Tmo0yzIpDdEn03H3ooPz_0fTEthJS5EI-tfIy_d5DzlMO_nbf8nuy-a5-dTpkcIz6DPuz8SBV2W5VII5axWIGZGCEJe4CqC0cIF_XUiL4YHvF5J-GMn_DQr0xMj6dai3LFX2YowifWEmkCzLSrBd-ktefyNXkLvBoFrOSNNDvRm3dPS-Uh-DbW7BbHKMeUImCfzDTcCaeRMTq6pSED96JQil3hijkbyqnHtuK7kpsg5O71y04RwxVCHlTopxIloHc-B4fN568fCqvi0eTt0ZfHzWDgshxOnGNaBNMPEcVAkRYAj-8IeztPTc34jEaUuTFbRvcmcwdAV9Rp5GVsaGQOfUkeavsTQU-2cNZORE2okU4P4CYOIQ8eTOhS02pByuvE41n5lcQSr49Z-80CpqyGme22qZMRkB5qbuy9pv5vf3QwtVHlvJu1OKZgAxcX-WrK5ECHG5XoIxo-IUHsUglC2RSiCNSdYeDqDkNIWcCgMriIVtKH-qAY31v-_XUkeBP7jvFQBr74vgBnNk4xEdLk2QuHV-USb6kWqX_G6N1ED3kbsN45Pzl_ziJ9j0PL_sJQGr1ZkadydnPvOJH5aA=='
 
     key = st.secrets['INSTRUCTION_KEY'].encode()
@@ -6750,7 +6754,7 @@ if st.session_state.get('authentication_status'):
             + Mentions of specific threats, weapons, or planned actions.
             + References to targets (individuals or groups) or assignment of blame.
             + Indications of behavioral changes, distress, or conflict escalation.
-            + Evidence of“leakage” (sharing of concerning intent, stories, or warnings).
+            + Evidence of “leakage” (sharing of concerning intent, stories, or warnings).
             + Descriptions of impact on the respondent (e.g., fear, avoidance, heightened awareness).
             
             These observations should remain descriptive and may align with structured risk signals used in prevention models, such as imminence, capability, and intent, but should not assign scores or risk levels unless explicitly instructed.
@@ -6873,6 +6877,154 @@ if st.session_state.get('authentication_status'):
                 icon="st",
             )
 
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: ATAP Ethics Chatbot
+    #-------------------------------------------------------------------
+
+    elif submit9 and language == "English":
+        QUERY = f"""
+            # User context:
+                - User: Threat Assessment Professional
+                - Preferred language: {language}
+            
+            # Purpose:
+            Review user query to provide a response that is grounded in the Association of Threat Assessment Professional's code of ethics.
+
+            # Output
+            Provide:
+            + Provide a response to the user query in paragraph form, unless specifically directed.
+
+            # Requirements
+            + Only respond to queries about threat assessment ethics.
+            ++ If the query does not ask about ethics in threat assessment, respond with "That may involve information outside my expertise. I recommend reaching out to the appropriate professional for a more complete answer."
+            ++ If the response to the query cannot be found in the vector store, respond with "I'm not completely certain about that based on the available information. You may want to consult a threat assessment professional for further guidance."
+            + Do not diagnose, imply mental health conditions, or make clinical judgments.
+            + Use observational, non‑directive language (e.g., “This may suggest…”).
+            + Avoid speculation beyond what is explicitly present.
+            + Use the user’s preferred language for the entire output.
+
+            Now produce a response to the threat assessment ethics query.
+            """
+        
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = "Follow query instructions",
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID3],
+                }],
+                include=["file_search_call.results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This analysis supports, but does not replace, a qualified threat assessment professional’s opinion.*")            
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
+
+    #-------------------------------------------------------------------
+    # TOOL ASSESSMENT
+    # TOOL: Hospital Ethics Chatbot
+    #-------------------------------------------------------------------
+
+    elif submit10 and language == "English":
+        QUERY = f"""
+            # User context:
+                - User: Hospital Professional
+                - Preferred language: {language}
+            
+            # Purpose:
+            Review user query to provide a response that is grounded in the appropriate hospital professional's code of ethics.
+
+            # Output
+            Provide:
+            + Provide a response to the user query in paragraph form, unless specifically directed.
+
+            # Requirements
+            + Only respond to queries about ethics associated with professionals in the hospital setting.
+            ++ If the query does not ask about ethics in the hospital setting, respond with "That may involve information outside my expertise. I recommend reaching out to the appropriate professional for a more complete answer."
+            ++ If the response to the query cannot be found in the vector store, respond with "I'm not completely certain about that based on the available information. You may want to consult a hospital professional for further guidance."
+            + Do not diagnose, imply mental health conditions, or make clinical judgments.
+            + Use observational, non‑directive language (e.g., “This may suggest…”).
+            + Avoid speculation beyond what is explicitly present.
+            + Use the user’s preferred language for the entire output.
+
+            Now produce a response to the hospital professional's ethics query.
+            """
+        
+        # Setup output columns to display results.
+        # answer_col, sources_col = st.columns(2)
+        # Create new client for this submission.
+        client2 = OpenAI(api_key=openai_api_key)
+        # Query the aitam library vector store and include internet
+        # serach results.
+        with st.spinner('Searching...'):
+            response2 = client2.responses.create(
+                instructions = "Follow query instructions",
+                input = QUERY,
+                model = model,
+                temperature = 0.6,
+                # text={
+                #     "verbosity": "low"
+                # },
+                tools = [{
+                            "type": "file_search",
+                            "vector_store_ids": [VECTOR_STORE_ID4],
+                }],
+                include=["file_search_call.results"]
+            )
+        # Write response to the answer column.    
+        # with answer_col:
+        try:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output_text) #output[1].content[0].text)
+        except:
+            cleaned_response = re.sub(r'【.*?†.*?】', '', response2.output[1].content[0].text)
+
+        st.markdown("#### Qué Sopa AI Guidance")
+        st.write("*This analysis supports, but does not replace, a qualified hospital professional’s opinion.*")            
+
+        st.session_state.cleaned_response = cleaned_response
+        
+        if st.session_state.cleaned_response:
+            st.markdown(st.session_state.cleaned_response)
+                        
+            # Add a small copy icon button
+            copy_button(
+                text=st.session_state.cleaned_response,
+                tooltip="Copy this text",
+                copied_label="Copied!",
+                icon="st",
+            )
+    
     elif st.session_state.cleaned_response:
         st.markdown(st.session_state.cleaned_response)
                     
