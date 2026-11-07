@@ -702,7 +702,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     # Create ATAP Ethics Chatbot survey form.
-    if tool == "ATAP Ethics Chatbot" and language == "English":
+    elif tool == "ATAP Ethics Chatbot" and language == "English":
         with st.form("atap"):
             Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
 
@@ -723,7 +723,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     # Create Hospital Ethics Chatbot survey form.
-    if tool == "Hospital Ethics Chatbot" and language == "English":
+    elif tool == "Hospital Ethics Chatbot" and language == "English":
         with st.form("hospital"):
             Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
 
