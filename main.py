@@ -4,6 +4,10 @@
 #
 # CHANGELOG:
 #
+# 11.07.2026: Added ATAP Ethics and Hospital Ethics chatbots, and
+# linked them to their respective RAGs. These are initial develop-
+# ment implementations only.
+#
 # 10.24.2026: Added Gratefulness and Forgiveness questionnaire.
 # Updated name of POC to Perceptions of Community Concern (POCC).
 #
@@ -174,7 +178,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     tool = st.radio("Select a tool:",
-        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Community Concern (POCC)", "Gratefulness and Forgiveness"], index=None,
+        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Community Concern (POCC)", "Gratefulness and Forgiveness", "ATAP Ethics Chatbot", "Hospital Ethics Chatbot"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
@@ -184,6 +188,8 @@ if st.session_state.get('authentication_status'):
             "An assessment designed to gather information relevant to an individual’s capacity to assist legal counsel as part of a competency to stand trial evaluation.\n",
             "Help identify concerns in the community and prevent harm before it occurs.\n",
             "A questionnaire to evaluate an individuals personal measure of gratefulness and forgiveness.\n",
+            "Ethics chatbot for the Association of Threat Assessment Professionals.\n",
+            "Ethics chatbot for professionals in the hospital setting.\n",
         ],
     )
     
@@ -221,6 +227,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False    
             submit8 = False
+            submit9 = False
+            submit10 = False
 
     #-------------------------------------------------------------------
     # TOOL: Questions About People You Know in Spanish
@@ -251,6 +259,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
             
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Child Version
@@ -313,6 +323,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
     
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Child Version, in Spanish
@@ -375,6 +387,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
 
     #-------------------------------------------------------------------
     # TOOL: My Feelings and Needs, NEIL Adult Version
@@ -436,6 +450,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
     
     #-------------------------------------------------------------------
     # TOOL: Daily Digital Connected life, DDCL
@@ -495,6 +511,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
 
     #-------------------------------------------------------------------
     # TOOL: Future Inferred Narration of Events, FINE
@@ -529,6 +547,8 @@ if st.session_state.get('authentication_status'):
             submit6 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
 
     #-------------------------------------------------------------------
     # TOOL: Competency to Stand Trial
@@ -565,6 +585,8 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit7 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
 
     #-------------------------------------------------------------------
     # TOOL: Perceptions of Community Concern, POCC
@@ -595,6 +617,8 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
     
     #-------------------------------------------------------------------
     # TOOL: Perceptions of Community Concern, POCC, in Spanish
@@ -624,6 +648,8 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit8 = False
+            submit9 = False
+            submit10 = False            
 
     #-------------------------------------------------------------------
     # TOOL: Gratefulness and Forgiveness
@@ -663,6 +689,50 @@ if st.session_state.get('authentication_status'):
             submit5 = False
             submit6 = False
             submit7 = False
+            submit9 = False
+            submit10 = False            
+
+    #-------------------------------------------------------------------
+    # TOOL: ATAP Ethics Chatbot
+    # DESRIPTION: Ethics chatbot for the Association of Threat Assessment Professionals.
+    #-------------------------------------------------------------------
+    
+    # Create ATAP Ethics Chatbot survey form.
+    if tool == "ATAP Ethics Chatbot" and language == "English":
+        with st.form("atap"):
+            Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
+
+            submit9 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+            submit5 = False
+            submit6 = False
+            submit7 = False    
+            submit8 = False
+            submit10 = False
+
+    #-------------------------------------------------------------------
+    # TOOL: Hospital Ethics Chatbot
+    # DESRIPTION: Ethics chatbot for hospital professionals.
+    #-------------------------------------------------------------------
+    
+    # Create Hospital Ethics Chatbot survey form.
+    if tool == "Hospital Ethics Chatbot" and language == "English":
+        with st.form("hospital"):
+            Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
+
+            submit10 = st.form_submit_button("Submit")
+            submit1 = False
+            submit2 = False
+            submit3 = False
+            submit4 = False
+            submit5 = False
+            submit6 = False
+            submit7 = False    
+            submit8 = False
+            submit9 = False
     
     else:
         submit1 = False
@@ -673,6 +743,8 @@ if st.session_state.get('authentication_status'):
         submit6 = False
         submit7 = False
         submit8 = False
+        submit9 = False
+        submit10 = False            
 
     #===================================================================
 
