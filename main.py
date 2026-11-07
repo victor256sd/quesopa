@@ -6216,6 +6216,14 @@ if st.session_state.get('authentication_status'):
 
         st.markdown("QUE SOPA nonprofit - developmental instrument. This questionnaire has not yet established psychometric norms, reliability, validity, sensitivity, specificity, predictive validity, or empirically derived cut scores. Use it to organize information, identify possible protective or risk-relevant factors, and determine whether additional assessment may be appropriate. It should not be used as a stand-alone basis for diagnosis, prediction of violence, or dispositive clinical, employment, educational, forensic, or legal decisions.")
         Q_rawdata = Q_rawdata + "Score=" + str(Q_total)
+
+    if submit9 and language == "English":
+        Q_rawdata = name + "," + str(age) + ","
+        Q_rawdata = Q_rawdata + Q1
+
+    if submit10 and language == "English":
+        Q_rawdata = name + "," + str(age) + ","
+        Q_rawdata = Q_rawdata + Q1
     
     #===================================================================
 
@@ -6886,7 +6894,7 @@ if st.session_state.get('authentication_status'):
         QUERY = f"""
             # User context:
                 - User: Threat Assessment Professional
-                - User Query: {Q1}
+                - User Query: {Q_rawdata}
                 - Preferred language: {language}
             
             # Purpose:
@@ -6961,7 +6969,7 @@ if st.session_state.get('authentication_status'):
         QUERY = f"""
             # User context:
                 - User: Hospital Professional
-                - User Query: {Q1}
+                - User Query: {Q_rawdata}
                 - Preferred language: {language}
             
             # Purpose:
