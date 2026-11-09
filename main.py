@@ -4,6 +4,9 @@
 #
 # CHANGELOG:
 #
+# 11.08.2026: Added ATAP Ethics Chatbot description from Glenn and
+# privacy button with language from Glenn.
+#
 # 11.07.2026: Added ATAP Ethics and Hospital Ethics chatbots, and
 # linked them to their respective RAGs. These are initial develop-
 # ment implementations only.
@@ -96,6 +99,15 @@ from st_copy import copy_button
 # Disable the button called via on_click attribute.
 def disable_button():
     st.session_state.disabled = True        
+    
+# Privacy button for the ATAP Ethics Chatbot.
+def privacy_popup():
+    st.markdown("""
+        <div style="text-align: center;">
+            <u><b>Permissions/Consent</b></u><br>
+        </div>
+        <i>ATAP members access the ATAP Ethics Chatbot through the Association members’ side of the webpage. The Chatbot is designed to provide one response based on the query while keeping the user anonymous. It does not engage in an AI dialogue. We know some people may use this Chatbot to discuss a wide range of scenarios in planning, training, or prevention rehearsals. If an event is described, the Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to the assigned ATAP committee reviewing questions and answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. This tool was designed by ATAP members and is a benefit of membership.</i><br><br>
+    """, unsafe_allow_html=True)
 
 # Definitive CSS selectors for Streamlit 1.45.1+
 st.markdown("""
@@ -704,8 +716,10 @@ if st.session_state.get('authentication_status'):
     # Create ATAP Ethics Chatbot survey form.
     elif tool == "ATAP Ethics Chatbot" and language == "English":
         with st.form("atap"):
+            st.button("Privacy Policy", on_click=privacy_popup)
             Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
-
+            st.write("**Disclaimer**: This application was developed as an adjunctive tool to help ATAP members, if they desire, consider the potential ethical concerns that may arise in decisions, analysis, and management across different threat assessment scenarios or situations.   It provides an opportunity to align choices with ATAP’s Code of Ethics. Please understand that while this application’s guidance and responses are informed by and limited to the ATAP Code of Ethics, additional supportive resources, and the RAGE-V, they are generated from a closed set of documents integrated through artificial intelligence. The restricted library is determined by ATAP, and the web is not searched, eliminating the potential for web-based misinformation and hallucinations. All AI-generated responses are intended for informational and educational purposes only and do not constitute legal advice, threat advisement, or a substitute for BTAM or individual professional judgment. Users should consult local and federal law enforcement when appropriate, CTM members, state regulations, penal code, qualified professionals, or legal counsel for authoritative guidance on ethical concerns. This tool is designed to support thorough consideration of perspectives, not to replace professional decision-making or a formal review process. It does not replace your assessment methods or standard-of-practice tools. It has inherent limitations, such as sometimes providing incomplete or inaccurate information. Users of this app must not rely upon or make any decisions solely based on AI-generated responses to the questions asked. The answers provided are for discussion and consideration and are optional, not required, in determining best practices.")
+            
             submit9 = st.form_submit_button("Submit")
             submit1 = False
             submit2 = False
