@@ -709,7 +709,6 @@ if st.session_state.get('authentication_status'):
         
         with st.form("atap"):
             # Privacy button for the ATAP Ethics Chatbot.
-            @st.dialog("Privacy Policy")
             def privacy_popup():
                 st.markdown("""
                     <div style="text-align: center;">
