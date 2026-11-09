@@ -101,6 +101,7 @@ def disable_button():
     st.session_state.disabled = True        
 
 # Privacy button for the ATAP Ethics Chatbot.
+@st.dialog("Privacy Policy")
 def privacy_popup():
     st.markdown("""
         <div style="text-align: center;">
@@ -718,8 +719,8 @@ if st.session_state.get('authentication_status'):
         
         with st.form("atap"):
             privacy_popup()
-            Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
             st.write("**Disclaimer**: This application was developed as an adjunctive tool to help ATAP members, if they desire, consider the potential ethical concerns that may arise in decisions, analysis, and management across different threat assessment scenarios or situations.   It provides an opportunity to align choices with ATAP’s Code of Ethics. Please understand that while this application’s guidance and responses are informed by and limited to the ATAP Code of Ethics, additional supportive resources, and the RAGE-V, they are generated from a closed set of documents integrated through artificial intelligence. The restricted library is determined by ATAP, and the web is not searched, eliminating the potential for web-based misinformation and hallucinations. All AI-generated responses are intended for informational and educational purposes only and do not constitute legal advice, threat advisement, or a substitute for BTAM or individual professional judgment. Users should consult local and federal law enforcement when appropriate, CTM members, state regulations, penal code, qualified professionals, or legal counsel for authoritative guidance on ethical concerns. This tool is designed to support thorough consideration of perspectives, not to replace professional decision-making or a formal review process. It does not replace your assessment methods or standard-of-practice tools. It has inherent limitations, such as sometimes providing incomplete or inaccurate information. Users of this app must not rely upon or make any decisions solely based on AI-generated responses to the questions asked. The answers provided are for discussion and consideration and are optional, not required, in determining best practices.")
+            Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
             
             submit9 = st.form_submit_button("Submit")
             submit1 = False
