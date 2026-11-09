@@ -96,10 +96,6 @@ from cryptography.fernet import Fernet
 import re
 from st_copy import copy_button
 
-# Disable the button called via on_click attribute.
-def disable_button():
-    st.session_state.disabled = True        
-    
 # Privacy button for the ATAP Ethics Chatbot.
 @st.dialog("Privacy Policy")
 def privacy_popup():
@@ -109,6 +105,10 @@ def privacy_popup():
         </div>
         <i>ATAP members access the ATAP Ethics Chatbot through the Association members’ side of the webpage. The Chatbot is designed to provide one response based on the query while keeping the user anonymous. It does not engage in an AI dialogue. We know some people may use this Chatbot to discuss a wide range of scenarios in planning, training, or prevention rehearsals. If an event is described, the Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to the assigned ATAP committee reviewing questions and answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. This tool was designed by ATAP members and is a benefit of membership.</i><br><br>
     """, unsafe_allow_html=True)
+    
+# Disable the button called via on_click attribute.
+def disable_button():
+    st.session_state.disabled = True        
 
 # Definitive CSS selectors for Streamlit 1.45.1+
 st.markdown("""
