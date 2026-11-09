@@ -4,6 +4,11 @@
 #
 # CHANGELOG:
 #
+# 11.09.2026: Added Medical/Behavioral Ethics Chatbot description
+# from Glenn and privacy button with language from Glenn (both
+# slightly edited), and changed the chatbot name from Hospital
+# Ethics Chatbot to Medical/Behavioral Ethics Chatbot.
+#
 # 11.08.2026: Added ATAP Ethics Chatbot description from Glenn and
 # privacy button with language from Glenn.
 #
@@ -80,7 +85,7 @@
 # Submit7 - Perceptions of Community Concern, POCC, in Spanish
 # Submit8 - Gratefulness and Forgiveness
 # Submit9 - ATAP Ethics Chatbot
-# Submit10 - Hospital Ethics Chatbot
+# Submit10 - Medical/Behavioral Ethics Chatbot
 #-------------------------------------------------------------------
 
 import streamlit as st
@@ -102,12 +107,22 @@ def disable_button():
 
 # Privacy button for the ATAP Ethics Chatbot.
 @st.dialog("Privacy Policy")
-def privacy_popup():
+def privacy_popup_atap():
     st.markdown("""
         <div style="text-align: center;">
             <u><b>Permissions/Consent</b></u><br>
         </div>
         <i>ATAP members access the ATAP Ethics Chatbot through the Association members’ side of the webpage. The Chatbot is designed to provide one response based on the query while keeping the user anonymous. It does not engage in an AI dialogue. We know some people may use this Chatbot to discuss a wide range of scenarios in planning, training, or prevention rehearsals. If an event is described, the Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to the assigned ATAP committee reviewing questions and answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. This tool was designed by ATAP members and is a benefit of membership.</i><br><br>
+    """, unsafe_allow_html=True)
+
+# Privacy button for the Medical/Behavioral Ethics Chatbot.
+@st.dialog("Privacy Policy")
+def privacy_popup_mb():
+    st.markdown("""
+        <div style="text-align: center;">
+            <u><b>Permissions/Consent</b></u><br>
+        </div>
+        <i>Users anonymously prompt a response from the selected code of ethics — the Medical/Behavioral Ethics Chatbot is designed to provide one response based on the query. Dialogue is for the workplace. We know some people may use this MB Ethics Chatbot to discuss a wide range of scenarios in planning, training, or for other educational or recreational purposes. If an event is described, the MB Ethics Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to QUE SOPA reviewing answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. We may provide overall de-identified descriptions to your workplace. We may inform your employer about common issues being asked about. The goal is to help improve outcomes for those you work with and those you provide services to.</i><br><br>
     """, unsafe_allow_html=True)
 
 # Definitive CSS selectors for Streamlit 1.45.1+
@@ -195,7 +210,7 @@ if st.session_state.get('authentication_status'):
     #-------------------------------------------------------------------
     
     tool = st.radio("Select a tool:",
-        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Community Concern (POCC)", "Gratefulness and Forgiveness", "ATAP Ethics Chatbot", "Hospital Ethics Chatbot"], index=None,
+        ["Questions About Yourself and Others", "My Feelings and Needs (NEIL Child Version)", "My Feelings and Needs (NEIL Adult Version)", "Daily Digital Connected Life (DDCL)", "Future Inferred Narration of Events (FINE)", "Competency to Stand Trial", "Perceptions of Community Concern (POCC)", "Gratefulness and Forgiveness", "ATAP Ethics Chatbot", "Medical/Behavioral Ethics Chatbot"], index=None,
         captions=[
             "A brief, non-diagnostic self-report measure designed to assess perceived social connection, loneliness, and online social engagement. Items are written at a 5th–6th grade reading level and are suitable for minimal-risk survey research.\n",
             "A questionnaire that helps measure how a child has been feeling and connecting with others over the past week.\n",
@@ -717,7 +732,7 @@ if st.session_state.get('authentication_status'):
     # Create ATAP Ethics Chatbot survey form.
     elif tool == "ATAP Ethics Chatbot" and language == "English":
         if st.button("Privacy Policy"):
-            privacy_popup()
+            privacy_popup_atap()
         
         with st.form("atap"):
             st.write("**Disclaimer**: This application was developed as an adjunctive tool to help ATAP members, if they desire, consider the potential ethical concerns that may arise in decisions, analysis, and management across different threat assessment scenarios or situations.   It provides an opportunity to align choices with ATAP’s Code of Ethics. Please understand that while this application’s guidance and responses are informed by and limited to the ATAP Code of Ethics, additional supportive resources, and the RAGE-V, they are generated from a closed set of documents integrated through artificial intelligence. The restricted library is determined by ATAP, and the web is not searched, eliminating the potential for web-based misinformation and hallucinations. All AI-generated responses are intended for informational and educational purposes only and do not constitute legal advice, threat advisement, or a substitute for BTAM or individual professional judgment. Users should consult local and federal law enforcement when appropriate, CTM members, state regulations, penal code, qualified professionals, or legal counsel for authoritative guidance on ethical concerns. This tool is designed to support thorough consideration of perspectives, not to replace professional decision-making or a formal review process. It does not replace your assessment methods or standard-of-practice tools. It has inherent limitations, such as sometimes providing incomplete or inaccurate information. Users of this app must not rely upon or make any decisions solely based on AI-generated responses to the questions asked. The answers provided are for discussion and consideration and are optional, not required, in determining best practices.")
@@ -735,13 +750,18 @@ if st.session_state.get('authentication_status'):
             submit10 = False
 
     #-------------------------------------------------------------------
-    # TOOL: Hospital Ethics Chatbot
+    # TOOL: Medical/Behavioral Ethics Chatbot
     # DESRIPTION: Ethics chatbot for hospital professionals.
     #-------------------------------------------------------------------
     
     # Create Hospital Ethics Chatbot survey form.
-    elif tool == "Hospital Ethics Chatbot" and language == "English":
+    elif tool == "Medical/Behavioral Ethics Chatbot" and language == "English":
+        if st.button("Privacy Policy"):
+            privacy_popup_mb()
+
         with st.form("hospital"):
+            st.write("This application was developed to support those engaged in providing care in the medical and behavioral health fields. Every discipline has a code of Ethics to guide choices; these are often helpful to consult when client, team member, or patient demands conflict with institutional expectations. Now it will be at your fingertips through the device of your choosing. These decisions can feel isolating, and we know that you chose this job because you care about others and want to help — this Medical/Behavioral Ethics Chatbot provides guidance based on the ethics codes of the intersecting professions that provide these services. Type in your job and your question, and MB.EthicsChatBot will suggest ethical considerations that may influence your actions. Prompt query suggestions appear on the side of the app. Please understand that while this application’s guidance and responses are informed by many different Codes of Ethics in your field or adjacent fields, as well as related professional standards, they are generated by artificial intelligence relying on these codes and your prompts.")
+            st.write("**Disclaimer**: MB Ethics Chatbot responses are intended for informational and educational purposes only and do not constitute legal advice, official policy interpretation, or a substitute for professional judgment. Users should consult their supervisors, HR department, co-workers, state regulations, qualified subject matter experts, or legal counsel for authoritative guidance on ethical or compliance matters. This tool is designed to assist, not replace, professional decision-making or formal review processes and may have inherent limitations, such as providing incomplete or inaccurate information. It is designed to slow down reactivity with consideration, examine concerns, and foster conversations with others about best ethical practices. Users of this app must not rely on or make any decisions solely based on AI-generated responses to the questions asked. The answers provided are for consideration and are only one part of the process of determining best practices. All users will remain anonymous. This application is maintained by QUE SOPA, and your employer is providing it as a source of support. QUE SOPA is a non-profit formed to foster connection and healthy choices.")
             Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
 
             submit10 = st.form_submit_button("Submit")
