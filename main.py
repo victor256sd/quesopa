@@ -95,16 +95,6 @@ from pathlib import Path
 from cryptography.fernet import Fernet
 import re
 from st_copy import copy_button
-
-# Privacy button for the ATAP Ethics Chatbot.
-@st.dialog("Privacy Policy")
-def privacy_popup():
-    st.markdown("""
-        <div style="text-align: center;">
-            <u><b>Permissions/Consent</b></u><br>
-        </div>
-        <i>ATAP members access the ATAP Ethics Chatbot through the Association members’ side of the webpage. The Chatbot is designed to provide one response based on the query while keeping the user anonymous. It does not engage in an AI dialogue. We know some people may use this Chatbot to discuss a wide range of scenarios in planning, training, or prevention rehearsals. If an event is described, the Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to the assigned ATAP committee reviewing questions and answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. This tool was designed by ATAP members and is a benefit of membership.</i><br><br>
-    """, unsafe_allow_html=True)
     
 # Disable the button called via on_click attribute.
 def disable_button():
@@ -716,6 +706,16 @@ if st.session_state.get('authentication_status'):
     
     # Create ATAP Ethics Chatbot survey form.
     elif tool == "ATAP Ethics Chatbot" and language == "English":
+        # Privacy button for the ATAP Ethics Chatbot.
+        @st.dialog("Privacy Policy")
+        def privacy_popup():
+            st.markdown("""
+                <div style="text-align: center;">
+                    <u><b>Permissions/Consent</b></u><br>
+                </div>
+                <i>ATAP members access the ATAP Ethics Chatbot through the Association members’ side of the webpage. The Chatbot is designed to provide one response based on the query while keeping the user anonymous. It does not engage in an AI dialogue. We know some people may use this Chatbot to discuss a wide range of scenarios in planning, training, or prevention rehearsals. If an event is described, the Chatbot cannot determine if it is real or imagined. When you ask the Chatbot a question, you consent to the assigned ATAP committee reviewing questions and answers to improve the Chatbot. After removing any inadvertent identifying information from any anonymous question, both answers and questions may be compiled for research, instructional, presentation, and publication purposes. This tool was designed by ATAP members and is a benefit of membership.</i><br><br>
+            """, unsafe_allow_html=True)
+        
         with st.form("atap"):
             st.button("Privacy Policy", on_click=privacy_popup)
             Q1 = st.text_area("Enter your query below:", placeholder="Write your thoughts here...", height=300)
