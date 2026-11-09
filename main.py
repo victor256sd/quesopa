@@ -101,6 +101,7 @@ def disable_button():
     st.session_state.disabled = True        
     
 # Privacy button for the ATAP Ethics Chatbot.
+@st.dialog("Privacy Policy")
 def privacy_popup():
     st.markdown("""
         <div style="text-align: center;">
